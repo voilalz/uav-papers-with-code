@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-05",
+  "generated_at": "2026-10-06",
   "repos": {
     "aerorobotics/neural-fly": {
       "full_name": "aerorobotics/neural-fly",
       "stars": 222,
       "lang": "Jupyter",
+      "license": null,
       "updated": "2022-05-21",
       "archived": false
     },
@@ -13,6 +14,7 @@
       "full_name": "aerostack2/aerostack2",
       "stars": 392,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2026-09-16",
       "archived": false
     },
@@ -20,6 +22,7 @@
       "full_name": "AirVLN/AirVLN",
       "stars": 393,
       "lang": "Python",
+      "license": null,
       "updated": "2026-03-25",
       "archived": false
     },
@@ -27,6 +30,7 @@
       "full_name": "AnyLoc/AnyLoc",
       "stars": 643,
       "lang": "Python",
+      "license": "BSD-3-Clause",
       "updated": "2024-03-13",
       "archived": false
     },
@@ -34,6 +38,7 @@
       "full_name": "arplaboratory/learning-to-fly",
       "stars": 593,
       "lang": "C++",
+      "license": "MIT",
       "updated": "2025-05-22",
       "archived": false
     },
@@ -41,6 +46,7 @@
       "full_name": "btx0424/OmniDrones",
       "stars": 583,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-01-20",
       "archived": false
     },
@@ -48,6 +54,7 @@
       "full_name": "CAPTAIN-WHU/DOTA_devkit",
       "stars": 677,
       "lang": "Jupyter",
+      "license": null,
       "updated": "2019-07-05",
       "archived": false
     },
@@ -55,6 +62,7 @@
       "full_name": "castacks/tartanair_tools",
       "stars": 434,
       "lang": "Jupyter",
+      "license": "BSD-3-Clause",
       "updated": "2026-04-30",
       "archived": false
     },
@@ -62,6 +70,7 @@
       "full_name": "ChenhongyiYang/QueryDet-PyTorch",
       "stars": 483,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2024-03-22",
       "archived": false
     },
@@ -69,6 +78,7 @@
       "full_name": "Cli98/DMNet",
       "stars": 107,
       "lang": "Python",
+      "license": null,
       "updated": "2022-07-01",
       "archived": false
     },
@@ -76,6 +86,7 @@
       "full_name": "Cuogeihong/CEASC",
       "stars": 139,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2023-05-08",
       "archived": false
     },
@@ -83,6 +94,7 @@
       "full_name": "cv516Buaa/tph-yolov5",
       "stars": 755,
       "lang": "Python",
+      "license": "GPL-3.0",
       "updated": "2023-03-24",
       "archived": false
     },
@@ -90,6 +102,7 @@
       "full_name": "Dmmm1997/DenseUAV",
       "stars": 231,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2025-12-12",
       "archived": false
     },
@@ -97,6 +110,7 @@
       "full_name": "Dmmm1997/FSRA",
       "stars": 122,
       "lang": "Python",
+      "license": null,
       "updated": "2024-03-07",
       "archived": false
     },
@@ -104,6 +118,7 @@
       "full_name": "ethz-asl/kalibr",
       "stars": 5750,
       "lang": "C++",
+      "license": null,
       "updated": "2024-03-08",
       "archived": false
     },
@@ -111,6 +126,7 @@
       "full_name": "ethz-asl/maplab",
       "stars": 2879,
       "lang": "C++",
+      "license": "Apache-2.0",
       "updated": "2023-06-18",
       "archived": false
     },
@@ -118,6 +134,7 @@
       "full_name": "ethz-asl/mav_control_rw",
       "stars": 456,
       "lang": "C",
+      "license": "Apache-2.0",
       "updated": "2018-09-01",
       "archived": false
     },
@@ -125,6 +142,7 @@
       "full_name": "ethz-asl/nbvplanner",
       "stars": 453,
       "lang": "C++",
+      "license": null,
       "updated": "2017-07-26",
       "archived": false
     },
@@ -132,6 +150,7 @@
       "full_name": "ethz-asl/rotors_simulator",
       "stars": 1506,
       "lang": "C++",
+      "license": null,
       "updated": "2021-07-06",
       "archived": false
     },
@@ -139,6 +158,7 @@
       "full_name": "ethz-asl/rovio",
       "stars": 1269,
       "lang": "C++",
+      "license": null,
       "updated": "2024-01-10",
       "archived": false
     },
@@ -146,6 +166,7 @@
       "full_name": "ethz-asl/voxblox",
       "stars": 1673,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2021-11-22",
       "archived": false
     },
@@ -153,6 +174,7 @@
       "full_name": "fyangneil/Clustered-Object-Detection-in-Aerial-Image",
       "stars": 131,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2020-05-25",
       "archived": false
     },
@@ -160,6 +182,7 @@
       "full_name": "gaoxiang12/faster-lio",
       "stars": 1639,
       "lang": "C++",
+      "license": "GPL-2.0",
       "updated": "2026-09-04",
       "archived": false
     },
@@ -167,13 +190,15 @@
       "full_name": "HenryHuYu/DiffPhysDrone",
       "stars": 633,
       "lang": "CUDA",
+      "license": null,
       "updated": "2025-06-25",
       "archived": false
     },
     "hku-mars/fast-livo2": {
       "full_name": "hku-mars/FAST-LIVO2",
-      "stars": 4708,
+      "stars": 4707,
       "lang": "C++",
+      "license": "GPL-2.0",
       "updated": "2026-03-08",
       "archived": false
     },
@@ -181,6 +206,7 @@
       "full_name": "hku-mars/FAST_LIO",
       "stars": 5239,
       "lang": "C++",
+      "license": "GPL-2.0",
       "updated": "2024-07-23",
       "archived": false
     },
@@ -188,6 +214,7 @@
       "full_name": "hku-mars/IPC",
       "stars": 258,
       "lang": "C++",
+      "license": null,
       "updated": "2024-07-19",
       "archived": false
     },
@@ -195,6 +222,7 @@
       "full_name": "hku-mars/MARSIM",
       "stars": 584,
       "lang": "C++",
+      "license": "GPL-2.0",
       "updated": "2025-10-25",
       "archived": false
     },
@@ -202,6 +230,7 @@
       "full_name": "hku-mars/Point-LIO",
       "stars": 1344,
       "lang": "C++",
+      "license": null,
       "updated": "2026-06-13",
       "archived": false
     },
@@ -209,6 +238,7 @@
       "full_name": "hku-mars/r3live",
       "stars": 2463,
       "lang": "C++",
+      "license": "GPL-2.0",
       "updated": "2022-08-24",
       "archived": false
     },
@@ -216,6 +246,7 @@
       "full_name": "hku-mars/ROG-Map",
       "stars": 622,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2025-03-13",
       "archived": false
     },
@@ -223,6 +254,7 @@
       "full_name": "hku-mars/SUPER",
       "stars": 1052,
       "lang": "C++",
+      "license": null,
       "updated": "2025-06-04",
       "archived": false
     },
@@ -230,6 +262,7 @@
       "full_name": "hku-mars/Swarm-LIO2",
       "stars": 460,
       "lang": "C++",
+      "license": "GPL-2.0",
       "updated": "2026-01-13",
       "archived": false
     },
@@ -237,6 +270,7 @@
       "full_name": "HKUST-Aerial-Robotics/D2SLAM",
       "stars": 469,
       "lang": "Jupyter",
+      "license": null,
       "updated": "2024-12-13",
       "archived": false
     },
@@ -244,6 +278,7 @@
       "full_name": "HKUST-Aerial-Robotics/ESVO",
       "stars": 509,
       "lang": "C++",
+      "license": null,
       "updated": "2025-03-20",
       "archived": false
     },
@@ -251,6 +286,7 @@
       "full_name": "HKUST-Aerial-Robotics/FALCON",
       "stars": 323,
       "lang": "C++",
+      "license": null,
       "updated": "2025-05-16",
       "archived": false
     },
@@ -258,6 +294,7 @@
       "full_name": "HKUST-Aerial-Robotics/Fast-Planner",
       "stars": 3417,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2024-10-24",
       "archived": false
     },
@@ -265,6 +302,7 @@
       "full_name": "HKUST-Aerial-Robotics/FC-Planner",
       "stars": 379,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2026-06-16",
       "archived": false
     },
@@ -272,6 +310,7 @@
       "full_name": "HKUST-Aerial-Robotics/FUEL",
       "stars": 1485,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2024-11-19",
       "archived": false
     },
@@ -279,6 +318,7 @@
       "full_name": "HKUST-Aerial-Robotics/GVINS",
       "stars": 1162,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2021-09-02",
       "archived": false
     },
@@ -286,6 +326,7 @@
       "full_name": "HKUST-Aerial-Robotics/Omni-swarm",
       "stars": 288,
       "lang": "Jupyter",
+      "license": null,
       "updated": "2022-07-03",
       "archived": false
     },
@@ -293,6 +334,7 @@
       "full_name": "HKUST-Aerial-Robotics/Teach-Repeat-Replan",
       "stars": 1162,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2021-10-19",
       "archived": false
     },
@@ -300,6 +342,7 @@
       "full_name": "HKUST-Aerial-Robotics/VINS-Fusion",
       "stars": 4736,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2021-07-26",
       "archived": false
     },
@@ -307,6 +350,7 @@
       "full_name": "HKUST-Aerial-Robotics/VINS-Mono",
       "stars": 6048,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2024-05-23",
       "archived": false
     },
@@ -314,6 +358,7 @@
       "full_name": "Jaeyoung-Lim/mavros_controllers",
       "stars": 509,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2022-08-23",
       "archived": false
     },
@@ -321,13 +366,15 @@
       "full_name": "KevinHuang8/DATT",
       "stars": 98,
       "lang": "Python",
+      "license": null,
       "updated": "2024-05-23",
       "archived": false
     },
     "koide3/glim": {
       "full_name": "koide3/glim",
-      "stars": 1854,
+      "stars": 1855,
       "lang": "C++",
+      "license": "MIT",
       "updated": "2026-09-06",
       "archived": false
     },
@@ -335,6 +382,7 @@
       "full_name": "KumarRobotics/msckf_vio",
       "stars": 1976,
       "lang": "C++",
+      "license": null,
       "updated": "2021-04-26",
       "archived": false
     },
@@ -342,6 +390,7 @@
       "full_name": "layumi/University1652-Baseline",
       "stars": 687,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-10-04",
       "archived": false
     },
@@ -349,6 +398,7 @@
       "full_name": "learnsyslab/gym-pybullet-drones",
       "stars": 2153,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-09-06",
       "archived": false
     },
@@ -356,6 +406,7 @@
       "full_name": "LiuShuaiyr/UAVMOT",
       "stars": 62,
       "lang": "Python",
+      "license": null,
       "updated": "2022-09-01",
       "archived": false
     },
@@ -363,6 +414,7 @@
       "full_name": "lukasvst/dm-vio",
       "stars": 1234,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2024-10-27",
       "archived": false
     },
@@ -370,6 +422,7 @@
       "full_name": "microsoft/AirSim",
       "stars": 18535,
       "lang": "C++",
+      "license": null,
       "updated": "2026-09-15",
       "archived": false
     },
@@ -377,6 +430,7 @@
       "full_name": "microsoft/AirSim-Drone-Racing-Lab",
       "stars": 240,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2020-07-02",
       "archived": true
     },
@@ -384,6 +438,7 @@
       "full_name": "mit-acl/faster",
       "stars": 1253,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2025-03-10",
       "archived": false
     },
@@ -391,6 +446,7 @@
       "full_name": "mit-acl/mader",
       "stars": 621,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2022-12-07",
       "archived": false
     },
@@ -398,6 +454,7 @@
       "full_name": "mit-aera/Blackbird-Dataset",
       "stars": 160,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2022-12-15",
       "archived": false
     },
@@ -405,6 +462,7 @@
       "full_name": "MIT-SPARK/Kimera-VIO",
       "stars": 1923,
       "lang": "C++",
+      "license": "BSD-2-Clause",
       "updated": "2025-02-10",
       "archived": false
     },
@@ -412,6 +470,7 @@
       "full_name": "mwaseema/Drone-Detection",
       "stars": 63,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2021-12-14",
       "archived": false
     },
@@ -419,6 +478,7 @@
       "full_name": "ntnu-arl/aerial_gym_simulator",
       "stars": 776,
       "lang": "Python",
+      "license": "BSD-3-Clause",
       "updated": "2026-06-28",
       "archived": false
     },
@@ -426,6 +486,7 @@
       "full_name": "ntnu-arl/gbplanner_ros",
       "stars": 865,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2026-09-13",
       "archived": false
     },
@@ -433,6 +494,7 @@
       "full_name": "ntu-aris/ntu_viral_dataset",
       "stars": 232,
       "lang": null,
+      "license": "MIT",
       "updated": "2025-03-12",
       "archived": false
     },
@@ -440,20 +502,23 @@
       "full_name": "nvidia-isaac/nvblox",
       "stars": 1316,
       "lang": "C++",
+      "license": null,
       "updated": "2026-07-03",
       "archived": false
     },
     "obss/sahi": {
       "full_name": "obss/sahi",
-      "stars": 5530,
+      "stars": 5531,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-09-30",
       "archived": false
     },
     "octomap/octomap": {
       "full_name": "OctoMap/octomap",
-      "stars": 2387,
+      "stars": 2388,
       "lang": "C++",
+      "license": null,
       "updated": "2026-09-26",
       "archived": false
     },
@@ -461,6 +526,7 @@
       "full_name": "open-mmlab/mmrotate",
       "stars": 2172,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2024-09-28",
       "archived": false
     },
@@ -468,6 +534,7 @@
       "full_name": "OPT4SMART/crazychoir",
       "stars": 54,
       "lang": "Python",
+      "license": "GPL-3.0",
       "updated": "2025-06-11",
       "archived": false
     },
@@ -475,6 +542,7 @@
       "full_name": "PegasusSimulator/PegasusSimulator",
       "stars": 890,
       "lang": "Python",
+      "license": "BSD-3-Clause",
       "updated": "2026-07-24",
       "archived": false
     },
@@ -482,6 +550,7 @@
       "full_name": "PRBonn/kiss-icp",
       "stars": 2337,
       "lang": "C++",
+      "license": "MIT",
       "updated": "2026-05-04",
       "archived": false
     },
@@ -489,6 +558,7 @@
       "full_name": "prince687028/TravelUAV",
       "stars": 285,
       "lang": "Python",
+      "license": null,
       "updated": "2026-01-22",
       "archived": false
     },
@@ -496,6 +566,7 @@
       "full_name": "princeton-vl/DROID-SLAM",
       "stars": 2706,
       "lang": "Python",
+      "license": "BSD-3-Clause",
       "updated": "2025-05-05",
       "archived": false
     },
@@ -503,13 +574,15 @@
       "full_name": "PuAnysh/UFPMP-Det",
       "stars": 71,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2022-04-03",
       "archived": false
     },
     "px4/px4-autopilot": {
       "full_name": "PX4/PX4-Autopilot",
-      "stars": 12743,
+      "stars": 12745,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2026-10-05",
       "archived": false
     },
@@ -517,13 +590,15 @@
       "full_name": "Reza-Zhu/SUES-200-Benchmark",
       "stars": 92,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-09-08",
       "archived": false
     },
     "robin-shaun/xtdrone": {
       "full_name": "robin-shaun/XTDrone",
-      "stars": 1728,
+      "stars": 1729,
       "lang": "C++",
+      "license": "MIT",
       "updated": "2026-10-04",
       "archived": false
     },
@@ -531,6 +606,7 @@
       "full_name": "Robotics-STAR-Lab/EPIC",
       "stars": 239,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2025-05-02",
       "archived": false
     },
@@ -538,6 +614,7 @@
       "full_name": "Robotics-STAR-Lab/RACER",
       "stars": 799,
       "lang": "C++",
+      "license": null,
       "updated": "2024-11-19",
       "archived": false
     },
@@ -545,6 +622,7 @@
       "full_name": "Robotics-STAR-Lab/STAR-Searcher",
       "stars": 134,
       "lang": "C++",
+      "license": null,
       "updated": "2025-05-08",
       "archived": false
     },
@@ -552,6 +630,7 @@
       "full_name": "rpng/open_vins",
       "stars": 3128,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2025-11-30",
       "archived": false
     },
@@ -559,13 +638,15 @@
       "full_name": "Skyy93/Sample4Geo",
       "stars": 166,
       "lang": "Python",
+      "license": null,
       "updated": "2025-08-08",
       "archived": false
     },
     "spencerfolk/rotorpy": {
       "full_name": "spencerfolk/rotorpy",
-      "stars": 312,
+      "stars": 313,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-09-07",
       "archived": false
     },
@@ -573,6 +654,7 @@
       "full_name": "sutdcv/UAV-Human",
       "stars": 259,
       "lang": "Python",
+      "license": null,
       "updated": "2022-07-11",
       "archived": false
     },
@@ -580,6 +662,7 @@
       "full_name": "TixiaoShan/LIO-SAM",
       "stars": 4935,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2023-04-17",
       "archived": false
     },
@@ -587,6 +670,7 @@
       "full_name": "TixiaoShan/LVI-SAM",
       "stars": 1885,
       "lang": "C++",
+      "license": "BSD-3-Clause",
       "updated": "2022-12-17",
       "archived": false
     },
@@ -594,6 +678,7 @@
       "full_name": "TUM-AAS/neural-mpc",
       "stars": 286,
       "lang": "Python",
+      "license": "GPL-3.0",
       "updated": "2025-03-15",
       "archived": false
     },
@@ -601,6 +686,7 @@
       "full_name": "typefly/TypeFly",
       "stars": 117,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2026-07-08",
       "archived": false
     },
@@ -608,6 +694,7 @@
       "full_name": "USC-ACTLab/crazyswarm",
       "stars": 379,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2022-12-17",
       "archived": false
     },
@@ -615,6 +702,7 @@
       "full_name": "UZ-SLAMLab/ORB_SLAM3",
       "stars": 9127,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2022-02-10",
       "archived": false
     },
@@ -622,6 +710,7 @@
       "full_name": "uzh-rpg/agile_autonomy",
       "stars": 811,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2023-01-23",
       "archived": false
     },
@@ -629,6 +718,7 @@
       "full_name": "uzh-rpg/data_driven_mpc",
       "stars": 364,
       "lang": "Python",
+      "license": "GPL-3.0",
       "updated": "2021-03-14",
       "archived": false
     },
@@ -636,6 +726,7 @@
       "full_name": "uzh-rpg/deep_drone_acrobatics",
       "stars": 247,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2021-05-04",
       "archived": false
     },
@@ -643,6 +734,7 @@
       "full_name": "uzh-rpg/flightmare",
       "stars": 1428,
       "lang": "C++",
+      "license": null,
       "updated": "2023-05-15",
       "archived": false
     },
@@ -650,6 +742,7 @@
       "full_name": "uzh-rpg/rpg_mpc",
       "stars": 522,
       "lang": "C",
+      "license": "GPL-3.0",
       "updated": "2019-12-19",
       "archived": false
     },
@@ -657,6 +750,7 @@
       "full_name": "uzh-rpg/rpg_public_dronet",
       "stars": 453,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2018-05-25",
       "archived": false
     },
@@ -664,6 +758,7 @@
       "full_name": "uzh-rpg/rpg_quadrotor_control",
       "stars": 726,
       "lang": "C++",
+      "license": null,
       "updated": "2021-02-25",
       "archived": false
     },
@@ -671,6 +766,7 @@
       "full_name": "uzh-rpg/rpg_svo_pro_open",
       "stars": 1613,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2022-08-04",
       "archived": false
     },
@@ -678,6 +774,7 @@
       "full_name": "uzh-rpg/rpg_time_optimal",
       "stars": 128,
       "lang": "Python",
+      "license": "GPL-3.0",
       "updated": "2021-09-17",
       "archived": false
     },
@@ -685,6 +782,7 @@
       "full_name": "uzh-rpg/rpg_trajectory_evaluation",
       "stars": 1213,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2022-09-14",
       "archived": false
     },
@@ -692,6 +790,7 @@
       "full_name": "v4rl-ucy/covins",
       "stars": 461,
       "lang": "C++",
+      "license": null,
       "updated": "2023-05-28",
       "archived": false
     },
@@ -699,6 +798,7 @@
       "full_name": "vectr-ucla/direct_lidar_inertial_odometry",
       "stars": 1051,
       "lang": "C++",
+      "license": "MIT",
       "updated": "2024-11-08",
       "archived": false
     },
@@ -706,6 +806,7 @@
       "full_name": "VisDrone/DroneVehicle",
       "stars": 744,
       "lang": null,
+      "license": null,
       "updated": "2022-08-20",
       "archived": false
     },
@@ -713,6 +814,7 @@
       "full_name": "VisDrone/VisDrone-Dataset",
       "stars": 2590,
       "lang": null,
+      "license": null,
       "updated": "2023-09-24",
       "archived": false
     },
@@ -720,6 +822,7 @@
       "full_name": "vision4robotics/AutoTrack",
       "stars": 105,
       "lang": "MATLAB",
+      "license": null,
       "updated": "2020-07-17",
       "archived": false
     },
@@ -727,6 +830,7 @@
       "full_name": "vision4robotics/HiFT",
       "stars": 84,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2022-10-11",
       "archived": false
     },
@@ -734,6 +838,7 @@
       "full_name": "vision4robotics/SAM-DA",
       "stars": 62,
       "lang": "Jupyter",
+      "license": "Apache-2.0",
       "updated": "2024-09-27",
       "archived": false
     },
@@ -741,6 +846,7 @@
       "full_name": "vision4robotics/SiamAPN",
       "stars": 81,
       "lang": "Python",
+      "license": null,
       "updated": "2022-03-29",
       "archived": false
     },
@@ -748,6 +854,7 @@
       "full_name": "vision4robotics/TCTrack",
       "stars": 205,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2023-08-29",
       "archived": false
     },
@@ -755,6 +862,7 @@
       "full_name": "vision4robotics/UDAT",
       "stars": 126,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2023-10-23",
       "archived": false
     },
@@ -762,6 +870,7 @@
       "full_name": "water-cookie/citynav",
       "stars": 142,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2025-02-11",
       "archived": false
     },
@@ -769,6 +878,7 @@
       "full_name": "wtyhub/LPN",
       "stars": 99,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2026-07-06",
       "archived": false
     },
@@ -776,6 +886,7 @@
       "full_name": "xyyang317/Aba-ViTrack",
       "stars": 53,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2025-12-17",
       "archived": false
     },
@@ -783,6 +894,7 @@
       "full_name": "YeLyuUT/UAVidToolKit",
       "stars": 56,
       "lang": "Python",
+      "license": null,
       "updated": "2021-01-14",
       "archived": false
     },
@@ -790,6 +902,7 @@
       "full_name": "Yux1angJi/GTA-UAV",
       "stars": 172,
       "lang": "Python",
+      "license": "Apache-2.0",
       "updated": "2025-10-20",
       "archived": false
     },
@@ -797,6 +910,7 @@
       "full_name": "zcablii/LSKNet",
       "stars": 701,
       "lang": "Python",
+      "license": null,
       "updated": "2026-09-14",
       "archived": false
     },
@@ -804,6 +918,7 @@
       "full_name": "ZhaoJ9014/Anti-UAV",
       "stars": 861,
       "lang": "Python",
+      "license": "MIT",
       "updated": "2025-05-07",
       "archived": false
     },
@@ -811,6 +926,7 @@
       "full_name": "ZJU-FAST-Lab/CMPCC",
       "stars": 300,
       "lang": "C",
+      "license": null,
       "updated": "2021-05-14",
       "archived": false
     },
@@ -818,6 +934,7 @@
       "full_name": "ZJU-FAST-Lab/ego-planner",
       "stars": 2683,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2025-03-08",
       "archived": false
     },
@@ -825,6 +942,7 @@
       "full_name": "ZJU-FAST-Lab/ego-planner-swarm",
       "stars": 2197,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2025-03-08",
       "archived": false
     },
@@ -832,6 +950,7 @@
       "full_name": "ZJU-FAST-Lab/Elastic-Tracker",
       "stars": 332,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2023-06-16",
       "archived": false
     },
@@ -839,6 +958,7 @@
       "full_name": "ZJU-FAST-Lab/GCOPTER",
       "stars": 1305,
       "lang": "C++",
+      "license": "MIT",
       "updated": "2023-06-06",
       "archived": false
     },
@@ -846,6 +966,7 @@
       "full_name": "ZJU-FAST-Lab/Swarm-Formation",
       "stars": 570,
       "lang": "C++",
+      "license": "GPL-3.0",
       "updated": "2024-01-24",
       "archived": false
     }
