@@ -354,7 +354,7 @@ h1 {
 
   <footer class="foot">
     <p>收录标准：公开了代码或数据、在无人机方向有代表性或被广泛使用的工作。</p>
-    <p>论文链接已逐条核对，优先使用 arXiv 等开放版本；Star 数与“最近提交”（默认分支最后一次提交）取自 GitHub，数据日期见页首。</p>
+    <p>论文链接已逐条核对，优先使用 arXiv 等开放版本；Star 数与“最近提交”（默认分支最后一次提交）取自 GitHub，每周一自动刷新，数据日期见页首。</p>
     <p>“第三方实现”表示代码并非论文作者发布；标注“已归档”或“停止维护”的仓库仍可参考，但不再更新。</p>
     <p>网站源码与数据：<a href="https://github.com/voilalz/uav-papers-with-code">github.com/voilalz/uav-papers-with-code</a></p>
   </footer>
@@ -366,7 +366,11 @@ h1 {
   "use strict";
   var DATA = JSON.parse(document.getElementById("data").textContent);
   var DATA_DATE = "2026-10-05";
-  var RECENT_SINCE = "2025-10-05";
+  var RECENT_SINCE = (function () {
+    var d = new Date(DATA_DATE + "T00:00:00Z");
+    d.setUTCFullYear(d.getUTCFullYear() - 1);
+    return d.toISOString().slice(0, 10);
+  })();
 
   var CATS = [
     { id: "all", code: "ALL", full: "全部", short: "全部" },

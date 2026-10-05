@@ -1,0 +1,49 @@
+name: 刷新 Star 数据
+
+on:
+  schedule:
+    - cron: "17 1 * * 1"   # 每周一 09:17（北京时间）
+  workflow_dispatch:        # 也可以在 Actions 页面手动运行
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: refresh-stats
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: 刷新 Star 数与最近提交时间
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/refresh_stats.py
+
+      - name: 提交并推送
+        id: commit
+        run: |
+          if git diff --quiet; then
+            echo "数据没有变化，跳过提交"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html README.md
+          git commit -m "chore: 刷新 Star 数与最近提交时间（$(TZ=Asia/Shanghai date +%F)）"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: 重新发布 GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent \
+            || echo "::warning::Pages 重新发布请求失败，下次推送时会一并发布"
