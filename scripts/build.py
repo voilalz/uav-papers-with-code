@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""由 data/ 和 templates/index.html 生成网站 index.html，并同步 README 中的数字与日期。
+
+    python3 scripts/build.py           # 生成
+    python3 scripts/build.py --check   # 只检查 index.html / README 是否与数据一致（CI 用）
+
+index.html 是生成文件，请改 templates/index.html 或 data/，不要直接改它。
+"""
+import argparse
+import json
+import os
+import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import datalib  # noqa: E402
+import validate  # noqa: E402
+
+ARCHIVED_NOTE = "仓库已归档"
+README_COUNT_RE = re.compile(r"收录 \d+ 篇论文、\d+ 个代码仓库")
+README_SUBS_RE = re.compile(r"\d+ 个细分方向")
+README_DATE_RE = re.compile(r"(截至 )\d{4}-\d{2}-\d{2}")
+
+
+def page_entries(papers, taxonomy, stats):
+    """把论文条目和仓库统计合并成页面使用的扁平结构。"""
+    venues = taxonomy["venues"]
+    stat_repos = stats.get("repos", {})
+    out = []
+    for p in papers:
+        repos = []
+        for r in p.get("repos", []):
+            st = stat_repos.get(datalib.repo_key(r["name"]), {})
+            repos.append({"name": st.get("full_name") or r["name"], "official": r["official"]})
+        main = datalib.primary_repo(p)
+        st = stat_repos.get(datalib.repo_key(main["name"]), {}) if main else {}
+        note = p.get("note")
+        if not note and st.get("archived"):
+            note = ARCHIVED_NOTE
+        e = {
+            "id": p["id"], "kind": p["kind"], "name": p["name"], "title": p["title"],
+            "authors": p["authors"], "venue": p["venue"], "venue_full": venues[p["venue"]]["full"],
+            "year": p["year"], "paper": p["paper"], "repos": repos, "subs": p["subs"], "zh": p["zh"],
+            "stars": st.get("stars"), "lang": st.get("lang"), "updated": st.get("updated"),
+        }
+        for k in ("site", "tags"):
+            if p.get(k):
+                e[k] = p[k]
+        if note:
+            e["note"] = note
+        out.append(e)
+    return out
+
+
+def script_json(obj):
+    """可安全放进 <script> 的紧凑 JSON。"""
+    return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def render(papers, taxonomy, stats, template):
+    entries = page_entries(papers, taxonomy, stats)
+    tax = {"categories": taxonomy["categories"],
+           "subs": [{"id": s["id"], "cat": s["cat"], "label": s["label"]} for s in taxonomy["subs"]]}
+    values = {
+        "{{DATA}}": script_json(entries),
+        "{{TAXONOMY}}": script_json(tax),
+        "{{DATA_DATE}}": json.dumps(stats.get("generated_at") or ""),
+        "{{PAPER_COUNT}}": str(len(entries)),
+    }
+    html = template
+    for key, val in values.items():
+        if key not in html:
+            raise SystemExit(f"模板中缺少占位符 {key}")
+        html = html.replace(key, val)
+    return html
+
+
+def render_readme(readme, papers, taxonomy, stats):
+    n_repos = sum(1 for p in papers if p.get("repos"))
+    readme = README_COUNT_RE.sub(f"收录 {len(papers)} 篇论文、{n_repos} 个代码仓库", readme)
+    readme = README_SUBS_RE.sub(f"{len(taxonomy['subs'])} 个细分方向", readme)
+    if stats.get("generated_at"):
+        readme = README_DATE_RE.sub(lambda m: m.group(1) + stats["generated_at"], readme)
+    return readme
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--check", action="store_true", help="只检查生成文件是否最新，不写入")
+    args = ap.parse_args(argv)
+
+    papers, taxonomy, stats = datalib.load_papers(), datalib.load_taxonomy(), datalib.load_stats()
+    with open(datalib.SCHEMA, encoding="utf-8") as f:
+        errors, _ = validate.check(papers, taxonomy, stats, json.load(f))
+    if errors:
+        sys.exit("数据未通过校验，请先运行 python3 scripts/validate.py 查看错误")
+
+    with open(datalib.TEMPLATE, encoding="utf-8") as f:
+        html = render(papers, taxonomy, stats, f.read())
+    with open(datalib.README, encoding="utf-8") as f:
+        old_readme = f.read()
+    readme = render_readme(old_readme, papers, taxonomy, stats)
+    old_html = ""
+    if os.path.exists(datalib.INDEX):
+        with open(datalib.INDEX, encoding="utf-8") as f:
+            old_html = f.read()
+
+    if args.check:
+        stale = [n for n, new, old in (("index.html", html, old_html), ("README.md", readme, old_readme)) if new != old]
+        if stale:
+            sys.exit(f"{'、'.join(stale)} 与 data/ 不一致，请运行 python3 scripts/build.py 后一并提交")
+        print("index.html 与 README.md 已是最新")
+        return
+
+    with open(datalib.INDEX, "w", encoding="utf-8") as f:
+        f.write(html)
+    with open(datalib.README, "w", encoding="utf-8") as f:
+        f.write(readme)
+    print(f"已生成 index.html：{len(papers)} 篇，数据日期 {stats.get('generated_at')}")
+
+
+if __name__ == "__main__":
+    main()

@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "17 1 * * 1"   # 每周一 09:17（北京时间）
   workflow_dispatch:        # 也可以在 Actions 页面手动运行
+  push:                     # 新增或修改仓库后立即补上统计数据
+    branches: [main]
+    paths: [data/papers.yaml]
 
 permissions:
   contents: write
@@ -20,10 +23,23 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: 刷新 Star 数与最近提交时间
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 刷新 Star 数、许可证与最近提交时间
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/refresh_stats.py
+        run: python3 scripts/refresh_github.py
+
+      - name: 校验并重新生成页面
+        run: |
+          python3 scripts/validate.py
+          python3 scripts/build.py
 
       - name: 提交并推送
         id: commit
@@ -35,7 +51,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html README.md
+          git add data/generated/repo_stats.json index.html README.md
           git commit -m "chore: 刷新 Star 数与最近提交时间（$(TZ=Asia/Shanghai date +%F)）"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"

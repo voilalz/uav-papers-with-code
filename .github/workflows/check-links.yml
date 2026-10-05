@@ -1,0 +1,53 @@
+name: 链接巡检
+
+on:
+  schedule:
+    - cron: "43 2 * * 3"   # 每周三 10:43（北京时间）
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: check-links
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 检查论文链接与数据集主页
+        id: check
+        run: python3 scripts/check_links.py --output report.md
+
+      # 只维护一个 issue：有问题就新建或更新，问题清零就关闭
+      - name: 更新巡检 issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: 链接巡检报告
+        run: |
+          num=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
+                --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          echo "" >> report.md
+          echo "_由 [链接巡检](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) 于 $(TZ=Asia/Shanghai date '+%F %R') 生成_" >> report.md
+          if [ "${{ steps.check.outputs.problems }}" = "true" ]; then
+            if [ -n "$num" ]; then
+              gh issue edit "$num" --body-file report.md
+            else
+              gh issue create --title "$TITLE" --body-file report.md
+            fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "本周巡检没有发现问题，自动关闭。"
+          fi

@@ -1,0 +1,7 @@
+data/ 目录下的数据（论文条目、中文简介、分类与词表）以 知识共享 署名 4.0 国际许可协议（CC BY 4.0）发布：
+https://creativecommons.org/licenses/by/4.0/deed.zh-hans
+
+转载或使用时请注明出处：UAV Papers with Code（https://github.com/voilalz/uav-papers-with-code）。
+
+论文标题、作者等书目信息属于事实信息；各论文与代码仓库的版权和许可证归其原作者所有，以原始出处为准。
+仓库根目录的 LICENSE（MIT）适用于网站与脚本代码。
