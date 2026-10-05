@@ -1,0 +1,76 @@
+name: 推荐论文
+description: 推荐一篇公开了代码或数据的无人机方向论文
+title: "[推荐] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: 感谢推荐！请先在网站上搜索，确认还没有收录。收录标准见 CONTRIBUTING.md。
+  - type: input
+    id: paper
+    attributes:
+      label: 论文链接
+      description: 优先填 arXiv 链接，没有则填 DOI 或会议开放版本
+      placeholder: https://arxiv.org/abs/2307.05263
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: 代码或数据仓库
+      placeholder: https://github.com/owner/name
+    validations:
+      required: true
+  - type: dropdown
+    id: official
+    attributes:
+      label: 代码是否由论文作者发布
+      options: [是（官方代码）, 否（第三方实现）, 不确定]
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: 发表处与年份
+      placeholder: ICRA 2025 / RA-L 2024 / arXiv 2025
+    validations:
+      required: true
+  - type: dropdown
+    id: subs
+    attributes:
+      label: 细分方向
+      description: 可多选；没有合适的就选"其他"，并在下面说明
+      multiple: true
+      options:
+        - 目标检测 (det)
+        - 目标跟踪 (trk)
+        - 地理定位 (geo)
+        - 语言导航与大模型 (vln)
+        - 分割与行为 (seg)
+        - 视觉 / VIO (vio)
+        - 激光雷达 (lio)
+        - 建图 (map)
+        - 多机协同定位 (coll)
+        - 轨迹规划 (plan)
+        - 学习型飞行 (learn)
+        - 自主探索 (expl)
+        - 集群 (swarm)
+        - 飞控与控制 (ctrl)
+        - 仿真平台 (sim)
+        - 数据集 (data)
+        - 工具与软件 (tool)
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: zh
+    attributes:
+      label: 一句话中文简介
+      description: 40–80 字，说清做了什么、有什么特点
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 推荐理由（可选）
+      description: 例如在无人机上的实际应用、被广泛使用的程度

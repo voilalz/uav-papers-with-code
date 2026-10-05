@@ -1,0 +1,78 @@
+# 分类与词表：页面和 scripts/validate.py 共用。
+# 新增细分方向或 venue 时改这里；papers.yaml 中出现词表外的代码会校验失败。
+
+categories:
+  - {id: vision, code: CV, full: 视觉, short: 视觉}
+  - {id: nav, code: NAV, full: 导航, short: 导航}
+  - {id: gnc, code: "G&C", full: 制导与控制, short: 制导控制}
+  - {id: platform, code: SIM, full: 平台与数据, short: 平台数据}
+
+# 细分方向：id 写入论文的 subs 字段，顺序即页面上的显示顺序
+subs:
+  - {id: det, cat: vision, label: 目标检测}
+  - {id: trk, cat: vision, label: 目标跟踪}
+  - {id: geo, cat: vision, label: 地理定位}
+  - {id: vln, cat: vision, label: 语言导航与大模型}
+  - {id: seg, cat: vision, label: 分割与行为}
+  - {id: vio, cat: nav, label: 视觉 / VIO}
+  - {id: lio, cat: nav, label: 激光雷达}
+  - {id: map, cat: nav, label: 建图}
+  - {id: coll, cat: nav, label: 多机协同定位}
+  - {id: plan, cat: gnc, label: 轨迹规划}
+  - {id: learn, cat: gnc, label: 学习型飞行}
+  - {id: expl, cat: gnc, label: 自主探索}
+  - {id: swarm, cat: gnc, label: 集群}
+  - {id: ctrl, cat: gnc, label: 飞控与控制}
+  - {id: sim, cat: platform, label: 仿真平台}
+  - {id: data, cat: platform, label: 数据集}
+  - {id: tool, cat: platform, label: 工具与软件}
+
+# 条目类型（kind 字段）
+kinds:
+  method: 方法
+  dataset: 数据集
+  simulator: 仿真平台
+  tool: 工具与软件
+
+# venue 词表：key 是 papers.yaml 中使用的简称
+# type: journal 期刊 | conference 会议 | workshop 研讨会 | book 专著章节 | preprint 预印本
+venues:
+  arXiv: {full: arXiv preprint, type: preprint}
+  # 期刊
+  T-RO: {full: IEEE Transactions on Robotics, type: journal}
+  RA-L: {full: IEEE Robotics and Automation Letters, type: journal}
+  IJRR: {full: The International Journal of Robotics Research, type: journal}
+  Sci. Robot.: {full: Science Robotics, type: journal}
+  Nat. Mach. Intell.: {full: Nature Machine Intelligence, type: journal}
+  Auton. Robots: {full: Autonomous Robots, type: journal}
+  RAS: {full: Robotics and Autonomous Systems, type: journal}
+  Adv. Intell. Syst.: {full: Advanced Intelligent Systems, type: journal}
+  TCSVT: {full: IEEE Transactions on Circuits and Systems for Video Technology, type: journal}
+  TPAMI: {full: IEEE Transactions on Pattern Analysis and Machine Intelligence, type: journal}
+  TIP: {full: IEEE Transactions on Image Processing, type: journal}
+  TMM: {full: IEEE Transactions on Multimedia, type: journal}
+  ISPRS JPRS: {full: ISPRS Journal of Photogrammetry and Remote Sensing, type: journal}
+  # 会议
+  ICRA: {full: IEEE International Conference on Robotics and Automation, type: conference}
+  IROS: {full: IEEE/RSJ International Conference on Intelligent Robots and Systems, type: conference}
+  RSS: {full: "Robotics: Science and Systems", type: conference}
+  CoRL: {full: Conference on Robot Learning, type: conference}
+  ISER: {full: International Symposium on Experimental Robotics, type: conference}
+  ICUAS: {full: International Conference on Unmanned Aircraft Systems, type: conference}
+  ICRAS: {full: International Conference on Robotics and Automation Sciences, type: conference}
+  FSR: {full: Field and Service Robotics, type: conference}
+  ICARM: {full: International Conference on Advanced Robotics and Mechatronics, type: conference}
+  IFAC: {full: IFAC World Congress, type: conference}
+  CVPR: {full: IEEE/CVF Conference on Computer Vision and Pattern Recognition, type: conference}
+  ICCV: {full: IEEE/CVF International Conference on Computer Vision, type: conference}
+  NeurIPS: {full: Conference on Neural Information Processing Systems, type: conference}
+  ICLR: {full: International Conference on Learning Representations, type: conference}
+  AAAI: {full: AAAI Conference on Artificial Intelligence, type: conference}
+  ACM MM: {full: ACM International Conference on Multimedia, type: conference}
+  ICIP: {full: IEEE International Conference on Image Processing, type: conference}
+  ISMAR: {full: IEEE International Symposium on Mixed and Augmented Reality, type: conference}
+  # 专著章节
+  Springer: {full: "Robot Operating System (ROS): The Complete Reference, Springer", type: book}
+  # 研讨会
+  CVPRW: {full: CVPR Workshops, type: workshop}
+  ICCVW: {full: ICCV Workshops, type: workshop}

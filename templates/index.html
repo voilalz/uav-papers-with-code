@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>UAV Papers with Code</title>
+<meta name="description" content="无人机视觉、导航、制导与控制方向的开源论文索引：{{PAPER_COUNT}} 篇论文，附论文链接、GitHub 代码仓库与 Star 数，可搜索、筛选和排序。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UAV Papers with Code">
+<meta property="og:description" content="无人机视觉、导航、制导与控制方向的开源论文索引：{{PAPER_COUNT}} 篇论文，附论文链接、GitHub 代码仓库与 Star 数，可搜索、筛选和排序。">
+<meta property="og:url" content="https://voilalz.github.io/uav-papers-with-code/">
+<meta name="theme-color" content="#EEF1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1218" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Cdefs%3E%3CclipPath%20id='c'%3E%3Ccircle%20cx='24'%20cy='24'%20r='21'/%3E%3C/clipPath%3E%3C/defs%3E%3Ccircle%20cx='24'%20cy='24'%20r='22.5'%20fill='%23F7F8F4'%20stroke='%23142235'%20stroke-width='2.5'/%3E%3Cg%20clip-path='url(%23c)'%20transform='rotate(-14%2024%2024)'%3E%3Crect%20x='-6'%20y='27'%20width='60'%20height='30'%20fill='%23C9D3C4'/%3E%3Cline%20x1='-6'%20y1='27'%20x2='54'%20y2='27'%20stroke='%23142235'%20stroke-width='1.6'/%3E%3C/g%3E%3Cpath%20d='M8%2025h10l3%203.5%203-3.5%203%203.5%203-3.5h10'%20fill='none'%20stroke='%23A3236F'%20stroke-width='3.2'%20stroke-linejoin='round'%20stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 字体异步加载：字体服务不可达时页面直接用系统字体渲染，不会卡住 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"></noscript>
+<style>
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Layout: aeronautical-chart masthead (graticule + attitude indicator), then a filter rail
+   (annunciator-style mode strip, sticky on desktop) beside a flight-log list of papers. */
+:root {
+  --bg: #EEF1EC;          /* chart paper */
+  --surface: #F7F8F4;     /* raised panels, row hover */
+  --ink: #142235;         /* chart navy */
+  --muted: #55646E;       /* secondary text */
+  --rule: #C8D0CA;        /* hairlines */
+  --grid: rgba(20, 34, 53, .06);
+  --ground: #D2D9CE;      /* attitude-indicator ground */
+  --accent: #A3236F;      /* avionics magenta: active route / selected mode */
+  --accent-soft: rgba(163, 35, 111, .09);
+  --link: #1D5C96;
+  --ok: #2D7A4F;          /* recent activity */
+  --caution: #985F00;     /* amber caution */
+  --caution-soft: rgba(152, 95, 0, .10);
+
+  --f-ui: "B612", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", system-ui, sans-serif;
+  --f-mono: "B612 Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "PingFang SC", "Microsoft YaHei", monospace;
+  --f-title: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", "Songti SC", serif;
+  --f-body: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+
+  --s-xs: 11.5px; --s-sm: 13px; --s-md: 15px; --s-lg: 17px; --s-xl: clamp(26px, 6vw, 38px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1218; --surface: #111B23; --ink: #DCE5EC; --muted: #8D9DAA; --rule: #22303B;
+    --grid: rgba(130, 190, 230, .06); --ground: #1C2A33;
+    --accent: #FF5CC4; --accent-soft: rgba(255, 92, 196, .13); --link: #63C7EE;
+    --ok: #43D18C; --caution: #F0B23E; --caution-soft: rgba(240, 178, 62, .12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1218; --surface: #111B23; --ink: #DCE5EC; --muted: #8D9DAA; --rule: #22303B;
+  --grid: rgba(130, 190, 230, .06); --ground: #1C2A33;
+  --accent: #FF5CC4; --accent-soft: rgba(255, 92, 196, .13); --link: #63C7EE;
+  --ok: #43D18C; --caution: #F0B23E; --caution-soft: rgba(240, 178, 62, .12);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: var(--s-md); line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.page { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 56px; }
+@media (min-width: 720px) { .page { padding-inline: 28px; padding-block: 32px 72px; } }
+
+/* ── Masthead ───────────────────────────── */
+.masthead {
+  position: relative; display: grid; gap: 20px;
+  padding-block: 8px 24px; margin-bottom: 20px; border-bottom: 1px solid var(--rule);
+}
+.masthead::before {
+  content: ""; position: absolute; inset: -20px -16px 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+          mask-image: linear-gradient(to bottom, #000 30%, transparent);
+}
+.brand { display: flex; gap: 14px; align-items: flex-start; min-width: 0; }
+.adi { width: 46px; height: 46px; flex: none; margin-top: 4px; }
+.eyebrow {
+  margin: 0 0 4px; font-family: var(--f-mono); font-size: var(--s-xs);
+  letter-spacing: .14em; color: var(--muted);
+}
+h1 {
+  margin: 0; font-family: var(--f-ui); font-weight: 700; font-size: var(--s-xl);
+  line-height: 1.12; letter-spacing: -.01em; text-wrap: balance;
+}
+.lede { margin: 10px 0 0; max-width: 40em; color: var(--muted); }
+.readout {
+  margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--rule); background: var(--surface);
+}
+.readout div { padding: 8px 12px; border-top: 1px solid var(--rule); }
+.readout div:nth-child(-n+2) { border-top: 0; }
+.readout div:nth-child(2n) { border-left: 1px solid var(--rule); }
+.readout dt { font-family: var(--f-ui); font-size: var(--s-xs); color: var(--muted); letter-spacing: .04em; }
+.readout dd { margin: 0; font-family: var(--f-mono); font-size: 18px; font-variant-numeric: tabular-nums; }
+@media (min-width: 720px) {
+  .masthead { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+  .readout { grid-template-columns: repeat(4, auto); }
+  .readout div { border-top: 0 !important; border-left: 1px solid var(--rule); }
+  .readout div:first-child { border-left: 0; }
+}
+
+/* ── Layout ─────────────────────────────── */
+.layout { display: grid; gap: 18px; }
+.rail { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.main { min-width: 0; }
+@media (min-width: 960px) {
+  .layout { grid-template-columns: 268px minmax(0, 1fr); gap: 40px; }
+  .rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); align-self: start; }
+}
+
+.label {
+  display: block; margin-bottom: 6px; font-family: var(--f-ui); font-size: var(--s-xs);
+  color: var(--muted); letter-spacing: .06em;
+}
+
+/* search */
+.search { position: relative; }
+.search svg { position: absolute; left: 11px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+#q {
+  width: 100%; padding: 10px 40px 10px 34px; font: inherit; font-size: var(--s-md);
+  color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+  -webkit-appearance: none; appearance: none;
+}
+#q::placeholder { color: var(--muted); opacity: .85; }
+#q:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.kbd {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  font-family: var(--f-mono); font-size: 11px; color: var(--muted);
+  border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; line-height: 18px;
+}
+@media (hover: none) { .kbd { display: none; } }
+
+/* mode strip — annunciator panel; the active mode gets the boxed annunciation */
+.modes {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--rule); background: var(--surface);
+}
+.mode {
+  display: grid; justify-items: center; gap: 1px; min-width: 0;
+  padding: 7px 2px 6px; border: 0; border-left: 1px solid var(--rule);
+  background: transparent; cursor: pointer; text-align: center;
+}
+.mode:first-child { border-left: 0; }
+.mode .code { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--muted); }
+.mode .lab { font-family: var(--f-ui); font-size: 13px; line-height: 1.3; white-space: nowrap; }
+.mode .lab-full { display: none; }
+.mode .n { font-family: var(--f-mono); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.mode:hover { background: var(--accent-soft); }
+.mode[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--accent); }
+.mode[aria-pressed="true"] .code, .mode[aria-pressed="true"] .lab { color: var(--accent); }
+@media (min-width: 960px) {
+  .modes { grid-template-columns: 1fr; }
+  .mode {
+    grid-template-columns: 40px 1fr auto; justify-items: start; align-items: baseline;
+    gap: 10px; padding: 9px 12px; border-left: 0; border-top: 1px solid var(--rule); text-align: left;
+  }
+  .mode:first-child { border-top: 0; }
+  .mode .lab-full { display: inline; }
+  .mode .lab-short { display: none; }
+}
+
+/* sub-area chips */
+.subs { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: inline-flex; align-items: baseline; gap: 6px; padding: 4px 9px;
+  font-size: var(--s-sm); line-height: 1.4; border: 1px solid var(--rule); border-radius: 3px;
+  background: transparent; cursor: pointer;
+}
+.chip .n { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.chip[aria-pressed="true"] .n { color: var(--accent); }
+
+/* sort */
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+.seg button {
+  padding: 7px 4px; border: 0; border-left: 1px solid var(--rule); background: var(--surface);
+  font-size: var(--s-sm); cursor: pointer; white-space: nowrap;
+}
+.seg button:first-child { border-left: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+.legend { margin: 0; font-size: var(--s-xs); color: var(--muted); line-height: 1.7; }
+.legend .dot { margin-right: 4px; }
+
+/* ── Status line ────────────────────────── */
+.status {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--ink);
+  font-family: var(--f-ui); font-size: var(--s-sm); color: var(--muted);
+}
+.status b { color: var(--ink); font-family: var(--f-mono); font-weight: 700; }
+.clear {
+  border: 1px solid var(--rule); border-radius: 3px; background: transparent; padding: 3px 9px;
+  font-size: var(--s-sm); cursor: pointer;
+}
+.clear:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Entries ────────────────────────────── */
+.list { list-style: none; margin: 0; padding: 0; }
+.entry {
+  display: grid; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--rule);
+}
+.e-side {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; row-gap: 3px; align-items: baseline;
+}
+.e-name {
+  margin: 0; font-family: var(--f-ui); font-weight: 700; font-size: var(--s-lg); line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.e-star { justify-self: end; text-align: right; font-family: var(--f-mono); font-size: var(--s-sm); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.e-star .g { display: block; width: 64px; height: 3px; margin: 4px 0 0 auto; background: var(--rule); }
+.e-star .g i { display: block; height: 100%; background: var(--accent); }
+.e-star .ds { font-family: var(--f-ui); font-size: var(--s-xs); color: var(--muted); }
+.e-meta {
+  grid-column: 1 / -1; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px;
+  font-family: var(--f-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.venue {
+  font-family: var(--f-mono); font-size: 12px; color: var(--ink);
+  border: 1px solid var(--ink); padding: 0 5px; border-radius: 2px; line-height: 18px; white-space: nowrap;
+}
+.dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--rule); vertical-align: 1px; }
+.dot.ok { background: var(--ok); }
+.e-main { min-width: 0; display: grid; gap: 4px; }
+.e-title { margin: 0; font-family: var(--f-title); font-size: 16.5px; line-height: 1.4; font-weight: 600; }
+.e-title a { text-decoration: none; }
+.e-title a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; color: var(--link); }
+.e-authors { margin: 0; font-size: var(--s-sm); color: var(--muted); }
+.e-zh { margin: 2px 0 0; max-width: 46em; }
+.e-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 6px; }
+.lnk {
+  display: inline-flex; align-items: baseline; gap: 6px; max-width: 100%;
+  padding: 3px 9px; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface);
+  text-decoration: none; font-size: var(--s-sm); line-height: 1.45;
+}
+.lnk .k { font-family: var(--f-ui); color: var(--muted); font-size: 12px; white-space: nowrap; }
+.lnk .v { font-family: var(--f-mono); font-size: 12px; color: var(--link); overflow-wrap: anywhere; }
+.lnk:hover { border-color: var(--link); }
+.areas { font-family: var(--f-ui); font-size: 12px; color: var(--muted); }
+.areas span + span::before { content: " · "; }
+.note {
+  font-size: 12px; color: var(--caution); background: var(--caution-soft);
+  padding: 1px 7px; border-radius: 2px;
+}
+@media (min-width: 720px) {
+  .entry { grid-template-columns: 184px minmax(0, 1fr); column-gap: 28px; }
+  .e-side { grid-template-columns: 1fr; align-content: start; row-gap: 8px; }
+  .e-star { justify-self: start; text-align: left; font-size: 14px; }
+  .e-star .g { margin-left: 0; width: 96px; }
+  .e-meta { grid-column: auto; flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+.perma {
+  margin-left: 6px; font-family: var(--f-mono); font-weight: 400; font-size: var(--s-sm);
+  color: var(--muted); text-decoration: none; opacity: 0;
+}
+.entry:hover .perma, .perma:focus { opacity: 1; }
+.perma:hover { color: var(--accent); }
+.entry.hit { box-shadow: inset 3px 0 0 var(--accent); }
+.entry:hover { background: linear-gradient(90deg, transparent, var(--accent-soft) 40%, transparent); }
+
+.empty { padding: 40px 0; text-align: center; color: var(--muted); }
+.empty p { margin: 0 0 12px; }
+
+/* ── Footer ─────────────────────────────── */
+.foot {
+  margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--rule);
+  display: grid; gap: 6px; font-size: var(--s-sm); color: var(--muted); max-width: 52em;
+}
+.foot p { margin: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .mode, .chip, .lnk, .seg button, #q { transition: background-color .15s, border-color .15s, box-shadow .15s, color .15s; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="brand">
+      <svg class="adi" viewBox="0 0 48 48" aria-hidden="true">
+        <defs><clipPath id="adi-c"><circle cx="24" cy="24" r="21"/></clipPath></defs>
+        <circle cx="24" cy="24" r="22.5" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
+        <g clip-path="url(#adi-c)" transform="rotate(-14 24 24)">
+          <rect x="-6" y="27" width="60" height="30" fill="var(--ground)"/>
+          <line x1="-6" y1="27" x2="54" y2="27" stroke="var(--ink)" stroke-width="1.2"/>
+          <line x1="18" y1="21" x2="30" y2="21" stroke="var(--muted)" stroke-width="1"/>
+          <line x1="20.5" y1="15" x2="27.5" y2="15" stroke="var(--muted)" stroke-width="1"/>
+          <line x1="18" y1="33" x2="30" y2="33" stroke="var(--muted)" stroke-width="1"/>
+        </g>
+        <path d="M9 25h9l3 3.5 3-3.5 3 3.5 3-3.5h9" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="24" cy="25" r="1.4" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <p class="eyebrow">UAV · CV · NAV · G&amp;C</p>
+        <h1>UAV Papers with Code</h1>
+        <p class="lede">无人机视觉、导航、制导与控制方向的开源论文索引。每篇附论文、代码仓库与 GitHub Star 数，可按方向筛选，按热度或时间排序。</p>
+      </div>
+    </div>
+    <dl class="readout" id="readout"></dl>
+  </header>
+
+  <div class="layout">
+    <aside class="rail" aria-label="筛选">
+      <div class="search">
+        <label for="q" class="sr-only">搜索论文</label>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="搜索方法、作者、会议…">
+        <span class="kbd" aria-hidden="true">/</span>
+      </div>
+      <div>
+        <span class="label" id="modes-label">研究方向</span>
+        <div class="modes" id="modes" role="group" aria-labelledby="modes-label"></div>
+      </div>
+      <div id="subs-wrap" hidden>
+        <span class="label" id="subs-label">细分方向</span>
+        <div class="subs" id="subs" role="group" aria-labelledby="subs-label"></div>
+      </div>
+      <div>
+        <span class="label" id="sort-label">排序</span>
+        <div class="seg" id="sort" role="group" aria-labelledby="sort-label">
+          <button type="button" id="sort-stars" data-sort="stars" aria-pressed="true">Star 数</button>
+          <button type="button" id="sort-year" data-sort="year" aria-pressed="false">发表年份</button>
+          <button type="button" id="sort-updated" data-sort="updated" aria-pressed="false">最近提交</button>
+        </div>
+      </div>
+      <p class="legend"><span class="dot ok"></span>近一年内仍有代码提交　·　刻度条按 Star 数的对数比例绘制</p>
+    </aside>
+
+    <main class="main">
+      <div class="status" aria-live="polite">
+        <span id="count"></span>
+        <button type="button" class="clear" id="clear" hidden>清除筛选</button>
+      </div>
+      <ol class="list" id="list"></ol>
+      <div class="empty" id="empty" hidden>
+        <p>没有匹配的论文。可以换个关键词，或清除筛选后再试。</p>
+        <button type="button" class="clear" id="clear2">清除筛选</button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="foot">
+    <p>收录标准：公开了代码或数据、在无人机方向有代表性或被广泛使用的工作。</p>
+    <p>论文链接已逐条核对，优先使用 arXiv 等开放版本；Star 数与“最近提交”（默认分支最后一次提交）取自 GitHub，每周一自动刷新，数据日期见页首。</p>
+    <p>“第三方代码”表示代码并非论文作者发布；标注“已归档”或“停止维护”的仓库仍可参考，但不再更新。</p>
+    <p>网站源码与数据：<a href="https://github.com/voilalz/uav-papers-with-code">github.com/voilalz/uav-papers-with-code</a></p>
+  </footer>
+</div>
+
+<script type="application/json" id="data">{{DATA}}</script>
+<script type="application/json" id="taxonomy">{{TAXONOMY}}</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("data").textContent);
+  var DATA_DATE = {{DATA_DATE}};
+  var RECENT_SINCE = (function () {
+    var d = new Date(DATA_DATE + "T00:00:00Z");
+    d.setUTCFullYear(d.getUTCFullYear() - 1);
+    return d.toISOString().slice(0, 10);
+  })();
+
+  var TAX = JSON.parse(document.getElementById("taxonomy").textContent);
+  var CATS = [{ id: "all", code: "ALL", full: "全部", short: "全部" }].concat(TAX.categories);
+  var CAT_BY_ID = {};
+  CATS.forEach(function (c) { CAT_BY_ID[c.id] = c; });
+
+  var SUBS = TAX.subs.map(function (s) { return [s.id, s.cat, s.label]; });
+  var SUB = {};
+  SUBS.forEach(function (s) { SUB[s[0]] = { id: s[0], cat: s[1], label: s[2] }; });
+
+  var maxStars = 1;
+  DATA.forEach(function (d) {
+    if (d.stars && d.stars > maxStars) maxStars = d.stars;
+    d.cats = [];
+    d.subs.forEach(function (s) { if (d.cats.indexOf(SUB[s].cat) < 0) d.cats.push(SUB[s].cat); });
+    d.hay = [d.name, d.title, d.authors, d.venue, d.year, d.repos.map(function (r) { return r.name; }).join(" "), d.zh, (d.tags || []).join(" "),
+      d.subs.map(function (s) { return SUB[s].label; }).join(" "),
+      d.cats.map(function (c) { return CAT_BY_ID[c].full + " " + CAT_BY_ID[c].code; }).join(" "),
+      d.note || "", d.lang || ""].join(" ").toLowerCase();
+  });
+
+  var state = { q: "", cat: "all", sub: null, sort: "stars" };
+  var h = (location.hash || "").slice(1);
+  if (CAT_BY_ID[h]) state.cat = h;
+
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(n) { return n.toLocaleString("en-US"); }
+  function tokens() { return state.q.trim().toLowerCase().split(/\s+/).filter(Boolean); }
+  function searchOk(d, t) { for (var i = 0; i < t.length; i++) if (d.hay.indexOf(t[i]) < 0) return false; return true; }
+  function catOk(d, cat) { return cat === "all" || d.cats.indexOf(cat) >= 0; }
+  function paperSrc(u) {
+    if (u.indexOf("arxiv.org") >= 0) return "arXiv";
+    if (u.indexOf("doi.org") >= 0) return "DOI";
+    if (u.indexOf("science.org") >= 0) return "Science";
+    if (u.indexOf("ieeexplore") >= 0) return "IEEE";
+    if (u.indexOf("thecvf.com") >= 0) return "CVF";
+    if (/\.pdf$/i.test(u)) return "PDF";
+    return "链接";
+  }
+
+  /* readout */
+  var repos = DATA.filter(function (d) { return d.repos.length; });
+  var totalStars = repos.reduce(function (a, d) { return a + (d.stars || 0); }, 0);
+  $("readout").innerHTML = [
+    ["论文", DATA.length], ["开源仓库", repos.length], ["Star 合计", fmt(totalStars)], ["数据日期", DATA_DATE]
+  ].map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+
+  /* mode strip */
+  $("modes").innerHTML = CATS.map(function (c) {
+    return '<button type="button" class="mode" id="mode-' + c.id + '" data-cat="' + c.id + '" aria-pressed="false">' +
+      '<span class="code">' + esc(c.code) + '</span>' +
+      '<span class="lab"><span class="lab-short">' + c.short + '</span><span class="lab-full">' + c.full + '</span></span>' +
+      '<span class="n"></span></button>';
+  }).join("");
+
+  function render() {
+    var t = tokens();
+    var bySearch = DATA.filter(function (d) { return searchOk(d, t); });
+
+    CATS.forEach(function (c) {
+      var b = $("mode-" + c.id);
+      b.setAttribute("aria-pressed", String(state.cat === c.id));
+      b.querySelector(".n").textContent = bySearch.filter(function (d) { return catOk(d, c.id); }).length;
+    });
+
+    var inCat = bySearch.filter(function (d) { return catOk(d, state.cat); });
+    var subsHere = state.cat === "all" ? [] : SUBS.filter(function (s) { return s[1] === state.cat; });
+    $("subs-wrap").hidden = subsHere.length === 0;
+    $("subs").innerHTML = subsHere.map(function (s) {
+      var n = inCat.filter(function (d) { return d.subs.indexOf(s[0]) >= 0; }).length;
+      return '<button type="button" class="chip" data-sub="' + s[0] + '" aria-pressed="' + (state.sub === s[0]) + '">' +
+        esc(s[2]) + '<span class="n">' + n + '</span></button>';
+    }).join("");
+
+    var rows = inCat.filter(function (d) { return !state.sub || d.subs.indexOf(state.sub) >= 0; });
+    var sorters = {
+      stars: function (a, b) { return (b.stars == null ? -1 : b.stars) - (a.stars == null ? -1 : a.stars) || b.year - a.year; },
+      year: function (a, b) { return b.year - a.year || (b.stars || 0) - (a.stars || 0); },
+      updated: function (a, b) { return (b.updated || "").localeCompare(a.updated || "") || (b.stars || 0) - (a.stars || 0); }
+    };
+    rows.sort(sorters[state.sort]);
+
+    Array.prototype.forEach.call(document.querySelectorAll("#sort button"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-sort") === state.sort));
+    });
+
+    var filtered = state.q.trim() || state.cat !== "all" || state.sub;
+    $("count").innerHTML = filtered
+      ? "筛选出 <b>" + rows.length + "</b> / " + DATA.length + " 篇"
+      : "共 <b>" + DATA.length + "</b> 篇";
+    $("clear").hidden = !filtered;
+    $("empty").hidden = rows.length > 0;
+
+    $("list").innerHTML = rows.map(entryHTML).join("");
+  }
+
+  function entryHTML(d) {
+    var star;
+    if (d.stars != null) {
+      var w = Math.max(4, Math.round(Math.log10(Math.max(d.stars, 1)) / Math.log10(maxStars) * 100));
+      star = '<span class="e-star" title="GitHub Star">★ ' + fmt(d.stars) + '<span class="g"><i style="width:' + w + '%"></i></span></span>';
+    } else {
+      star = '<span class="e-star"><span class="ds">' + (d.repos.length ? "Star 待刷新" : "数据集主页") + '</span></span>';
+    }
+    var meta = '<span class="venue" title="' + esc(d.venue_full) + '">' + esc(d.venue) + " " + d.year + "</span>";
+    if (d.lang) meta += "<span>" + esc(d.lang) + "</span>";
+    if (d.updated) {
+      var recent = d.updated >= RECENT_SINCE;
+      meta += '<span title="默认分支最后一次提交' + (recent ? "（近一年内有更新）" : "") + '"><span class="dot' + (recent ? " ok" : "") + '"></span> ' + d.updated.slice(0, 7) + "</span>";
+    }
+    var links = '<a class="lnk" href="' + esc(d.paper) + '" target="_blank" rel="noopener"><span class="k">论文</span><span class="v">' + paperSrc(d.paper) + " ↗</span></a>";
+    d.repos.forEach(function (r) {
+      links += '<a class="lnk" href="https://github.com/' + esc(r.name) + '" target="_blank" rel="noopener"><span class="k">' + (r.official ? "代码" : "第三方代码") + '</span><span class="v">' + esc(r.name) + " ↗</span></a>";
+    });
+    if (d.site) links += '<a class="lnk" href="' + esc(d.site) + '" target="_blank" rel="noopener"><span class="k">数据集</span><span class="v">' + esc(d.site.replace(/^https?:\/\//, "").replace(/\/$/, "")) + " ↗</span></a>";
+    var areas = '<span class="areas">' + d.subs.map(function (s) { return "<span>" + esc(SUB[s].label) + "</span>"; }).join("") + "</span>";
+    var note = d.note ? '<span class="note">' + esc(d.note) + "</span>" : "";
+    return '<li class="entry" id="' + esc(d.id) + '">' +
+      '<div class="e-side"><h2 class="e-name">' + esc(d.name) + '<a class="perma" href="#' + esc(d.id) + '" title="本条链接" aria-label="' + esc(d.name) + ' 的链接">#</a></h2>' + star + '<p class="e-meta">' + meta + "</p></div>" +
+      '<div class="e-main">' +
+        '<p class="e-title"><a href="' + esc(d.paper) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a></p>" +
+        '<p class="e-authors">' + esc(d.authors) + "</p>" +
+        '<p class="e-zh">' + esc(d.zh) + "</p>" +
+        '<div class="e-foot">' + links + areas + note + "</div>" +
+      "</div></li>";
+  }
+
+  /* events */
+  $("q").addEventListener("input", function (e) { state.q = e.target.value; render(); });
+  $("modes").addEventListener("click", function (e) {
+    var b = e.target.closest(".mode"); if (!b) return;
+    state.cat = b.getAttribute("data-cat"); state.sub = null; render();
+  });
+  $("subs").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return;
+    var s = b.getAttribute("data-sub"); state.sub = state.sub === s ? null : s; render();
+  });
+  $("sort").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    state.sort = b.getAttribute("data-sort"); render();
+  });
+  function clearAll() { state.q = ""; state.cat = "all"; state.sub = null; $("q").value = ""; render(); }
+  $("clear").addEventListener("click", clearAll);
+  $("clear2").addEventListener("click", clearAll);
+  document.addEventListener("keydown", function (e) {
+    var tag = (e.target && e.target.tagName) || "";
+    if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(tag) && !e.metaKey && !e.ctrlKey) { e.preventDefault(); $("q").focus(); }
+    if (e.key === "Escape" && e.target === $("q")) { $("q").value = ""; state.q = ""; render(); }
+  });
+
+  render();
+
+  /* 打开 #<论文 id> 形式的链接时定位到该条 */
+  function focusEntry() {
+    var id = decodeURIComponent((location.hash || "").slice(1));
+    if (!id || CAT_BY_ID[id]) return;
+    var el = document.getElementById(id);
+    if (!el || !el.classList.contains("entry")) {
+      if (!DATA.some(function (d) { return d.id === id; })) return;
+      clearAll(); el = document.getElementById(id);
+    }
+    el.classList.add("hit");
+    el.scrollIntoView({ block: "center" });
+  }
+  focusEntry();
+  window.addEventListener("hashchange", function () {
+    Array.prototype.forEach.call(document.querySelectorAll(".entry.hit"), function (e) { e.classList.remove("hit"); });
+    focusEntry();
+  });
+})();
+</script>
+
+</body>
+</html>
