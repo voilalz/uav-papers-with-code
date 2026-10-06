@@ -1,4 +1,4 @@
-"""各脚本共用的数据读写：papers.yaml、taxonomy.yaml、generated/repo_stats.json。"""
+"""各脚本共用的数据读写：papers.yaml、taxonomy.yaml、generated/ 下的统计与环境检测结果。"""
 import json
 import os
 import re
@@ -11,6 +11,7 @@ DATA = os.path.join(ROOT, "data")
 PAPERS = os.path.join(DATA, "papers.yaml")
 TAXONOMY = os.path.join(DATA, "taxonomy.yaml")
 STATS = os.path.join(DATA, "generated", "repo_stats.json")
+SIGNALS = os.path.join(DATA, "generated", "repo_signals.json")
 SCHEMA = os.path.join(ROOT, "schema", "paper.schema.json")
 TEMPLATE = os.path.join(ROOT, "templates", "index.html")
 INDEX = os.path.join(ROOT, "index.html")

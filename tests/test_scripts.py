@@ -14,6 +14,7 @@ import build  # noqa: E402
 import check_links  # noqa: E402
 import datalib  # noqa: E402
 import refresh_github  # noqa: E402
+import scan_repos  # noqa: E402
 import validate  # noqa: E402
 
 with open(datalib.SCHEMA, encoding="utf-8") as f:
@@ -131,6 +132,17 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(e["note"], build.ARCHIVED_NOTE)
         self.assertEqual(e["venue_full"], TAXONOMY["venues"]["ICRA"]["full"])
 
+    def test_page_entries_signals(self):
+        p = paper()
+        sig = {"repos": {"lab/demo": {"ros": "ros1", "ros_distro": ["noetic"], "cuda": False, "docker": True,
+                                      "ubuntu": [], "why": {"ros": "package.xml 使用 catkin", "cuda": "x"},
+                                      "commit": "2026-01-01", "scanner": 1}}}
+        [e] = build.page_entries([p], TAXONOMY, stats(), sig)
+        self.assertEqual(e["repos"][0]["sig"], {"ros": "ros1", "ros_distro": ["noetic"], "docker": True,
+                                                "why": {"ros": "package.xml 使用 catkin"}})
+        [e] = build.page_entries([p], TAXONOMY, stats())
+        self.assertNotIn("sig", e["repos"][0])
+
     def test_render_escapes_script_end(self):
         tpl = '<script id="data">{{DATA}}</script><script id="taxonomy">{{TAXONOMY}}</script>{{DATA_DATE}} {{PAPER_COUNT}}'
         html = build.render([paper(zh="危险的 </script> 文本，用于测试转义。")], TAXONOMY, stats(), tpl)
@@ -194,6 +206,98 @@ class RefreshTest(unittest.TestCase):
         self.assertEqual(set(new["repos"]), {"ok/one", "gone/two", "ok/three"})
         self.assertEqual(new["repos"]["gone/two"]["missing"], "HTTP 404")
         self.assertEqual(new["repos"]["gone/two"]["stars"], 3)
+
+
+class ScanReposTest(unittest.TestCase):
+    PKG_ROS1 = "<package><buildtool_depend>catkin</buildtool_depend><depend>mavros</depend></package>"
+    PKG_ROS2 = "<package format='3'><buildtool_depend>ament_cmake</buildtool_depend></package>"
+
+    def test_ros1_from_package_xml(self):
+        sig, why = scan_repos.detect(
+            ["pkg/package.xml", "pkg/launch/run.launch", "config/euroc/camchain-imucam.yaml", "docker/Dockerfile"],
+            readme="Tested on ROS Noetic.", package_xmls=[self.PKG_ROS1])
+        self.assertEqual(sig["ros"], "ros1")
+        self.assertEqual(sig["ros_distro"], ["noetic"])
+        self.assertEqual(sig["ubuntu"], ["20.04"])
+        self.assertEqual(why["ubuntu"], "由 ROS 发行版推断")
+        self.assertTrue(sig["px4"] and sig["docker"] and sig["launch_config"] and sig["calibration"])
+        self.assertIn("catkin", why["ros"])
+
+    def test_ros2_and_both(self):
+        sig, _ = scan_repos.detect(["a/package.xml"], package_xmls=[self.PKG_ROS2])
+        self.assertEqual(sig["ros"], "ros2")
+        sig, _ = scan_repos.detect([], package_xmls=[self.PKG_ROS1, self.PKG_ROS2])
+        self.assertEqual(sig["ros"], "both")
+        sig, _ = scan_repos.detect(["bringup/launch/sim.launch.py"])
+        self.assertEqual(sig["ros"], "ros2")
+
+    def test_ros_from_readme_commands(self):
+        sig, _ = scan_repos.detect(["src/main.cpp"], readme="cd catkin_ws && roslaunch demo run.launch")
+        self.assertEqual(sig["ros"], "ros1")
+
+    def test_learning_repo(self):
+        readme = ("Requires Ubuntu 18.04, CUDA 11.3 and PyTorch. Pretrained weights: "
+                  "https://drive.google.com/xyz . Runs on Jetson Orin NX.")
+        sig, why = scan_repos.detect(["train.py", "configs/base.py", "ops/nms_kernel.cu"], readme=readme,
+                                     dockerfile="FROM nvidia/cuda:11.8-devel-ubuntu20.04")
+        self.assertEqual(sig["ros"], "none")
+        self.assertEqual(sig["ros_distro"], [])
+        self.assertTrue(sig["cuda"] and sig["pretrained"] and sig["jetson"])
+        self.assertEqual(why["cuda"], "含 .cu 源文件")
+        self.assertEqual(sig["cuda_version"], ["11.3", "11.8"])
+        self.assertEqual(sig["ubuntu"], ["18.04", "20.04"])  # README 与 Dockerfile 镜像标签
+
+    def test_negatives(self):
+        sig, _ = scan_repos.detect(["src/calibration/solver.cpp", "src/calib/CMakeLists.txt", "README.md"], readme="A planner.")
+        for k in ("cuda", "px4", "docker", "launch_config", "calibration", "jetson", "pretrained"):
+            self.assertFalse(sig[k], k)
+        self.assertEqual(sig["ros"], "none")
+
+    def test_scan_repo_reads_few_files(self):
+        import base64
+        blob = lambda t: {"size": len(t), "content": base64.b64encode(t.encode()).decode()}  # noqa: E731
+        tree = {"tree": [{"path": p, "type": "blob", "sha": p, "size": 10} for p in
+                         ("README.md", "a/package.xml", "b/c/package.xml", "d/e/f/package.xml", "Dockerfile")]}
+        calls = []
+
+        def get(path):
+            calls.append(path)
+            if "/git/trees/" in path:
+                return tree
+            sha = path.rsplit("/", 1)[1]
+            return blob({"README.md": "ROS Melodic", "Dockerfile": "FROM ros:melodic"}.get(sha, self.PKG_ROS1))
+        sig, _, n = scan_repos.scan_repo("lab/demo", get)
+        self.assertEqual(n, 5)                              # 树 + README + 2 个 package.xml + Dockerfile
+        self.assertEqual(len(calls), 5)
+        self.assertEqual((sig["ros"], sig["ros_distro"]), ("ros1", ["melodic"]))
+
+    def test_main_skips_unchanged_and_respects_budget(self):
+        tmp = tempfile.mkdtemp()
+        papers = os.path.join(tmp, "papers.yaml")
+        sig_path = os.path.join(tmp, "signals.json")
+        with open(papers, "w", encoding="utf-8") as f:
+            f.write("- id: a-2020\n  repos: [{name: lab/same, official: true}]\n"
+                    "- id: b-2020\n  repos: [{name: lab/new, official: true}]\n")
+        st = stats(**{"lab/same": {"full_name": "lab/same", "updated": "2026-01-01"},
+                      "lab/new": {"full_name": "lab/new", "updated": "2026-02-02"}})
+        prev = {"ros": "ros1", "commit": "2026-01-01", "scanner": scan_repos.SCANNER_VERSION}
+        datalib.save_stats({"schema_version": 1, "generated_at": "x", "repos": {"lab/same": prev}}, sig_path)
+        scanned = []
+
+        def get(path):
+            scanned.append(path)
+            return {"tree": []}
+        orig_load, orig_save, orig_stats = datalib.load_papers, datalib.save_stats, datalib.load_stats
+        with mock.patch.object(datalib, "load_papers", lambda: orig_load(papers)), \
+                mock.patch.object(datalib, "SIGNALS", sig_path), \
+                mock.patch.object(datalib, "load_stats", lambda path=None: copy.deepcopy(st) if path is None else orig_stats(path)), \
+                mock.patch.object(datalib, "save_stats", lambda s, path=None: orig_save(s, path or sig_path)), \
+                mock.patch("sys.stdout"):
+            scan_repos.main(get=get, today="2026-10-06")
+        new = datalib.load_stats(sig_path)["repos"]
+        self.assertEqual(scanned, ["/repos/lab/new/git/trees/HEAD?recursive=1"])
+        self.assertEqual(new["lab/same"], prev)
+        self.assertEqual((new["lab/new"]["commit"], new["lab/new"]["scanned"]), ("2026-02-02", "2026-10-06"))
 
 
 class CheckLinksTest(unittest.TestCase):

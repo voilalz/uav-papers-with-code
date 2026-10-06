@@ -256,6 +256,13 @@ h1 {
 .lnk .k { font-family: var(--f-ui); color: var(--muted); font-size: 12px; white-space: nowrap; }
 .lnk .v { font-family: var(--f-mono); font-size: 12px; color: var(--link); overflow-wrap: anywhere; }
 .lnk:hover { border-color: var(--link); }
+.lnk.third .k { color: var(--caution); }
+.repo { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 5px; max-width: 100%; }
+/* 环境标签：虚线边框 = 脚本根据仓库文件自动推测 */
+.tag {
+  font-family: var(--f-mono); font-size: 11px; line-height: 17px; white-space: nowrap;
+  padding: 0 5px; border: 1px dashed var(--muted); border-radius: 2px; color: var(--muted); cursor: help;
+}
 .areas { font-family: var(--f-ui); font-size: 12px; color: var(--muted); }
 .areas span + span::before { content: " · "; }
 .note {
@@ -343,7 +350,11 @@ h1 {
           <button type="button" id="sort-updated" data-sort="updated" aria-pressed="false">最近提交</button>
         </div>
       </div>
-      <p class="legend"><span class="dot ok"></span>近一年内仍有代码提交　·　刻度条按 Star 数的对数比例绘制</p>
+      <div>
+        <span class="label" id="feats-label">代码与环境</span>
+        <div class="subs" id="feats" role="group" aria-labelledby="feats-label"></div>
+      </div>
+      <p class="legend"><span class="dot ok"></span>近一年内仍有代码提交　·　刻度条按 Star 数的对数比例绘制<br><span class="tag">虚线标签</span> 由脚本根据仓库文件自动推测，可能有误，悬停可看依据</p>
     </aside>
 
     <main class="main">
@@ -362,6 +373,7 @@ h1 {
   <footer class="foot">
     <p>收录标准：公开了代码或数据、在无人机方向有代表性或被广泛使用的工作。</p>
     <p>论文链接已逐条核对，优先使用 arXiv 等开放版本；Star 数与“最近提交”（默认分支最后一次提交）取自 GitHub，每周一自动刷新，数据日期见页首。</p>
+    <p>ROS、Docker、CUDA 等环境标签每周由脚本扫描仓库文件（package.xml、launch 文件、Dockerfile、README 等）推测得出，未经人工确认，仅供参考。</p>
     <p>“第三方代码”表示代码并非论文作者发布；标注“已归档”或“停止维护”的仓库仍可参考，但不再更新。</p>
     <p>网站源码与数据：<a href="https://github.com/voilalz/uav-papers-with-code">github.com/voilalz/uav-papers-with-code</a></p>
   </footer>
@@ -389,18 +401,56 @@ h1 {
   var SUB = {};
   SUBS.forEach(function (s) { SUB[s[0]] = { id: s[0], cat: s[1], label: s[2] }; });
 
+  /* 代码与环境筛选项：[id, 标签, 判断函数(仓库)] */
+  var FEATS = [
+    ["official", "仅官方代码", function (r) { return r.official; }],
+    ["ros1", "ROS1", function (r, s) { return s.ros === "ros1" || s.ros === "both"; }],
+    ["ros2", "ROS2", function (r, s) { return s.ros === "ros2" || s.ros === "both"; }],
+    ["docker", "Docker", function (r, s) { return s.docker; }],
+    ["cuda", "CUDA", function (r, s) { return s.cuda; }],
+    ["px4", "PX4", function (r, s) { return s.px4; }],
+    ["launch", "launch/config", function (r, s) { return s.launch_config; }],
+    ["calib", "标定文件", function (r, s) { return s.calibration; }],
+    ["pretrained", "预训练模型", function (r, s) { return s.pretrained; }],
+    ["jetson", "Jetson", function (r, s) { return s.jetson; }]
+  ];
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  /* 一个仓库的环境标签：[文字, 依据字段] */
+  function repoTags(s) {
+    var t = [];
+    if (s.ros) {
+      var ros = { ros1: "ROS1", ros2: "ROS2", both: "ROS1+ROS2" }[s.ros];
+      t.push([ros + (s.ros_distro ? " · " + s.ros_distro.map(cap).join("/") : ""), "ros"]);
+    }
+    if (s.ubuntu) t.push(["Ubuntu " + s.ubuntu.join("/"), "ubuntu"]);
+    if (s.cuda) t.push(["CUDA" + (s.cuda_version ? " " + s.cuda_version.join("/") : ""), "cuda"]);
+    if (s.px4) t.push(["PX4" + (s.px4_version ? " v" + s.px4_version.join("/") : ""), "px4"]);
+    if (s.ardupilot) t.push(["ArduPilot", "ardupilot"]);
+    if (s.docker) t.push(["Docker", "docker"]);
+    if (s.launch_config) t.push(["launch/config", "launch_config"]);
+    if (s.calibration) t.push(["标定文件", "calibration"]);
+    if (s.pretrained) t.push(["预训练模型", "pretrained"]);
+    if (s.jetson) t.push(["Jetson", "jetson"]);
+    return t;
+  }
+
   var maxStars = 1;
   DATA.forEach(function (d) {
+    d.feats = {};
+    d.repos.forEach(function (r) {
+      FEATS.forEach(function (f) { if (f[2](r, r.sig || {})) d.feats[f[0]] = true; });
+    });
     if (d.stars && d.stars > maxStars) maxStars = d.stars;
     d.cats = [];
     d.subs.forEach(function (s) { if (d.cats.indexOf(SUB[s].cat) < 0) d.cats.push(SUB[s].cat); });
     d.hay = [d.name, d.title, d.authors, d.venue, d.year, d.repos.map(function (r) { return r.name; }).join(" "), d.zh, (d.tags || []).join(" "),
       d.subs.map(function (s) { return SUB[s].label; }).join(" "),
       d.cats.map(function (c) { return CAT_BY_ID[c].full + " " + CAT_BY_ID[c].code; }).join(" "),
-      d.note || "", d.lang || ""].join(" ").toLowerCase();
+      d.note || "", d.lang || "",
+      d.repos.map(function (r) { return repoTags(r.sig || {}).map(function (t) { return t[0]; }).join(" "); }).join(" ")].join(" ").toLowerCase();
   });
 
-  var state = { q: "", cat: "all", sub: null, sort: "stars" };
+  var state = { q: "", cat: "all", sub: null, sort: "stars", feats: [] };
   var h = (location.hash || "").slice(1);
   if (CAT_BY_ID[h]) state.cat = h;
 
@@ -414,6 +464,7 @@ h1 {
   function tokens() { return state.q.trim().toLowerCase().split(/\s+/).filter(Boolean); }
   function searchOk(d, t) { for (var i = 0; i < t.length; i++) if (d.hay.indexOf(t[i]) < 0) return false; return true; }
   function catOk(d, cat) { return cat === "all" || d.cats.indexOf(cat) >= 0; }
+  function featsOk(d, feats) { for (var i = 0; i < feats.length; i++) if (!d.feats[feats[i]]) return false; return true; }
   function paperSrc(u) {
     if (u.indexOf("arxiv.org") >= 0) return "arXiv";
     if (u.indexOf("doi.org") >= 0) return "DOI";
@@ -441,7 +492,7 @@ h1 {
 
   function render() {
     var t = tokens();
-    var bySearch = DATA.filter(function (d) { return searchOk(d, t); });
+    var bySearch = DATA.filter(function (d) { return searchOk(d, t) && featsOk(d, state.feats); });
 
     CATS.forEach(function (c) {
       var b = $("mode-" + c.id);
@@ -459,6 +510,18 @@ h1 {
     }).join("");
 
     var rows = inCat.filter(function (d) { return !state.sub || d.subs.indexOf(state.sub) >= 0; });
+
+    /* 每个环境筛选项的数字：在其余条件不变的前提下再加上这一项后的篇数 */
+    var base = DATA.filter(function (d) {
+      return searchOk(d, t) && catOk(d, state.cat) && (!state.sub || d.subs.indexOf(state.sub) >= 0);
+    });
+    $("feats").innerHTML = FEATS.map(function (f) {
+      var on = state.feats.indexOf(f[0]) >= 0;
+      var need = on ? state.feats : state.feats.concat([f[0]]);
+      var n = base.filter(function (d) { return featsOk(d, need); }).length;
+      return '<button type="button" class="chip" data-feat="' + f[0] + '" aria-pressed="' + on + '">' +
+        esc(f[1]) + '<span class="n">' + n + '</span></button>';
+    }).join("");
     var sorters = {
       stars: function (a, b) { return (b.stars == null ? -1 : b.stars) - (a.stars == null ? -1 : a.stars) || b.year - a.year; },
       year: function (a, b) { return b.year - a.year || (b.stars || 0) - (a.stars || 0); },
@@ -470,7 +533,7 @@ h1 {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-sort") === state.sort));
     });
 
-    var filtered = state.q.trim() || state.cat !== "all" || state.sub;
+    var filtered = state.q.trim() || state.cat !== "all" || state.sub || state.feats.length;
     $("count").innerHTML = filtered
       ? "筛选出 <b>" + rows.length + "</b> / " + DATA.length + " 篇"
       : "共 <b>" + DATA.length + "</b> 篇";
@@ -496,7 +559,11 @@ h1 {
     }
     var links = '<a class="lnk" href="' + esc(d.paper) + '" target="_blank" rel="noopener"><span class="k">论文</span><span class="v">' + paperSrc(d.paper) + " ↗</span></a>";
     d.repos.forEach(function (r) {
-      links += '<a class="lnk" href="https://github.com/' + esc(r.name) + '" target="_blank" rel="noopener"><span class="k">' + (r.official ? "代码" : "第三方代码") + '</span><span class="v">' + esc(r.name) + " ↗</span></a>";
+      var s = r.sig || {}, why = s.why || {};
+      var tags = repoTags(s).map(function (t) {
+        return '<span class="tag" title="自动检测' + (why[t[1]] ? "：" + esc(why[t[1]]) : "") + '">' + esc(t[0]) + "</span>";
+      }).join("");
+      links += '<span class="repo"><a class="lnk' + (r.official ? "" : " third") + '" href="https://github.com/' + esc(r.name) + '" target="_blank" rel="noopener"><span class="k">' + (r.official ? "代码" : "第三方代码") + '</span><span class="v">' + esc(r.name) + " ↗</span></a>" + tags + "</span>";
     });
     if (d.site) links += '<a class="lnk" href="' + esc(d.site) + '" target="_blank" rel="noopener"><span class="k">数据集</span><span class="v">' + esc(d.site.replace(/^https?:\/\//, "").replace(/\/$/, "")) + " ↗</span></a>";
     var areas = '<span class="areas">' + d.subs.map(function (s) { return "<span>" + esc(SUB[s].label) + "</span>"; }).join("") + "</span>";
@@ -521,11 +588,17 @@ h1 {
     var b = e.target.closest(".chip"); if (!b) return;
     var s = b.getAttribute("data-sub"); state.sub = state.sub === s ? null : s; render();
   });
+  $("feats").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return;
+    var f = b.getAttribute("data-feat"), i = state.feats.indexOf(f);
+    if (i >= 0) state.feats.splice(i, 1); else state.feats.push(f);
+    render();
+  });
   $("sort").addEventListener("click", function (e) {
     var b = e.target.closest("button"); if (!b) return;
     state.sort = b.getAttribute("data-sort"); render();
   });
-  function clearAll() { state.q = ""; state.cat = "all"; state.sub = null; $("q").value = ""; render(); }
+  function clearAll() { state.q = ""; state.cat = "all"; state.sub = null; state.feats = []; $("q").value = ""; render(); }
   $("clear").addEventListener("click", clearAll);
   $("clear2").addEventListener("click", clearAll);
   document.addEventListener("keydown", function (e) {

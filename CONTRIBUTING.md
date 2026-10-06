@@ -17,7 +17,8 @@ data/
 ├── papers.yaml              # 论文条目：人工维护，唯一的事实来源
 ├── taxonomy.yaml            # 大方向、细分方向、条目类型、venue 词表
 └── generated/
-    └── repo_stats.json      # Star 数等统计：由脚本生成，请勿手改
+    ├── repo_stats.json      # Star 数等统计：由脚本生成，请勿手改
+    └── repo_signals.json    # ROS/Docker/CUDA 等环境的自动检测结果：由脚本生成，请勿手改
 schema/paper.schema.json     # papers.yaml 的格式定义
 templates/index.html         # 页面模板
 index.html                   # 生成的网站，请勿手改
@@ -26,6 +27,7 @@ scripts/
 ├── validate.py              # 校验：格式、词表、唯一性与查重
 ├── build.py                 # 由 data/ 和模板生成 index.html，同步 README 中的数字
 ├── refresh_github.py        # 刷新仓库统计（每周自动运行）
+├── scan_repos.py            # 扫描仓库文件，推测运行环境（每周自动运行）
 ├── check_links.py           # 链接巡检（每周自动运行，结果汇总到 issue）
 └── add_paper.py             # 按 arXiv 编号生成条目草稿
 tests/                       # 脚本的单元测试
@@ -72,6 +74,8 @@ python3 scripts/build.py
 | `added` | 是 | 收录日期，`"YYYY-MM-DD"` |
 
 Star 数、主要语言、许可证、最近提交日期都来自 `data/generated/repo_stats.json`，不要写进 `papers.yaml`。
+
+页面上的环境标签（ROS1/ROS2 与发行版、Ubuntu、CUDA、PX4、Docker、launch/config、标定文件、预训练模型、Jetson）来自 `data/generated/repo_signals.json`，由 `scan_repos.py` 根据文件树、README、`package.xml` 和 Dockerfile 推测，页面上以虚线标签显示并注明依据。判断规则见脚本中的 `detect()`；规则有改动时把 `SCANNER_VERSION` 加一，下次运行会重新扫描所有仓库。检测有误时请提 issue，不要手改该文件。
 
 ## ID 规则
 

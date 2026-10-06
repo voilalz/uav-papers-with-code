@@ -15,6 +15,7 @@
 - `data/papers.yaml`：论文条目，人工维护，唯一的事实来源；格式由 `schema/paper.schema.json` 定义。
 - `data/taxonomy.yaml`：大方向、细分方向、条目类型和 venue 词表。
 - `data/generated/repo_stats.json`：各仓库的 Star 数、语言、许可证与最近提交日期，由脚本生成。
+- `data/generated/repo_signals.json`：各仓库的 ROS / Docker / CUDA 等运行环境，由脚本扫描仓库文件推测得出。
 - `templates/index.html` → `index.html`：页面模板和由 `scripts/build.py` 生成的网站（单文件，无需服务器）。
 - `scripts/`：校验、生成、刷新统计、链接巡检、按 arXiv 编号生成条目草稿，说明见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 - `.github/workflows/`：PR 数据校验；每周一刷新统计并重新发布网站；每周三巡检链接并汇总到 issue。

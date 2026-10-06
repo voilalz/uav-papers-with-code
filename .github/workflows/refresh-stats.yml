@@ -36,6 +36,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/refresh_github.py
 
+      - name: 扫描仓库文件，推测 ROS / Docker / CUDA 等运行环境
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/scan_repos.py
+
       - name: 校验并重新生成页面
         run: |
           python3 scripts/validate.py
@@ -51,8 +56,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/generated/repo_stats.json index.html README.md
-          git commit -m "chore: 刷新 Star 数与最近提交时间（$(TZ=Asia/Shanghai date +%F)）"
+          git add data/generated/repo_stats.json data/generated/repo_signals.json index.html README.md
+          git commit -m "chore: 刷新 Star 数、最近提交时间与环境检测（$(TZ=Asia/Shanghai date +%F)）"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

@@ -1,0 +1,3091 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-06",
+  "repos": {
+    "aerorobotics/neural-fly": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "px4": "README 中提到 PX4"
+      },
+      "commit": "2022-05-21",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "aerostack2/aerostack2": {
+      "ros": "ros2",
+      "ros_distro": [
+        "galactic",
+        "humble"
+      ],
+      "ubuntu": [
+        "20.04",
+        "22.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 ament",
+        "ubuntu": "README / Dockerfile 中写明",
+        "px4": "含 PX4 相关目录",
+        "docker": "docker/humble/Dockerfile",
+        "launch_config": "as2_aerial_platforms/as2_platform_multirotor_simulator/launch/as2_platform_multirotor_simulator.launch.py",
+        "calibration": "as2_behaviors/as2_behaviors_object_perception/config/camera_calibration.yaml"
+      },
+      "commit": "2026-09-16",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "airvln/airvln": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2026-03-25",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "anyloc/anyloc": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "pretrained": "MixVPR/resnet50_MixVPR_4096_channels(1024)_rows(4) (1).ckpt"
+      },
+      "commit": "2024-03-13",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "arplaboratory/learning-to-fly": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "22.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "docker": "Dockerfile",
+        "launch_config": "src/config/ablation.h"
+      },
+      "commit": "2025-05-22",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "btx0424/omnidrones": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "launch_config": "cfg/algo/dqn.yaml"
+      },
+      "commit": "2026-01-20",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "captain-whu/dota_devkit": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件"
+      },
+      "commit": "2019-07-05",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "castacks/tartanair_tools": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2026-04-30",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "chenhongyiyang/querydet-pytorch": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [
+        "10.2"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "launch_config": "configs/BaseRetina.yaml"
+      },
+      "commit": "2024-03-22",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "cli98/dmnet": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2022-07-01",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "cuogeihong/ceasc": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "docker": "docker/Dockerfile",
+        "launch_config": "configs/UAV/baseline_fasterrcnn_res18_visdrone.py",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2023-05-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "cv516buaa/tph-yolov5": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "docker": "Dockerfile",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2023-03-24",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "dmmm1997/denseuav": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [
+        "11.3"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2025-12-12",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "dmmm1997/fsra": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2024-03-07",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/kalibr": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": false,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "Dockerfile_ros1_16_04",
+        "calibration": "aslam_incremental_calibration/incremental_calibration/conf/config.xml"
+      },
+      "commit": "2024-03-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/maplab": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "deploy/Dockerfile",
+        "launch_config": "applications/maplab-node/launch/euroc/euroc-maplab-node-w-rovioli.launch",
+        "calibration": "maplab-launch/config/alphasense-dev-kit/calib/alphasense-dev-kit-okvis.yaml"
+      },
+      "commit": "2023-06-18",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/mav_control_rw": {
+      "ros": "ros1",
+      "ros_distro": [
+        "indigo"
+      ],
+      "ubuntu": [
+        "14.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "px4": "README 中提到 PX4",
+        "launch_config": "mav_linear_mpc/launch/mav_linear_mpc.launch"
+      },
+      "commit": "2018-09-01",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/nbvplanner": {
+      "ros": "ros1",
+      "ros_distro": [
+        "indigo"
+      ],
+      "ubuntu": [
+        "14.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "launch_config": "interface_nbvp_rotors/launch/area_exploration.launch"
+      },
+      "commit": "2017-07-26",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/rotors_simulator": {
+      "ros": "ros1",
+      "ros_distro": [
+        "indigo",
+        "kinetic"
+      ],
+      "ubuntu": [
+        "14.04",
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "rotors_description/launch/xacrodisplay_pelican_base.launch"
+      },
+      "commit": "2021-07-06",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/rovio": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "launch_config": "launch/rovio_node.launch"
+      },
+      "commit": "2024-01-10",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ethz-asl/voxblox": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "launch_config": "voxblox_ros/launch/basement_dataset.launch",
+        "calibration": "voxblox_ros/cfg/calibrations/euroc_camchain.yaml"
+      },
+      "commit": "2021-11-22",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "fyangneil/clustered-object-detection-in-aerial-image": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "docker": "docker/Dockerfile",
+        "launch_config": "configs/04_2018_gn_baselines/e2e_mask_rcnn_R-101-FPN_2x_gn.yaml",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2020-05-25",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "gaoxiang12/faster-lio": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "docker/Dockerfile",
+        "launch_config": "launch/gdb_debug_example.launch"
+      },
+      "commit": "2026-09-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "henryhuyu/diffphysdrone": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "launch_config": "configs/multi_agent.args"
+      },
+      "commit": "2025-06-25",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/fast-livo2": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "launch/mapping_avia.launch"
+      },
+      "commit": "2026-03-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/fast_lio": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": true,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "launch/gdb_debug_example.launch",
+        "jetson": "README 中提到 TX2"
+      },
+      "commit": "2024-07-23",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/ipc": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "IPC/launch/fast_avoid.launch"
+      },
+      "commit": "2024-07-19",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/marsim": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "16.04",
+        "20.04",
+        "22.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "mars_drone_sim/launch/dynamics_test.launch"
+      },
+      "commit": "2025-10-25",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/point-lio": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "launch/gdb_debug_example.launch"
+      },
+      "commit": "2026-06-13",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/r3live": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "launch_config": "r3live/launch/r3live_bag.launch"
+      },
+      "commit": "2022-08-24",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/rog-map": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "launch_config": "examples/MARSIM/map_generator/launch/pub_pcd.launch"
+      },
+      "commit": "2025-03-13",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/super": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "px4": "README 中提到 PX4",
+        "launch_config": "mars_uav_sim/perfect_drone_sim/launch/benchmark.launch"
+      },
+      "commit": "2025-06-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hku-mars/swarm-lio2": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "launch_config": "livox_ros_driver_mars/launch/livox_hub.launch"
+      },
+      "commit": "2026-01-13",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/d2slam": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": true,
+      "pretrained": true,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "cuda": "README 中提到 CUDA",
+        "docker": "docker/Dockerfile.arm64_base_ros1_noetic",
+        "launch_config": "d2comm/launch/d2comm.launch",
+        "calibration": "config/GRACO/GRACO_calib.yaml",
+        "jetson": "README 中提到 Jetson",
+        "pretrained": "models/hitnet_series/hitnet_1x240x320_model_float16_quant.onnx"
+      },
+      "commit": "2024-12-13",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/esvo": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": true,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "esvo_core/launch/mvstereo/mvstereo_rpg.launch",
+        "calibration": "esvo_core/calib/hkust/left.yaml",
+        "jetson": "README 中提到 Jetson"
+      },
+      "commit": "2025-03-20",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/falcon": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "falcon_planner/exploration_manager/launch/exploration.launch"
+      },
+      "commit": "2025-05-16",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/fast-planner": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "fast_planner/plan_manage/launch/kino_replan.launch"
+      },
+      "commit": "2024-10-24",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/fc-planner": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "FC-Planner/src/hierarchical_coverage_planner/launch/christ.launch"
+      },
+      "commit": "2026-06-16",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/fuel": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "fuel_planner/exploration_manager/launch/exploration.launch"
+      },
+      "commit": "2024-11-19",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/gvins": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "docker": "docker/Dockerfile",
+        "launch_config": "estimator/launch/simulator.launch"
+      },
+      "commit": "2021-09-02",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/omni-swarm": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": true,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "localization_proxy/launch/uwb_comm-test.launch",
+        "jetson": "README 中提到 TX2"
+      },
+      "commit": "2022-07-03",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/teach-repeat-replan": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "global_planner/launch/global_planner.launch"
+      },
+      "commit": "2021-10-19",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/vins-fusion": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "docker": "docker/Dockerfile",
+        "launch_config": "config/realsense_d435i/rs_camera.launch"
+      },
+      "commit": "2021-07-26",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "hkust-aerial-robotics/vins-mono": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "docker/Dockerfile",
+        "launch_config": "ar_demo/launch/3dm_bag.launch",
+        "calibration": "config/euroc/euroc_config_no_extrinsic.yaml"
+      },
+      "commit": "2024-05-23",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "jaeyoung-lim/mavros_controllers": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "px4": "package.xml 依赖 px4_msgs/mavros",
+        "launch_config": "geometric_controller/launch/mav_trajectory_track_circle.launch"
+      },
+      "commit": "2022-08-23",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "kevinhuang8/datt": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2024-05-23",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "koide3/glim": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "22.04",
+        "24.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "12.2",
+        "13.1"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": true,
+      "pretrained": false,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "Dockerfile 基于 nvidia/cuda",
+        "docker": "docker/ubuntu/Dockerfile.gcc",
+        "launch_config": "config/config.json",
+        "jetson": "README 中提到 Jetson"
+      },
+      "commit": "2026-09-06",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "kumarrobotics/msckf_vio": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "launch/image_processor_euroc.launch",
+        "calibration": "config/camchain-imucam-euroc-noextrinsics.yaml"
+      },
+      "commit": "2021-04-26",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "layumi/university1652-baseline": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件"
+      },
+      "commit": "2026-10-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "learnsyslab/gym-pybullet-drones": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "24.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": true,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "px4": "README 中提到 PX4"
+      },
+      "commit": "2026-09-06",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "liushuaiyr/uavmot": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "launch_config": "src/lib/cfg/data.json"
+      },
+      "commit": "2022-09-01",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "lukasvst/dm-vio": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "16.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "configs/4seasons.yaml",
+        "calibration": "configs/pcalib_linear_8bit.txt"
+      },
+      "commit": "2024-10-27",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "microsoft/airsim": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": true,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "px4": "package.xml 依赖 px4_msgs/mavros",
+        "docker": "azure/docker/Dockerfile",
+        "launch_config": "ros/src/airsim_ros_pkgs/launch/airsim_all.launch"
+      },
+      "commit": "2026-09-15",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "microsoft/airsim-drone-racing-lab": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "docker/Dockerfile"
+      },
+      "commit": "2020-07-02",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "mit-acl/faster": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "faster/launch/faster.launch"
+      },
+      "commit": "2025-03-10",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "mit-acl/mader": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "mader/docker/Dockerfile",
+        "launch_config": "mader/launch/mader.launch"
+      },
+      "commit": "2022-12-07",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "mit-aera/blackbird-dataset": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "docker": "Dockerfile",
+        "launch_config": "ros_utilities/blackbird_dataset/launch/playback_sequence.launch"
+      },
+      "commit": "2022-12-15",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "mit-spark/kimera-vio": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "README 中有 roslaunch/catkin 命令",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "Dockerfile_20_04",
+        "launch_config": "params/D455/BackendParams.yaml",
+        "calibration": "scripts/kalibr/templates/camera.yaml"
+      },
+      "commit": "2025-02-10",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "mwaseema/drone-detection": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "README 中提到 CUDA"
+      },
+      "commit": "2021-12-14",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ntnu-arl/aerial_gym_simulator": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "launch_config": "aerial_gym/config/asset_config/base_asset.py",
+        "pretrained": "aerial_gym/examples/dce_rl_navigation/selected_network/selected_network/checkpoint_p0/best_000049472_25329664_reward_1056.252.pth"
+      },
+      "commit": "2026-06-28",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ntnu-arl/gbplanner_ros": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "gbplanner/launch/uav/gz/uav_gz_cargo_inspection.launch"
+      },
+      "commit": "2026-09-13",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "ntu-aris/ntu_viral_dataset": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2025-03-12",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "nvidia-isaac/nvblox": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": false,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "docker": "docker/Dockerfile.build",
+        "calibration": "executables/tests/data/3dmatch/camera-intrinsics.txt"
+      },
+      "commit": "2026-07-03",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "obss/sahi": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2026-09-30",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "octomap/octomap": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2026-09-26",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "open-mmlab/mmrotate": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "docker": ".circleci/docker/Dockerfile",
+        "launch_config": "configs/_base_/datasets/dotav1.py"
+      },
+      "commit": "2024-09-28",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "opt4smart/crazychoir": {
+      "ros": "ros2",
+      "ros_distro": [
+        "foxy"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "含 .launch.py 文件",
+        "ubuntu": "由 ROS 发行版推断",
+        "cuda": "README 中提到 CUDA",
+        "docker": "docker/Dockerfile",
+        "launch_config": "crazychoir_examples/launch/aggregative_lighthouse.launch.py"
+      },
+      "commit": "2025-06-11",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "pegasussimulator/pegasussimulator": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "22.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [
+        "1.14"
+      ],
+      "ardupilot": true,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "px4": "含 PX4 相关目录",
+        "launch_config": "extensions/pegasus.simulator/config/configs.yaml"
+      },
+      "commit": "2026-07-24",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "prbonn/kiss-icp": {
+      "ros": "ros2",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 ament",
+        "launch_config": "ros/launch/odometry.launch.py"
+      },
+      "commit": "2026-05-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "prince687028/traveluav": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [
+        "12.1"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "docker": "src/model_wrapper/utils/GroundingDINO/Dockerfile",
+        "launch_config": "src/model_wrapper/utils/GroundingDINO/groundingdino/config/GroundingDINO_SwinB_cfg.py"
+      },
+      "commit": "2026-01-22",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "princeton-vl/droid-slam": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "calibration": "calib/barn.txt"
+      },
+      "commit": "2025-05-05",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "puanysh/ufpmp-det": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "docker": "docker/Dockerfile",
+        "launch_config": "configs/UFPMP-Det/UAVDT_coarse_det.py",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2022-04-03",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "px4/px4-autopilot": {
+      "ros": "ros2",
+      "ros_distro": [],
+      "ubuntu": [
+        "24.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 ament",
+        "ubuntu": "README / Dockerfile 中写明",
+        "px4": "含 PX4 相关目录",
+        "docker": "Tools/packaging/containers/Dockerfile.gazebo",
+        "launch_config": "launch/multi_uav_mavros_sitl.launch",
+        "calibration": "src/modules/gyro_calibration/parameters.yaml"
+      },
+      "commit": "2026-10-05",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "reza-zhu/sues-200-benchmark": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2026-09-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "robin-shaun/xtdrone": {
+      "ros": "ros1",
+      "ros_distro": [
+        "indigo"
+      ],
+      "ubuntu": [
+        "14.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "px4": "package.xml 依赖 px4_msgs/mavros",
+        "docker": "sensing/slam/laser_slam/A-LOAM/docker/Dockerfile",
+        "launch_config": "contributer_demo/demo1/launch/cic2021.launch",
+        "calibration": "sitl_config/robotic_arm/le_arm_moveit_config/camera_calibration.yaml"
+      },
+      "commit": "2026-10-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "robotics-star-lab/epic": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "src/MARSIM/mars_drone_sim/launch/cave.launch"
+      },
+      "commit": "2025-05-02",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "robotics-star-lab/racer": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "swarm_exploration/exploration_manager/launch/bag_rviz.launch"
+      },
+      "commit": "2024-11-19",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "robotics-star-lab/star-searcher": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "Star-Searcher/rotors_simulator/rotors_description/launch/xacrodisplay_pelican_base.launch"
+      },
+      "commit": "2025-05-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "rpng/open_vins": {
+      "ros": "both",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "含 .launch、.launch.py 文件",
+        "ubuntu": "由 ROS 发行版推断",
+        "docker": "Dockerfile_ros1_16_04",
+        "launch_config": "ov_eval/launch/record.launch",
+        "calibration": "config/euroc_mav/kalibr_imu_chain.yaml"
+      },
+      "commit": "2025-11-30",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "skyy93/sample4geo": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2025-08-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "spencerfolk/rotorpy": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": true,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "px4": "含 PX4 相关目录"
+      },
+      "commit": "2026-09-07",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "sutdcv/uav-human": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2022-07-11",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "tixiaoshan/lio-sam": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "docker": "Dockerfile",
+        "launch_config": "launch/include/module_loam.launch"
+      },
+      "commit": "2023-04-17",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "tixiaoshan/lvi-sam": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic",
+        "melodic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "由 ROS 发行版推断",
+        "docker": "docker/Dockerfile",
+        "launch_config": "launch/include/module_robot_state_publisher.launch"
+      },
+      "commit": "2022-12-17",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "tum-aas/neural-mpc": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "launch_config": "ros_dd_mpc/launch/dd_mpc_wrapper.launch"
+      },
+      "commit": "2025-03-15",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "typefly/typefly": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "docker": "docker/Dockerfile",
+        "launch_config": "typefly/config/robot_info.example.json"
+      },
+      "commit": "2026-07-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "usc-actlab/crazyswarm": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "launch_config": "ros_ws/src/crazyswarm/launch/hover_swarm.launch"
+      },
+      "commit": "2022-12-17",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uz-slamlab/orb_slam3": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic"
+      ],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "README 中有 roslaunch/catkin 命令",
+        "ubuntu": "README / Dockerfile 中写明",
+        "calibration": "Examples/Calibration/recorder_empty/april_6x6_80x80cm_larues.yaml"
+      },
+      "commit": "2022-02-10",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/agile_autonomy": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "data_generation/agile_autonomy/launch/controller.launch",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2023-01-23",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/data_driven_mpc": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04",
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "ros_gp_mpc/launch/gp_mpc_wrapper.launch"
+      },
+      "commit": "2021-03-14",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/deep_drone_acrobatics": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "controller_learning/launch/simulation/base_quad_simulation_no_controller.launch"
+      },
+      "commit": "2021-05-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/flightmare": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "Dockerfile",
+        "launch_config": "flightros/launch/camera/camera.launch"
+      },
+      "commit": "2023-05-15",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/rpg_mpc": {
+      "ros": "ros1",
+      "ros_distro": [
+        "kinetic"
+      ],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "launch/mpc_controller.launch"
+      },
+      "commit": "2019-12-19",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/rpg_public_dronet": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "14.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "drone_control/dronet/dronet_control/launch/deep_navigation.launch",
+        "pretrained": "drone_control/dronet/dronet_perception/models/model_weights_59.h5"
+      },
+      "commit": "2018-05-25",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/rpg_quadrotor_control": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "launch_config": "bridges/sbus_bridge/launch/sbus_bridge.launch",
+        "calibration": "utils/vbat_thrust_calibration/launch/vbat_thrust_calibration.launch"
+      },
+      "commit": "2021-02-25",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/rpg_svo_pro_open": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04",
+        "20.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": true,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "svo_ros/launch/euroc_global_map_mono.launch",
+        "calibration": "svo_ros/param/calib/bluefox_25000826_fisheye.yaml"
+      },
+      "commit": "2022-08-04",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/rpg_time_optimal": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2021-09-17",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "uzh-rpg/rpg_trajectory_evaluation": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "16.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明"
+      },
+      "commit": "2022-09-14",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "v4rl-ucy/covins": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "docker": "docker/Dockerfile",
+        "launch_config": "covins_backend/launch/tf.launch"
+      },
+      "commit": "2023-05-28",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vectr-ucla/direct_lidar_inertial_odometry": {
+      "ros": "ros1",
+      "ros_distro": [
+        "noetic"
+      ],
+      "ubuntu": [
+        "20.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "launch/dlio.launch"
+      },
+      "commit": "2024-11-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "visdrone/dronevehicle": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2022-08-20",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "visdrone/visdrone-dataset": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2023-09-24",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vision4robotics/autotrack": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2020-07-17",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vision4robotics/hift": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "10.2"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "pretrained": "pretrained_models/alexnet-bn.pth"
+      },
+      "commit": "2022-10-11",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vision4robotics/sam-da": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "11.6"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "launch_config": "sam/demo/configs/webpack/common.js",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2024-09-27",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vision4robotics/siamapn": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "10.2"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "pretrained": "SiamAPN++/pretrained_models/alexnet-bn.pth"
+      },
+      "commit": "2022-03-29",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vision4robotics/tctrack": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "10.2"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": true,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "jetson": "README 中提到 Jetson",
+        "pretrained": "pretrained_models/temporalalexnet.pth"
+      },
+      "commit": "2023-08-29",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "vision4robotics/udat": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "launch_config": "preprocessing/config/datasets.yaml",
+        "pretrained": "preprocessing/DCE/Epoch99.pth"
+      },
+      "commit": "2023-10-23",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "water-cookie/citynav": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "22.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "11.8"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "launch_config": "gsamllavanav/configs/groundingdino/GroundingDINO_SwinB_cfg.py",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2025-02-11",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "wtyhub/lpn": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2026-07-06",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "xyyang317/aba-vitrack": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [
+        "10.2"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "README 中提到 CUDA",
+        "launch_config": "lib/config/__init__.py",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2025-12-17",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "yelyuut/uavidtoolkit": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": false,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {},
+      "commit": "2021-01-14",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "yux1angji/gta-uav": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "docker": "DeepGTAV/GTAVisionExport-DepthExtractor/managed/docker-compose.yml",
+        "launch_config": "Game4Loc/game4loc/matcher/networks/loftr/configs/__init__.py",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2025-10-20",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zcablii/lsknet": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "README 中提到 CUDA",
+        "docker": ".circleci/docker/Dockerfile",
+        "launch_config": "configs/_base_/datasets/dotav1.py",
+        "pretrained": "README 中有权重下载链接"
+      },
+      "commit": "2026-09-14",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zhaoj9014/anti-uav": {
+      "ros": "none",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [
+        "11.8"
+      ],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": true,
+      "why": {
+        "cuda": "含 .cu 源文件",
+        "docker": "anti_uav_jittor/anti_uav410_jit/trackers/SiamDT/libs/swintransformer/docker/Dockerfile",
+        "launch_config": "anti_uav_jittor/anti_uav410_jit/trackers/SiamDT/configs/siamdt_swin_tiny_adamw.py",
+        "pretrained": "Eval/model.pth"
+      },
+      "commit": "2025-05-07",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zju-fast-lab/cmpcc": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "launch_config": "src/cmpcc/launch/flyfly.launch"
+      },
+      "commit": "2021-05-14",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zju-fast-lab/ego-planner": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "src/planner/plan_manage/launch/run_in_sim.launch"
+      },
+      "commit": "2025-03-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zju-fast-lab/ego-planner-swarm": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [
+        "16.04",
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "src/planner/drone_detect/launch/drone_detect.launch"
+      },
+      "commit": "2025-03-08",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zju-fast-lab/elastic-tracker": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "cuda": "含 .cu 源文件",
+        "launch_config": "src/detection/target_ekf/launch/target_ekf.launch"
+      },
+      "commit": "2023-06-16",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zju-fast-lab/gcopter": {
+      "ros": "ros1",
+      "ros_distro": [],
+      "ubuntu": [],
+      "cuda": false,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": false,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "launch_config": "gcopter/launch/global_planning.launch"
+      },
+      "commit": "2023-06-06",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    },
+    "zju-fast-lab/swarm-formation": {
+      "ros": "ros1",
+      "ros_distro": [
+        "melodic",
+        "noetic"
+      ],
+      "ubuntu": [
+        "18.04"
+      ],
+      "cuda": true,
+      "cuda_version": [],
+      "px4": false,
+      "px4_version": [],
+      "ardupilot": false,
+      "docker": true,
+      "launch_config": true,
+      "calibration": false,
+      "jetson": false,
+      "pretrained": false,
+      "why": {
+        "ros": "package.xml 使用 catkin",
+        "ubuntu": "README / Dockerfile 中写明",
+        "cuda": "含 .cu 源文件",
+        "docker": "Dockerfile",
+        "launch_config": "src/planner/plan_manage/launch/normal_hexagon.launch"
+      },
+      "commit": "2024-01-24",
+      "scanned": "2026-10-06",
+      "scanner": 1
+    }
+  }
+}
