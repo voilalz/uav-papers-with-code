@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""由 data/ 和 templates/index.html 生成网站 index.html，并同步 README 中的数字与日期。
+"""由 data/（含 generated/ 下的统计与环境检测结果）和 templates/index.html 生成网站 index.html，并同步 README 中的数字与日期。
 
     python3 scripts/build.py           # 生成
     python3 scripts/build.py --check   # 只检查 index.html / README 是否与数据一致（CI 用）
@@ -22,16 +22,38 @@ README_SUBS_RE = re.compile(r"\d+ 个细分方向")
 README_DATE_RE = re.compile(r"(截至 )\d{4}-\d{2}-\d{2}")
 
 
-def page_entries(papers, taxonomy, stats):
-    """把论文条目和仓库统计合并成页面使用的扁平结构。"""
+# repo_signals.json 中页面要用的字段；值为空/false 的不写进页面，减小体积
+SIGNAL_KEYS = ("ros", "ros_distro", "ubuntu", "cuda", "cuda_version", "px4", "px4_version", "ardupilot",
+               "docker", "launch_config", "calibration", "jetson", "pretrained")
+
+
+def page_signals(sig):
+    """自动检测结果 → 页面用的紧凑结构（含依据 why）；没有扫描结果时返回 None。"""
+    if not sig:
+        return None
+    out = {k: sig[k] for k in SIGNAL_KEYS if sig.get(k) and sig.get(k) != "none"}
+    why = {k: v for k, v in (sig.get("why") or {}).items() if k in out}
+    if why:
+        out["why"] = why
+    return out
+
+
+def page_entries(papers, taxonomy, stats, signals=None):
+    """把论文条目、仓库统计和环境检测结果合并成页面使用的扁平结构。"""
     venues = taxonomy["venues"]
     stat_repos = stats.get("repos", {})
+    sig_repos = (signals or {}).get("repos", {})
     out = []
     for p in papers:
         repos = []
         for r in p.get("repos", []):
-            st = stat_repos.get(datalib.repo_key(r["name"]), {})
-            repos.append({"name": st.get("full_name") or r["name"], "official": r["official"]})
+            key = datalib.repo_key(r["name"])
+            st = stat_repos.get(key, {})
+            repo = {"name": st.get("full_name") or r["name"], "official": r["official"]}
+            sig = page_signals(sig_repos.get(key))
+            if sig is not None:
+                repo["sig"] = sig
+            repos.append(repo)
         main = datalib.primary_repo(p)
         st = stat_repos.get(datalib.repo_key(main["name"]), {}) if main else {}
         note = p.get("note")
@@ -57,8 +79,8 @@ def script_json(obj):
     return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
-def render(papers, taxonomy, stats, template):
-    entries = page_entries(papers, taxonomy, stats)
+def render(papers, taxonomy, stats, template, signals=None):
+    entries = page_entries(papers, taxonomy, stats, signals)
     tax = {"categories": taxonomy["categories"],
            "subs": [{"id": s["id"], "cat": s["cat"], "label": s["label"]} for s in taxonomy["subs"]]}
     values = {
@@ -96,7 +118,7 @@ def main(argv=None):
         sys.exit("数据未通过校验，请先运行 python3 scripts/validate.py 查看错误")
 
     with open(datalib.TEMPLATE, encoding="utf-8") as f:
-        html = render(papers, taxonomy, stats, f.read())
+        html = render(papers, taxonomy, stats, f.read(), datalib.load_stats(datalib.SIGNALS))
     with open(datalib.README, encoding="utf-8") as f:
         old_readme = f.read()
     readme = render_readme(old_readme, papers, taxonomy, stats)
