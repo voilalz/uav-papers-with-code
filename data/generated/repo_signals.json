@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-06",
+  "generated_at": "2026-10-07",
   "repos": {
     "aerorobotics/neural-fly": {
       "ros": "none",
@@ -1867,8 +1867,8 @@
         "launch_config": "launch/multi_uav_mavros_sitl.launch",
         "calibration": "src/modules/gyro_calibration/parameters.yaml"
       },
-      "commit": "2026-10-05",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-07",
+      "scanned": "2026-10-07",
       "scanner": 1
     },
     "reza-zhu/sues-200-benchmark": {
@@ -1919,8 +1919,8 @@
         "launch_config": "contributer_demo/demo1/launch/cic2021.launch",
         "calibration": "sitl_config/robotic_arm/le_arm_moveit_config/camera_calibration.yaml"
       },
-      "commit": "2026-10-04",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-06",
+      "scanned": "2026-10-07",
       "scanner": 1
     },
     "robotics-star-lab/epic": {
