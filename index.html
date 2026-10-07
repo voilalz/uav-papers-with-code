@@ -111,6 +111,14 @@ h1 {
 .readout div:nth-child(2n) { border-left: 1px solid var(--rule); }
 .readout dt { font-family: var(--f-ui); font-size: var(--s-xs); color: var(--muted); letter-spacing: .04em; }
 .readout dd { margin: 0; font-family: var(--f-mono); font-size: 18px; font-variant-numeric: tabular-nums; }
+/* 窄屏：统计压成一行小字，给论文列表让出首屏 */
+@media (max-width: 719.98px) {
+  .masthead { gap: 12px; padding-bottom: 16px; margin-bottom: 14px; }
+  .lede { font-size: 14px; }
+  .readout { display: flex; flex-wrap: wrap; gap: 2px 14px; border: 0; background: none; }
+  .readout div { display: flex; align-items: baseline; gap: 5px; padding: 0; border: 0 !important; }
+  .readout dd { font-size: 14px; }
+}
 @media (min-width: 720px) {
   .masthead { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
   .readout { grid-template-columns: repeat(4, auto); }
@@ -126,6 +134,55 @@ h1 {
   .layout { grid-template-columns: 268px minmax(0, 1fr); gap: 40px; }
   .rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); align-self: start; }
 }
+
+/* 搜索栏 + 筛选按钮；窄屏时排序与环境筛选收进底部抽屉，搜索栏吸顶 */
+.bar { display: flex; gap: 8px; }
+.bar .search { flex: 1; min-width: 0; }
+.filter-btn {
+  display: inline-flex; align-items: center; gap: 6px; flex: none; padding: 0 14px;
+  border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); cursor: pointer;
+  font-size: var(--s-md);
+}
+.filter-btn .badge {
+  min-width: 18px; padding: 0 5px; border-radius: 9px; background: var(--accent); color: var(--bg);
+  font-family: var(--f-mono); font-size: 11px; line-height: 18px; text-align: center;
+}
+.panel { display: grid; gap: 14px; align-content: start; }
+.panel-head, .panel-foot, .scrim { display: none; }
+@media (min-width: 960px) { .filter-btn { display: none; } }
+@media (max-width: 959.98px) {
+  .rail { display: contents; }
+  .bar {
+    position: sticky; top: 0; z-index: 5; margin-block: -8px; padding-block: 8px;
+    background: var(--bg); box-shadow: 0 1px 0 var(--rule);
+  }
+  .panel {
+    position: fixed; z-index: 21; left: 0; right: 0; bottom: 0; max-height: 82vh; overflow: auto;
+    padding: 0 16px calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--bg);
+    border-top: 1px solid var(--rule); box-shadow: 0 -8px 24px rgba(0, 0, 0, .18);
+    transform: translateY(100%); visibility: hidden; overscroll-behavior: contain;
+  }
+  .panel.open { transform: none; visibility: visible; }
+  .panel-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    position: sticky; top: 0; z-index: 1; padding-block: 14px 10px; background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .panel-title { font-family: var(--f-ui); font-weight: 700; }
+  .panel-foot { display: block; position: sticky; bottom: 0; padding-top: 6px; background: var(--bg); }
+  .done {
+    width: 100%; padding: 11px; border: 0; border-radius: 3px; cursor: pointer;
+    background: var(--ink); color: var(--bg); font-size: var(--s-md);
+  }
+  .scrim:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 20; background: rgba(0, 0, 0, .35); }
+  .entry { scroll-margin-top: 72px; }
+  .seg button { padding-block: 10px; }
+  .panel .chip { padding: 7px 11px; }
+}
+@media (max-width: 959.98px) and (prefers-reduced-motion: no-preference) {
+  .panel { transition: transform .2s ease, visibility .2s; }
+}
+html.locked { overflow: hidden; }
 
 .label {
   display: block; margin-bottom: 6px; font-family: var(--f-ui); font-size: var(--s-xs);
@@ -333,11 +390,14 @@ h1 {
 
   <div class="layout">
     <aside class="rail" aria-label="筛选">
-      <div class="search">
-        <label for="q" class="sr-only">搜索论文</label>
-        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="搜索方法、作者、会议…">
-        <span class="kbd" aria-hidden="true">/</span>
+      <div class="bar">
+        <div class="search">
+          <label for="q" class="sr-only">搜索论文</label>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="搜索方法、作者、会议…">
+          <span class="kbd" aria-hidden="true">/</span>
+        </div>
+        <button type="button" class="filter-btn" id="filter-btn" aria-controls="panel" aria-expanded="false">筛选<span class="badge" id="filter-n" hidden></span></button>
       </div>
       <div>
         <span class="label" id="modes-label">研究方向</span>
@@ -347,19 +407,24 @@ h1 {
         <span class="label" id="subs-label">细分方向</span>
         <div class="subs" id="subs" role="group" aria-labelledby="subs-label"></div>
       </div>
-      <div>
-        <span class="label" id="sort-label">排序</span>
-        <div class="seg" id="sort" role="group" aria-labelledby="sort-label">
-          <button type="button" id="sort-stars" data-sort="stars" aria-pressed="true">Star 数</button>
-          <button type="button" id="sort-year" data-sort="year" aria-pressed="false">发表年份</button>
-          <button type="button" id="sort-updated" data-sort="updated" aria-pressed="false">最近提交</button>
+      <div class="scrim" id="scrim" hidden></div>
+      <div class="panel" id="panel" aria-labelledby="panel-title">
+        <div class="panel-head"><span class="panel-title" id="panel-title">筛选与排序</span><button type="button" class="clear" id="panel-reset">重置</button></div>
+        <div>
+          <span class="label" id="sort-label">排序</span>
+          <div class="seg" id="sort" role="group" aria-labelledby="sort-label">
+            <button type="button" id="sort-stars" data-sort="stars" aria-pressed="true">Star 数</button>
+            <button type="button" id="sort-year" data-sort="year" aria-pressed="false">发表年份</button>
+            <button type="button" id="sort-updated" data-sort="updated" aria-pressed="false">最近提交</button>
+          </div>
         </div>
+        <div>
+          <span class="label" id="feats-label">代码与环境</span>
+          <div class="subs" id="feats" role="group" aria-labelledby="feats-label"></div>
+        </div>
+        <p class="legend"><span class="dot ok"></span>近一年内仍有代码提交　·　刻度条按 Star 数的对数比例绘制<br><span class="tag ok">实线标签</span> 已人工核对；<span class="tag">虚线标签</span> 由脚本根据仓库文件自动推测，可能有误。悬停可看依据</p>
+        <div class="panel-foot"><button type="button" class="done" id="panel-done">查看结果</button></div>
       </div>
-      <div>
-        <span class="label" id="feats-label">代码与环境</span>
-        <div class="subs" id="feats" role="group" aria-labelledby="feats-label"></div>
-      </div>
-      <p class="legend"><span class="dot ok"></span>近一年内仍有代码提交　·　刻度条按 Star 数的对数比例绘制<br><span class="tag ok">实线标签</span> 已人工核对；<span class="tag">虚线标签</span> 由脚本根据仓库文件自动推测，可能有误。悬停可看依据</p>
     </aside>
 
     <main class="main">
@@ -473,8 +538,38 @@ h1 {
   });
 
   var state = { q: "", cat: "all", sub: null, sort: "stars", feats: [] };
-  var h = (location.hash || "").slice(1);
-  if (CAT_BY_ID[h]) state.cat = h;
+  var SORTS = ["stars", "year", "updated"];
+  var FEAT_IDS = FEATS.map(function (f) { return f[0]; });
+
+  /* 筛选状态与网址同步：?q=…&cat=nav&sub=…&f=ros2,docker&sort=year；#论文id 仍用于定位单条 */
+  function readURL() {
+    var p = new URLSearchParams(location.search);
+    state.q = p.get("q") || "";
+    var c = p.get("cat"), h = (location.hash || "").slice(1);
+    if (!c && CAT_BY_ID[h]) c = h;  /* 兼容旧的 #cv 形式 */
+    state.cat = CAT_BY_ID[c] ? c : "all";
+    var sb = p.get("sub");
+    state.sub = SUB[sb] && SUB[sb].cat === state.cat ? sb : null;
+    state.feats = (p.get("f") || "").split(",").filter(function (f, i, a) {
+      return FEAT_IDS.indexOf(f) >= 0 && a.indexOf(f) === i;
+    });
+    state.sort = SORTS.indexOf(p.get("sort")) >= 0 ? p.get("sort") : "stars";
+  }
+  function writeURL() {
+    var p = [];
+    if (state.q.trim()) p.push("q=" + encodeURIComponent(state.q.trim()));
+    if (state.cat !== "all") p.push("cat=" + state.cat);
+    if (state.sub) p.push("sub=" + state.sub);
+    if (state.feats.length) p.push("f=" + state.feats.join(","));
+    if (state.sort !== "stars") p.push("sort=" + state.sort);
+    var h = location.hash;
+    if (CAT_BY_ID[h.slice(1)]) h = "";
+    var url = location.pathname + (p.length ? "?" + p.join("&") : "") + h;
+    if (url !== location.pathname + location.search + location.hash) {
+      try { history.replaceState(null, "", url); } catch (e) { /* file:// 等环境可能不允许 */ }
+    }
+  }
+  readURL();
 
   var $ = function (id) { return document.getElementById(id); };
   function esc(s) {
@@ -554,6 +649,7 @@ h1 {
       updated: function (a, b) { return (b.updated || "").localeCompare(a.updated || "") || (b.stars || 0) - (a.stars || 0); }
     };
     rows.sort(sorters[state.sort]);
+    writeURL();
 
     Array.prototype.forEach.call(document.querySelectorAll("#sort button"), function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-sort") === state.sort));
@@ -567,6 +663,11 @@ h1 {
     $("empty").hidden = rows.length > 0;
 
     $("list").innerHTML = rows.map(entryHTML).join("");
+
+    var nPanel = state.feats.length + (state.sort !== "stars" ? 1 : 0);
+    $("filter-n").hidden = !nPanel;
+    $("filter-n").textContent = nPanel;
+    $("panel-done").textContent = rows.length ? "查看 " + rows.length + " 篇" : "没有匹配的论文";
   }
 
   function entryHTML(d) {
@@ -641,6 +742,31 @@ h1 {
     if (e.key === "Escape" && e.target === $("q")) { $("q").value = ""; state.q = ""; render(); }
   });
 
+  /* 窄屏筛选抽屉 */
+  var narrow = window.matchMedia("(max-width: 959.98px)");
+  function setPanel(open) {
+    open = open && narrow.matches;
+    var panel = $("panel"), btn = $("filter-btn");
+    panel.classList.toggle("open", open);
+    $("scrim").hidden = !open;
+    document.documentElement.classList.toggle("locked", open);
+    btn.setAttribute("aria-expanded", String(open));
+    if (open) {
+      panel.setAttribute("role", "dialog"); panel.setAttribute("aria-modal", "true");
+      $("panel-done").focus();
+    } else if (panel.hasAttribute("role")) {
+      panel.removeAttribute("role"); panel.removeAttribute("aria-modal");
+      if (panel.contains(document.activeElement)) btn.focus();
+    }
+  }
+  $("filter-btn").addEventListener("click", function () { setPanel(true); });
+  $("panel-done").addEventListener("click", function () { setPanel(false); });
+  $("scrim").addEventListener("click", function () { setPanel(false); });
+  $("panel-reset").addEventListener("click", function () { state.feats = []; state.sort = "stars"; render(); });
+  $("panel").addEventListener("keydown", function (e) { if (e.key === "Escape") setPanel(false); });
+  if (narrow.addEventListener) narrow.addEventListener("change", function () { setPanel(false); });
+
+  $("q").value = state.q;
   render();
 
   /* 打开 #<论文 id> 形式的链接时定位到该条 */
