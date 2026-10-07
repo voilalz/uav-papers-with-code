@@ -111,6 +111,31 @@ class ValidateTest(unittest.TestCase):
         _, w = run_check([paper()], stats(**{"lab/demo": {"full_name": "lab/demo"}, "old/gone": {}}))
         self.assertTrue(any("old/gone" in m for _, m in w))
 
+    def test_repro_consistency(self):
+        repro = {"source": "readme", "checked": "2026-10-07"}
+        ok = paper(repos=[{"name": "lab/demo", "official": True,
+                           "repro": dict(repro, ros="ros1", ros_distro=["noetic"], cuda="optional", cuda_version=["11.8"])}])
+        self.assertEqual(run_check([ok])[0], [])
+        bad = paper(repos=[{"name": "lab/demo", "official": True,
+                            "repro": dict(repro, ros="ros2", ros_distro=["noetic"], cuda="none", cuda_version=["11.8"])}])
+        msgs = " ".join(m for _, m in run_check([bad])[0])
+        self.assertIn("noetic", msgs)
+        self.assertIn("cuda_version", msgs)
+        no_source = paper(repos=[{"name": "lab/demo", "official": True, "repro": {"ros": "ros1"}}])
+        self.assertTrue(run_check([no_source])[0])
+
+    def test_evaluated_on_must_reference_datasets(self):
+        data = paper(id="data-2020", kind="dataset", subs=["data"], title="Some Dataset", ids={"arxiv": "2001.00001"},
+                     paper="https://arxiv.org/abs/2001.00001", repos=[{"name": "lab/data", "official": True}])
+        self.assertEqual(run_check([paper(evaluated_on=["data-2020"]), data])[0], [])
+        msgs = " ".join(m for _, m in run_check([paper(evaluated_on=["nope-2020", "demo-2024"]), data])[0])
+        self.assertIn("nope-2020", msgs)
+        self.assertIn("自己", msgs)
+        other = paper(id="other-2020", title="Other", ids={"arxiv": "2001.00002"}, paper="https://arxiv.org/abs/2001.00002",
+                      repos=[{"name": "lab/other", "official": True}])
+        msgs = " ".join(m for _, m in run_check([paper(datasets=["other-2020"]), other])[0])
+        self.assertIn("不是数据集条目", msgs)
+
     def test_duplicate_yaml_keys_rejected(self):
         with tempfile.NamedTemporaryFile("w", suffix=".yaml", delete=False, encoding="utf-8") as f:
             f.write("- id: a-2020\n  name: A\n  name: B\n")
@@ -142,6 +167,31 @@ class BuildTest(unittest.TestCase):
                                                 "why": {"ros": "package.xml 使用 catkin"}})
         [e] = build.page_entries([p], TAXONOMY, stats())
         self.assertNotIn("sig", e["repos"][0])
+
+    def test_page_signals_manual_overrides_auto(self):
+        auto = {"ros": "ros1", "ros_distro": ["kinetic"], "cuda": True, "cuda_version": ["10.2"], "docker": False,
+                "jetson": True, "why": {"ros": "package.xml 使用 catkin", "cuda": "README 中提到 CUDA", "jetson": "x"}}
+        repro = {"source": "readme", "checked": "2026-10-07", "ros": "ros2", "cuda": "none", "docker": True, "note": "测试"}
+        out = build.page_signals(auto, repro)
+        self.assertEqual(out["ros"], "ros2")
+        self.assertNotIn("ros_distro", out)           # 确认了 ros 却没填发行版：丢掉推测的发行版
+        self.assertNotIn("cuda", out)                 # 确认不需要 CUDA
+        self.assertNotIn("cuda_version", out)
+        self.assertTrue(out["docker"] and out["jetson"])
+        self.assertEqual(out["ok"], ["ros", "docker"])
+        self.assertEqual(out["why"]["ros"], "README 写明，2026-10-07 核对")
+        self.assertEqual(out["why"]["jetson"], "x")
+        self.assertEqual(out["why"]["note"], "测试")
+        self.assertIsNone(build.page_signals(None, None))
+        self.assertEqual(build.page_signals(None, {"source": "tested", "checked": "2026-10-07", "cuda": "optional"})["cuda"], "optional")
+
+    def test_page_entries_dataset_links(self):
+        data = paper(id="data-2020", kind="dataset", name="DataSet", real_flight="data")
+        method = paper(evaluated_on=["data-2020"], real_flight="experiment")
+        e_method, e_data = build.page_entries([method, data], TAXONOMY, stats())
+        self.assertEqual(e_method["evaluated_on"], [["data-2020", "DataSet"]])
+        self.assertEqual(e_method["real_flight"], "experiment")
+        self.assertEqual(e_data["used_by"], [["demo-2024", "Demo"]])
 
     def test_render_escapes_script_end(self):
         tpl = '<script id="data">{{DATA}}</script><script id="taxonomy">{{TAXONOMY}}</script>{{DATA_DATE}} {{PAPER_COUNT}}'

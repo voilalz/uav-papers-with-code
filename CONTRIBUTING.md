@@ -71,11 +71,38 @@ python3 scripts/build.py
 | `tags` | 否 | 补充关键词，参与搜索，如 `[事件相机]` |
 | `note` | 否 | 页面上的提示，如“已停止维护，新项目建议用 X”；仓库归档的提示会自动生成，无需填写 |
 | `zh` | 是 | 一句话中文简介，10–120 字 |
+| `evaluated_on` | 否 | 在哪些已收录的数据集上做了评测，填数据集条目的 id，如 `[euroc-mav-2016]`；数据集条目上会反向显示"用于评测" |
+| `datasets` | 否 | 随论文发布、且已收录的数据集，填数据集条目的 id |
+| `real_flight` | 否 | `data` 公开了真实飞行数据 / `experiment` 有真机飞行实验但未公开数据 / `none` 没有真机飞行 |
 | `added` | 是 | 收录日期，`"YYYY-MM-DD"` |
 
 Star 数、主要语言、许可证、最近提交日期都来自 `data/generated/repo_stats.json`，不要写进 `papers.yaml`。
 
 页面上的环境标签（ROS1/ROS2 与发行版、Ubuntu、CUDA、PX4、Docker、launch/config、标定文件、预训练模型、Jetson）来自 `data/generated/repo_signals.json`，由 `scan_repos.py` 根据文件树、README、`package.xml` 和 Dockerfile 推测，页面上以虚线标签显示并注明依据。判断规则见脚本中的 `detect()`；规则有改动时把 `SCANNER_VERSION` 加一，下次运行会重新扫描所有仓库。检测有误时请提 issue，不要手改该文件。
+
+### 人工确认运行环境（`repos[].repro`）
+
+自动检测有误或不完整时，在对应仓库下填写 `repro`。填了的项覆盖自动结果，页面上改为实线标签并在悬停提示中注明来源和核对日期；没填的项继续显示自动推测。
+
+```yaml
+  repos:
+    - name: HKUST-Aerial-Robotics/VINS-Mono
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic], ubuntu: ["16.04"], docker: true}
+```
+
+| 字段 | 说明 |
+|---|---|
+| `source` | 必填。`readme` 作者在 README / 文档中写明；`tested` 有人实际编译运行过；`issue` 来自 issue 或社区报告 |
+| `checked` | 必填。核对日期 `"YYYY-MM-DD"` |
+| `ros` / `ros_distro` | `ros1` / `ros2` / `both` / `none`；发行版如 `[melodic, noetic]`，须与 `ros` 一致 |
+| `ubuntu` | 如 `["18.04", "20.04"]`（加引号，否则会被当成数字） |
+| `cuda` / `cuda_version` | `required` 必需 / `optional` 可选（如只用于 GPU 加速或仿真渲染）/ `none` 不需要；版本如 `["11.8"]` |
+| `px4` / `px4_version`、`ardupilot` | 是否用到 PX4 / ArduPilot，PX4 版本如 `["1.14"]` |
+| `docker`、`launch_config`、`calibration`、`pretrained`、`jetson` | `true` / `false`；`jetson: true` 表示作者写明或有人报告能在 Jetson 上运行 |
+| `note` | 补充说明（≤ 60 字），显示在悬停提示里 |
+
+只写能从 README、文档或实际运行中确认的项，拿不准的不要填。
 
 ## ID 规则
 
