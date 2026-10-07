@@ -11,9 +11,13 @@
   paper: "https://arxiv.org/abs/1708.03852"
   ids: {arxiv: "1708.03852"}
   repos:
-    - {name: HKUST-Aerial-Robotics/VINS-Mono, official: true}
+    - name: HKUST-Aerial-Robotics/VINS-Mono
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic], ubuntu: ["16.04"], docker: true}
   subs: [vio]
   zh: "单目视觉-惯性紧耦合滑窗优化，含在线初始化、外参标定与回环，是无人机 VIO 的经典基线。"
+  evaluated_on: [euroc-mav-2016]
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: vins-fusion-2019
@@ -26,9 +30,12 @@
   paper: "https://arxiv.org/abs/1901.03638"
   ids: {arxiv: "1901.03638"}
   repos:
-    - {name: HKUST-Aerial-Robotics/VINS-Fusion, official: true}
+    - name: HKUST-Aerial-Robotics/VINS-Fusion
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic, melodic], ubuntu: ["16.04", "18.04"], docker: true}
   subs: [vio]
   zh: "VINS-Mono 的多传感器扩展：支持单目/双目 + IMU，并可与 GPS 做全局融合。"
+  evaluated_on: [euroc-mav-2016]
   added: "2026-10-05"
 
 - id: orb-slam3-2021
@@ -41,9 +48,12 @@
   paper: "https://arxiv.org/abs/2007.11898"
   ids: {arxiv: "2007.11898"}
   repos:
-    - {name: UZ-SLAMLab/ORB_SLAM3, official: true}
+    - name: UZ-SLAMLab/ORB_SLAM3
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic], ubuntu: ["16.04", "18.04"], note: "ROS 接口为可选示例"}
   subs: [vio]
   zh: "基于特征点的视觉 / 视觉-惯性 SLAM，支持单目、双目、RGB-D 与多地图（Atlas）管理。"
+  evaluated_on: [euroc-mav-2016]
   added: "2026-10-05"
 
 - id: openvins-2020
@@ -55,9 +65,12 @@
   year: 2020
   paper: "https://pgeneva.com/downloads/papers/Geneva2020ICRA.pdf"
   repos:
-    - {name: rpng/open_vins, official: true}
+    - name: rpng/open_vins
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: both, docker: true}
   subs: [vio]
   zh: "基于 MSCKF 的滤波式 VIO 研究平台，模块化、文档完善，适合做算法对比与二次开发。"
+  evaluated_on: [euroc-mav-2016]
   added: "2026-10-05"
 
 - id: s-msckf-2018
@@ -70,9 +83,13 @@
   paper: "https://arxiv.org/abs/1712.00036"
   ids: {arxiv: "1712.00036"}
   repos:
-    - {name: KumarRobotics/msckf_vio, official: true}
+    - name: KumarRobotics/msckf_vio
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic], ubuntu: ["16.04"]}
   subs: [vio]
   zh: "双目 MSCKF 滤波 VIO，计算量小，面向高速自主飞行的机载实时定位。"
+  evaluated_on: [euroc-mav-2016]
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: rovio-2017
@@ -100,9 +117,12 @@
   paper: "https://arxiv.org/abs/1910.02490"
   ids: {arxiv: "1910.02490"}
   repos:
-    - {name: MIT-SPARK/Kimera-VIO, official: true}
+    - name: MIT-SPARK/Kimera-VIO
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ubuntu: ["20.04"], docker: true}
   subs: [vio, map]
   zh: "实时度量-语义 SLAM 库：VIO、位姿图优化、三维网格与语义建图一体化。"
+  evaluated_on: [euroc-mav-2016]
   added: "2026-10-05"
 
 - id: svo-pro-2017
@@ -114,7 +134,9 @@
   year: 2017
   paper: "https://rpg.ifi.uzh.ch/docs/TRO17_Forster-SVO.pdf"
   repos:
-    - {name: uzh-rpg/rpg_svo_pro_open, official: true}
+    - name: uzh-rpg/rpg_svo_pro_open
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic, noetic], ubuntu: ["18.04", "20.04"]}
   subs: [vio]
   zh: "半直接法视觉里程计，速度极快；SVO Pro 增加了滑窗后端、回环与全局 BA。"
   added: "2026-10-05"
@@ -129,9 +151,12 @@
   paper: "https://arxiv.org/abs/2201.04114"
   ids: {arxiv: "2201.04114"}
   repos:
-    - {name: lukasvst/dm-vio, official: true}
+    - name: lukasvst/dm-vio
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: none, ubuntu: ["16.04", "18.04", "20.04"], note: "ROS 接口在 dm-vio-ros 仓库"}
   subs: [vio]
   zh: "基于 DSO 的直接法 VIO，提出延迟边缘化，并用位姿图 BA 改进 IMU 初始化。"
+  evaluated_on: [euroc-mav-2016]
   added: "2026-10-05"
 
 - id: droid-slam-2021
@@ -144,9 +169,12 @@
   paper: "https://arxiv.org/abs/2108.10869"
   ids: {arxiv: "2108.10869"}
   repos:
-    - {name: princeton-vl/DROID-SLAM, official: true}
+    - name: princeton-vl/DROID-SLAM
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: none, cuda: required, pretrained: true}
   subs: [vio]
   zh: "基于可微稠密 BA 的深度学习 SLAM，在 EuRoC、TartanAir 等无人机数据上精度突出。"
+  evaluated_on: [euroc-mav-2016, tartanair-2020]
   added: "2026-10-05"
 
 - id: esvo-2021
@@ -175,7 +203,9 @@
   paper: "https://arxiv.org/abs/2103.07899"
   ids: {arxiv: "2103.07899"}
   repos:
-    - {name: HKUST-Aerial-Robotics/GVINS, official: true}
+    - name: HKUST-Aerial-Robotics/GVINS
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic], docker: true}
   subs: [vio]
   tags: [GNSS]
   zh: "GNSS 原始伪距/多普勒与视觉-惯性紧耦合，室内外切换平滑，全局无漂移。"
@@ -237,7 +267,9 @@
   paper: "https://arxiv.org/abs/2212.00654"
   ids: {arxiv: "2212.00654"}
   repos:
-    - {name: ethz-asl/maplab, official: true}
+    - name: ethz-asl/maplab
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic], ubuntu: ["18.04", "20.04"]}
   subs: [map, coll]
   zh: "多模态、多会话建图框架，支持地图合并、回环与多机器人协同建图。"
   added: "2026-10-05"
@@ -252,9 +284,12 @@
   paper: "https://arxiv.org/abs/2107.06829"
   ids: {arxiv: "2107.06829"}
   repos:
-    - {name: hku-mars/FAST_LIO, official: true}
+    - name: hku-mars/FAST_LIO
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic, noetic], ubuntu: ["18.04", "20.04"], docker: true, note: "README 要求 Ubuntu ≥ 16.04、ROS ≥ Melodic"}
   subs: [lio]
   zh: "迭代 EKF + ikd-Tree 直接配准原始点，速度快、适配多种激光雷达，机载 LIO 的常用选择。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: lio-sam-2020
@@ -267,7 +302,9 @@
   paper: "https://arxiv.org/abs/2007.00258"
   ids: {arxiv: "2007.00258"}
   repos:
-    - {name: TixiaoShan/LIO-SAM, official: true}
+    - name: TixiaoShan/LIO-SAM
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic, melodic], ubuntu: ["16.04", "18.04"], docker: true}
   subs: [lio]
   zh: "基于因子图的激光-惯性紧耦合，可融合 GPS 与回环因子。"
   added: "2026-10-05"
@@ -282,7 +319,9 @@
   paper: "https://arxiv.org/abs/2104.10831"
   ids: {arxiv: "2104.10831"}
   repos:
-    - {name: TixiaoShan/LVI-SAM, official: true}
+    - name: TixiaoShan/LVI-SAM
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic, melodic], docker: true}
   subs: [lio]
   zh: "激光-视觉-惯性因子图融合，两个子系统互相辅助，任一失效时系统仍可运行。"
   added: "2026-10-05"
@@ -297,7 +336,9 @@
   paper: "https://arxiv.org/abs/2109.07982"
   ids: {arxiv: "2109.07982"}
   repos:
-    - {name: hku-mars/r3live, official: true}
+    - name: hku-mars/r3live
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1}
   subs: [lio, map]
   zh: "激光-惯性-视觉紧耦合，实时输出带 RGB 颜色的稠密点云地图。"
   added: "2026-10-05"
@@ -312,9 +353,12 @@
   paper: "https://arxiv.org/abs/2408.14035"
   ids: {arxiv: "2408.14035"}
   repos:
-    - {name: hku-mars/FAST-LIVO2, official: true}
+    - name: hku-mars/FAST-LIVO2
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ubuntu: ["18.04", "20.04"]}
   subs: [lio]
   zh: "直接法激光-惯性-视觉里程计，ESIKF 顺序更新，兼顾精度与效率。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: point-lio-2023
@@ -327,7 +371,9 @@
   paper: "https://doi.org/10.1002/aisy.202200459"
   ids: {doi: "10.1002/aisy.202200459"}
   repos:
-    - {name: hku-mars/Point-LIO, official: true}
+    - name: hku-mars/Point-LIO
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [noetic], ubuntu: ["20.04"]}
   subs: [lio]
   zh: "逐点更新的高带宽 LIO，能应对剧烈运动和 IMU 饱和。"
   added: "2026-10-05"
@@ -342,7 +388,9 @@
   paper: "https://arxiv.org/abs/2203.03749"
   ids: {arxiv: "2203.03749"}
   repos:
-    - {name: vectr-ucla/direct_lidar_inertial_odometry, official: true}
+    - name: vectr-ucla/direct_lidar_inertial_odometry
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [noetic], ubuntu: ["20.04"], note: "ROS 2 版本在 feature/ros2 分支"}
   subs: [lio]
   zh: "轻量 LIO，以连续时间运动模型逐点去畸变，适合算力受限的空中平台。"
   added: "2026-10-05"
@@ -357,7 +405,9 @@
   paper: "https://arxiv.org/abs/2209.15397"
   ids: {arxiv: "2209.15397"}
   repos:
-    - {name: PRBonn/kiss-icp, official: true}
+    - name: PRBonn/kiss-icp
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros2, note: "ROS 1 已不再支持"}
   subs: [lio]
   zh: "极简的点到点 ICP 激光里程计，几乎无需调参即可跨平台使用。"
   added: "2026-10-05"
@@ -372,7 +422,9 @@
   paper: "https://doi.org/10.1109/LRA.2022.3152830"
   ids: {doi: "10.1109/LRA.2022.3152830"}
   repos:
-    - {name: gaoxiang12/faster-lio, official: true}
+    - name: gaoxiang12/faster-lio
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic, noetic], ubuntu: ["18.04", "20.04"], docker: true}
   subs: [lio]
   zh: "用并行稀疏增量体素（iVox）替代 ikd-Tree，在 FAST-LIO2 基础上进一步提速。"
   added: "2026-10-05"
@@ -402,7 +454,9 @@
   paper: "https://arxiv.org/abs/2407.10344"
   ids: {arxiv: "2407.10344"}
   repos:
-    - {name: koide3/glim, official: true}
+    - name: koide3/glim
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: none, ubuntu: ["22.04", "24.04"], cuda: optional, cuda_version: ["12.2", "12.6", "13.1"], docker: true, jetson: true, note: "ROS 2 接口在 glim_ros2 仓库；在 Jetson Orin 上测试过"}
   subs: [lio, map]
   zh: "以 GPU 加速扫描匹配因子的激光-惯性定位与建图框架，全局一致性好。"
   added: "2026-10-05"
@@ -477,9 +531,12 @@
   paper: "https://arxiv.org/abs/1907.01531"
   ids: {arxiv: "1907.01531"}
   repos:
-    - {name: HKUST-Aerial-Robotics/Fast-Planner, official: true}
+    - name: HKUST-Aerial-Robotics/Fast-Planner
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic, noetic], ubuntu: ["18.04", "20.04"], cuda: optional, note: "CUDA 只用于仿真中的深度图渲染"}
   subs: [plan]
   zh: "动力学 A* 路径搜索 + B 样条轨迹优化 + 时间重分配，快速自主飞行的经典框架。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: ego-planner-2021
@@ -492,9 +549,12 @@
   paper: "https://arxiv.org/abs/2008.08835"
   ids: {arxiv: "2008.08835"}
   repos:
-    - {name: ZJU-FAST-Lab/ego-planner, official: true}
+    - name: ZJU-FAST-Lab/ego-planner
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ubuntu: ["16.04", "18.04", "20.04"], cuda: optional, note: "CUDA 只用于仿真中的深度图渲染"}
   subs: [plan]
   zh: "无需构建 ESDF 的梯度局部规划器，只在碰撞段构造惩罚，计算量大幅降低。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: gcopter-2022
@@ -523,9 +583,12 @@
   paper: "https://arxiv.org/abs/1907.00520"
   ids: {arxiv: "1907.00520"}
   repos:
-    - {name: HKUST-Aerial-Robotics/Teach-Repeat-Replan, official: true}
+    - name: HKUST-Aerial-Robotics/Teach-Repeat-Replan
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [kinetic], ubuntu: ["16.04"], cuda: optional}
   subs: [plan]
   zh: "人工示教路线 → 自动生成激进轨迹 → 飞行中局部重规划的完整系统。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: faster-2021
@@ -568,7 +631,9 @@
   paper: "https://www.science.org/doi/10.1126/scirobotics.ado6187"
   ids: {doi: "10.1126/scirobotics.ado6187"}
   repos:
-    - {name: hku-mars/SUPER, official: true}
+    - name: hku-mars/SUPER
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: both, ros_distro: [noetic, foxy], ubuntu: ["20.04"], note: "ROS1 Noetic 为主要支持平台"}
   subs: [plan]
   zh: "激光雷达无人机在未知环境中以 20 m/s 以上速度安全飞行的规划系统。"
   added: "2026-10-05"
@@ -702,9 +767,12 @@
   paper: "https://arxiv.org/abs/2010.11561"
   ids: {arxiv: "2010.11561"}
   repos:
-    - {name: HKUST-Aerial-Robotics/FUEL, official: true}
+    - name: HKUST-Aerial-Robotics/FUEL
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ros_distro: [melodic, noetic], ubuntu: ["18.04", "20.04"], cuda: none}
   subs: [expl]
   zh: "增量维护前沿信息结构（FIS）并分层规划，大幅提升未知环境的探索效率。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: racer-2023
@@ -824,9 +892,12 @@
   paper: "https://arxiv.org/abs/2011.04183"
   ids: {arxiv: "2011.04183"}
   repos:
-    - {name: ZJU-FAST-Lab/ego-planner-swarm, official: true}
+    - name: ZJU-FAST-Lab/ego-planner-swarm
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ubuntu: ["16.04", "18.04", "20.04"], cuda: optional, note: "CUDA 只用于仿真中的深度图渲染"}
   subs: [swarm, plan]
   zh: "基于 EGO-Planner 的去中心化集群，仅用机载算力在密集环境中避障并互相避让。"
+  real_flight: experiment
   added: "2026-10-05"
 
 - id: mader-2021
@@ -900,7 +971,9 @@
   paper: "https://doi.org/10.1109/ICRA.2015.7140074"
   ids: {doi: "10.1109/ICRA.2015.7140074"}
   repos:
-    - {name: PX4/PX4-Autopilot, official: true}
+    - name: PX4/PX4-Autopilot
+      official: true
+      repro: {source: readme, checked: "2026-10-07", px4: true}
   subs: [ctrl, tool]
   zh: "最主流的开源飞控之一，支持多旋翼、固定翼、垂起等机型，科研与工业广泛使用。"
   added: "2026-10-05"
@@ -1133,6 +1206,7 @@
   subs: [det, data]
   tags: ["红外"]
   zh: "无人机 RGB-红外双模态车辆检测数据集，并提出不确定性感知的跨模态融合方法。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: dogfight-2021
@@ -1526,6 +1600,7 @@
     - {name: YeLyuUT/UAVidToolKit, official: true}
   subs: [seg, data]
   zh: "倾斜视角 4K 无人机视频语义分割数据集（8 类），附标注与评测工具。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: uav-human-2021
@@ -1541,6 +1616,7 @@
     - {name: sutdcv/UAV-Human, official: true}
   subs: [seg, data]
   zh: "无人机视角的人体行为理解基准，涵盖动作识别、姿态估计、行人重识别与属性识别。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: airsim-2017
@@ -1658,7 +1734,9 @@
   paper: "https://arxiv.org/abs/2003.09700"
   ids: {arxiv: "2003.09700"}
   repos:
-    - {name: robin-shaun/XTDrone, official: true}
+    - name: robin-shaun/XTDrone
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, px4: true}
   subs: [sim]
   zh: "基于 PX4 + ROS + Gazebo 的通用无人机仿真平台，支持多机型与多机协同，中文教程完善。"
   added: "2026-10-05"
@@ -1720,6 +1798,7 @@
   site: "https://projects.asl.ethz.ch/datasets/euroc-mav/"
   subs: [data]
   zh: "室内微型无人机双目 + IMU 数据集，带高精度真值，是 VIO 评测最常用的基准。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: uzh-fpv-2019
@@ -1733,6 +1812,7 @@
   site: "https://fpv.ifi.uzh.ch/"
   subs: [data]
   zh: "FPV 竞速无人机的激进飞行数据集，含事件相机，用于极端运动下的 VIO 评测。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: blackbird-2020
@@ -1748,6 +1828,7 @@
     - {name: mit-aera/Blackbird-Dataset, official: true}
   subs: [data]
   zh: "高速激进飞行的四旋翼数据集，含 IMU、电机转速与照片级渲染图像。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: ntu-viral-2022
@@ -1763,6 +1844,7 @@
     - {name: ntu-aris/ntu_viral_dataset, official: true}
   subs: [data]
   zh: "无人机搭载双目、IMU、UWB 与两台激光雷达的多传感器融合数据集。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: tartanair-2020
@@ -1778,6 +1860,7 @@
     - {name: castacks/tartanair_tools, official: true}
   subs: [data]
   zh: "大规模仿真 SLAM 数据集，覆盖极端光照、天气与动态物体等困难场景。"
+  real_flight: none
   added: "2026-10-05"
 
 - id: visdrone-2021
@@ -1793,6 +1876,7 @@
     - {name: VisDrone/VisDrone-Dataset, official: true}
   subs: [data, det, trk]
   zh: "无人机视角检测与跟踪基准（采集自 14 座城市），涵盖图像/视频检测、单目标与多目标跟踪。"
+  real_flight: data
   added: "2026-10-05"
 
 - id: dota-2018
@@ -1821,7 +1905,9 @@
   paper: "https://doi.org/10.1109/IROS.2013.6696514"
   ids: {doi: "10.1109/IROS.2013.6696514"}
   repos:
-    - {name: ethz-asl/kalibr, official: true}
+    - name: ethz-asl/kalibr
+      official: true
+      repro: {source: readme, checked: "2026-10-07", ros: ros1, ubuntu: ["16.04", "18.04", "20.04"], docker: true}
   subs: [tool]
   tags: ["标定"]
   zh: "相机-IMU 时空联合标定工具箱，多相机 / IMU 标定的事实标准。"

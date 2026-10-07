@@ -18,6 +18,25 @@ import datalib  # noqa: E402
 
 ARXIV_URL = re.compile(r"^https://arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?$")
 DOI_URL = re.compile(r"^https://(?:dx\.)?doi\.org/(10\.\S+)$")
+ROS1_DISTROS = {"indigo", "kinetic", "melodic", "noetic"}
+
+
+def check_repro(repro):
+    """repro 中各字段之间的一致性；返回错误消息列表。"""
+    if not repro:
+        return []
+    msgs = []
+    ros, distros = repro.get("ros"), repro.get("ros_distro", [])
+    if distros and ros in (None, "none"):
+        msgs.append("填了 ros_distro，ros 应为 ros1 / ros2 / both")
+    for d in distros:
+        if ros == "ros1" and d not in ROS1_DISTROS or ros == "ros2" and d in ROS1_DISTROS:
+            msgs.append(f"ROS 发行版 {d} 与 ros: {ros} 不符")
+    if repro.get("cuda_version") and repro.get("cuda") in (None, "none"):
+        msgs.append("填了 cuda_version，cuda 应为 required 或 optional")
+    if repro.get("px4_version") and not repro.get("px4"):
+        msgs.append("填了 px4_version，px4 应为 true")
+    return msgs
 
 
 def check(papers, taxonomy, stats, schema):
@@ -82,6 +101,19 @@ def check(papers, taxonomy, stats, schema):
         unique("title", datalib.norm_title(p["title"]), pid, "标题")
         for r in p.get("repos", []):
             unique("repo", datalib.repo_key(r["name"]), pid, f"仓库 {r['name']}")
+            errors.extend((pid, f"仓库 {r['name']} 的 repro：{m}") for m in check_repro(r.get("repro")))
+
+    # evaluated_on / datasets 只能引用已收录的数据集条目
+    kind_of = {p["id"]: p["kind"] for p in papers}
+    for p in papers:
+        for field in ("evaluated_on", "datasets"):
+            for ref in p.get(field, []):
+                if ref == p["id"]:
+                    errors.append((p["id"], f"{field} 不能引用自己"))
+                elif ref not in kind_of:
+                    errors.append((p["id"], f"{field} 中的 {ref} 不是已收录条目的 id"))
+                elif kind_of[ref] != "dataset":
+                    errors.append((p["id"], f"{field} 中的 {ref} 不是数据集条目（kind 为 {kind_of[ref]}）"))
 
     # 与机器生成的统计数据对照
     stat_repos = stats.get("repos", {})
