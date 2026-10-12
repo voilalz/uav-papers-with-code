@@ -42,9 +42,9 @@
       "updated": "2026-03-25",
       "archived": false
     },
-    "all-hands-ai/openhands": {
-      "full_name": "OpenHands/OpenHands",
-      "stars": 90660,
+    "anomalyco/opencode": {
+      "full_name": "anomalyco/opencode",
+      "stars": 212805,
       "lang": "TypeScript",
       "license": "MIT",
       "updated": "2026-10-12",
@@ -194,7 +194,7 @@
       "updated": "2026-10-11",
       "archived": false
     },
-    "comfyanonymous/comfyui": {
+    "comfy-org/comfyui": {
       "full_name": "Comfy-Org/ComfyUI",
       "stars": 137033,
       "lang": "Python",
@@ -378,7 +378,7 @@
       "updated": "2026-10-12",
       "archived": false
     },
-    "f/awesome-chatgpt-prompts": {
+    "f/prompts.chat": {
       "full_name": "f/prompts.chat",
       "stars": 172672,
       "lang": null,
@@ -392,6 +392,14 @@
       "lang": "Jupyter",
       "license": "Apache-2.0",
       "updated": "2024-09-18",
+      "archived": false
+    },
+    "firecrawl/firecrawl": {
+      "full_name": "firecrawl/firecrawl",
+      "stars": 190640,
+      "lang": "TypeScript",
+      "license": "AGPL-3.0",
+      "updated": "2026-10-11",
       "archived": false
     },
     "flowiseai/flowise": {
@@ -426,7 +434,7 @@
       "updated": "2026-09-04",
       "archived": false
     },
-    "genesis-embodied-ai/genesis": {
+    "genesis-embodied-ai/genesis-world": {
       "full_name": "Genesis-Embodied-AI/genesis-world",
       "stars": 30046,
       "lang": "Python",
@@ -498,7 +506,7 @@
       "updated": "2026-10-12",
       "archived": false
     },
-    "hiyouga/llama-factory": {
+    "hiyouga/llamafactory": {
       "full_name": "hiyouga/LlamaFactory",
       "stars": 75423,
       "lang": "Python",
@@ -874,7 +882,7 @@
       "updated": "2022-09-01",
       "archived": false
     },
-    "lobehub/lobe-chat": {
+    "lobehub/lobehub": {
       "full_name": "lobehub/lobehub",
       "stars": 83155,
       "lang": "TypeScript",
@@ -896,14 +904,6 @@
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-10-07",
-      "archived": false
-    },
-    "mendableai/firecrawl": {
-      "full_name": "firecrawl/firecrawl",
-      "stars": 190640,
-      "lang": "TypeScript",
-      "license": "AGPL-3.0",
-      "updated": "2026-10-11",
       "archived": false
     },
     "microsoft/airsim": {
@@ -1226,6 +1226,14 @@
       "updated": "2026-10-11",
       "archived": false
     },
+    "openhands/openhands": {
+      "full_name": "OpenHands/OpenHands",
+      "stars": 90660,
+      "lang": "TypeScript",
+      "license": "MIT",
+      "updated": "2026-10-12",
+      "archived": false
+    },
     "opt4smart/crazychoir": {
       "full_name": "OPT4SMART/crazychoir",
       "stars": 54,
@@ -1426,14 +1434,6 @@
       "updated": "2026-09-07",
       "archived": false
     },
-    "sst/opencode": {
-      "full_name": "anomalyco/opencode",
-      "stars": 212805,
-      "lang": "TypeScript",
-      "license": "MIT",
-      "updated": "2026-10-12",
-      "archived": false
-    },
     "sutdcv/uav-human": {
       "full_name": "sutdcv/UAV-Human",
       "stars": 259,
@@ -1610,6 +1610,14 @@
       "updated": "2024-11-08",
       "archived": false
     },
+    "verl-project/verl": {
+      "full_name": "verl-project/verl",
+      "stars": 23833,
+      "lang": "Python",
+      "license": "Apache-2.0",
+      "updated": "2026-10-12",
+      "archived": false
+    },
     "visdrone/dronevehicle": {
       "full_name": "VisDrone/DroneVehicle",
       "stars": 748,
@@ -1677,14 +1685,6 @@
     "vllm-project/vllm": {
       "full_name": "vllm-project/vllm",
       "stars": 93619,
-      "lang": "Python",
-      "license": "Apache-2.0",
-      "updated": "2026-10-12",
-      "archived": false
-    },
-    "volcengine/verl": {
-      "full_name": "verl-project/verl",
-      "stars": 23833,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-10-12",

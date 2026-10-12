@@ -22,6 +22,7 @@
 {{STYLE}}
 /* ── AI 页 ── */
 .lede code { font-family: var(--f-mono); font-size: .92em; }
+.e-name .own { display: block; font-family: var(--f-mono); font-weight: 400; font-size: 12px; color: var(--muted); }
 .seg.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ai-rail-extra { display: grid; gap: 14px; }
 @media (max-width: 959.98px) {
@@ -220,7 +221,7 @@
     var url = "https://github.com/" + d.name;
     var note = d.note ? '<span class="note">' + esc(d.note) + "</span>" : "";
     return '<li class="entry" id="' + esc(d.id) + '">' +
-      '<div class="e-side"><h2 class="e-name">' + esc(d.short) + '<a class="perma" href="#' + esc(d.id) + '" title="本条链接" aria-label="' + esc(d.short) + ' 的链接">#</a></h2>' + star + '<p class="e-meta">' + meta + "</p></div>" +
+      '<div class="e-side"><h2 class="e-name"><span class="own">' + esc(d.name.split("/")[0]) + ' /</span>' + esc(d.short) + '<a class="perma" href="#' + esc(d.id) + '" title="本条链接" aria-label="' + esc(d.short) + ' 的链接">#</a></h2>' + star + '<p class="e-meta">' + meta + "</p></div>" +
       '<div class="e-main">' +
         '<p class="e-zh">' + esc(d.zh) + "</p>" +
         '<div class="e-foot"><a class="lnk" href="' + esc(url) + '" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">' + esc(d.name) + ' ↗</span></a>' +

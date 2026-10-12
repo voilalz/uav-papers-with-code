@@ -36,8 +36,8 @@ repos:
   - {name: RooCodeInc/Roo-Code, cat: coding, added: "2026-10-12", zh: "由 Cline 衍生的 VS Code 编程 Agent，支持多种工作模式和自定义角色。"}
   - {name: Aider-AI/aider, cat: coding, added: "2026-10-12", zh: "终端里的结对编程工具，直接在 git 仓库中改代码并自动提交。"}
   - {name: continuedev/continue, cat: coding, added: "2026-10-12", zh: "开源 IDE AI 助手（VS Code / JetBrains），可接入任意模型。"}
-  - {name: All-Hands-AI/OpenHands, cat: coding, added: "2026-10-12", zh: "开源的自主软件开发 Agent 平台（原 OpenDevin），在沙箱中写代码、跑命令、浏览网页。"}
-  - {name: sst/opencode, cat: coding, added: "2026-10-12", zh: "终端里的开源 AI 编程 Agent，可切换多家模型。"}
+  - {name: OpenHands/OpenHands, cat: coding, added: "2026-10-12", zh: "开源的自主软件开发 Agent 平台（原 OpenDevin），在沙箱中写代码、跑命令、浏览网页。"}
+  - {name: anomalyco/opencode, cat: coding, added: "2026-10-12", zh: "终端里的开源 AI 编程 Agent，可切换多家模型。"}
   - {name: github/spec-kit, cat: coding, added: "2026-10-12", zh: "GitHub 的规格驱动开发工具包：先写规格和计划，再让编程 Agent 按步骤实现。"}
 
   # ── Skills 与 MCP ──
@@ -64,7 +64,6 @@ repos:
   - {name: openai/whisper, cat: model, added: "2026-10-12", zh: "OpenAI 的多语言语音识别与翻译模型。"}
   - {name: openai/CLIP, cat: model, added: "2026-10-12", zh: "图文对比学习模型，零样本图像分类与多模态检索的基础。"}
   - {name: facebookresearch/segment-anything, cat: model, added: "2026-10-12", zh: "Meta 的通用图像分割模型 SAM，可按点、框提示分割任意物体。"}
-  - {name: Stability-AI/stablediffusion, cat: model, added: "2026-10-12", zh: "Stable Diffusion 2 系列文生图模型的官方代码。"}
   - {name: black-forest-labs/flux, cat: model, added: "2026-10-12", zh: "FLUX.1 文生图模型的官方推理代码。"}
   - {name: karpathy/nanoGPT, cat: model, added: "2026-10-12", zh: "最简洁的 GPT 训练与微调实现，几百行代码复现 GPT-2。"}
 
@@ -82,12 +81,12 @@ repos:
 
   # ── 训练与微调 ──
   - {name: pytorch/pytorch, cat: train, added: "2026-10-12", zh: "主流深度学习框架。"}
-  - {name: hiyouga/LLaMA-Factory, cat: train, added: "2026-10-12", zh: "统一的大模型微调框架，支持上百种模型和 LoRA、DPO 等方法，带 Web 界面。"}
+  - {name: hiyouga/LlamaFactory, cat: train, added: "2026-10-12", zh: "统一的大模型微调框架，支持上百种模型和 LoRA、DPO 等方法，带 Web 界面。"}
   - {name: unslothai/unsloth, cat: train, added: "2026-10-12", zh: "更快、更省显存的 LLM 微调与强化学习训练。"}
   - {name: huggingface/peft, cat: train, added: "2026-10-12", zh: "LoRA 等参数高效微调方法库。"}
   - {name: huggingface/trl, cat: train, added: "2026-10-12", zh: "用 SFT、DPO、GRPO 等方法做语言模型后训练的库。"}
   - {name: deepspeedai/DeepSpeed, cat: train, added: "2026-10-12", zh: "微软的大规模分布式训练与推理优化库，ZeRO 显存优化。"}
-  - {name: volcengine/verl, cat: train, added: "2026-10-12", zh: "字节火山引擎的 LLM 强化学习训练框架。"}
+  - {name: verl-project/verl, cat: train, added: "2026-10-12", zh: "字节跳动开源的 LLM 强化学习训练框架（原 volcengine/verl）。"}
   - {name: axolotl-ai-cloud/axolotl, cat: train, added: "2026-10-12", zh: "用 YAML 配置驱动的 LLM 微调工具。"}
   - {name: karpathy/nanochat, cat: train, added: "2026-10-12", zh: "从分词、预训练到对话微调和网页界面，几百美元复现一个完整的小型 ChatGPT。"}
   - {name: jingyaogong/minimind, cat: train, added: "2026-10-12", zh: "从零训练一个 26M 参数小模型的完整中文教程与代码。"}
@@ -103,26 +102,26 @@ repos:
   - {name: docling-project/docling, cat: rag, added: "2026-10-12", zh: "IBM 开源的文档解析工具，把 PDF、Office 等转成结构化数据。"}
   - {name: opendatalab/MinerU, cat: rag, added: "2026-10-12", zh: "把 PDF 高质量转换为 Markdown / JSON，擅长公式与表格。"}
   - {name: microsoft/markitdown, cat: rag, added: "2026-10-12", zh: "把各种文件转成 Markdown 供 LLM 使用的小工具。"}
-  - {name: mendableai/firecrawl, cat: rag, added: "2026-10-12", zh: "把整个网站抓取成 LLM 可用的 Markdown 或结构化数据。"}
+  - {name: firecrawl/firecrawl, cat: rag, added: "2026-10-12", zh: "把整个网站抓取成 LLM 可用的 Markdown 或结构化数据。"}
   - {name: unclecode/crawl4ai, cat: rag, added: "2026-10-12", zh: "面向 LLM 的开源网页爬虫。"}
 
   # ── 应用与平台 ──
   - {name: langgenius/dify, cat: app, added: "2026-10-12", zh: "可视化搭建 LLM 应用和 Agent 工作流的开源平台。"}
   - {name: n8n-io/n8n, cat: app, added: "2026-10-12", zh: "支持 AI 节点的工作流自动化平台，可自托管。"}
   - {name: open-webui/open-webui, cat: app, added: "2026-10-12", zh: "自托管的 AI 对话界面，可接 Ollama 和 OpenAI 兼容接口。"}
-  - {name: lobehub/lobe-chat, cat: app, added: "2026-10-12", zh: "现代化的开源 AI 对话框架，支持多模型、插件与知识库。"}
+  - {name: lobehub/lobehub, cat: app, added: "2026-10-12", zh: "现代化的开源 AI 对话框架，支持多模型、插件与知识库。"}
   - {name: langflow-ai/langflow, cat: app, added: "2026-10-12", zh: "拖拽式搭建 Agent 与 RAG 流程的可视化工具。"}
   - {name: FlowiseAI/Flowise, cat: app, added: "2026-10-12", zh: "拖拽式构建 LLM 应用与 Agent。"}
   - {name: Mintplex-Labs/anything-llm, cat: app, added: "2026-10-12", zh: "一体化桌面 / 服务器 AI 应用，内置 RAG 与 Agent。"}
   - {name: ChatGPTNextWeb/NextChat, cat: app, added: "2026-10-12", zh: "轻量的跨平台 AI 对话客户端。"}
   - {name: CherryHQ/cherry-studio, cat: app, added: "2026-10-12", zh: "支持多家模型服务的桌面 AI 客户端。"}
   - {name: janhq/jan, cat: app, added: "2026-10-12", zh: "完全离线运行的本地 ChatGPT 替代品。"}
-  - {name: comfyanonymous/ComfyUI, cat: app, added: "2026-10-12", zh: "节点式的扩散模型图像 / 视频生成界面。"}
+  - {name: Comfy-Org/ComfyUI, cat: app, added: "2026-10-12", zh: "节点式的扩散模型图像 / 视频生成界面。"}
   - {name: AUTOMATIC1111/stable-diffusion-webui, cat: app, added: "2026-10-12", zh: "最流行的 Stable Diffusion 网页界面。"}
 
   # ── 具身智能与仿真 ──
   - {name: huggingface/lerobot, cat: embodied, added: "2026-10-12", zh: "Hugging Face 的机器人学习库：数据集、模仿学习 / VLA 策略与低成本机械臂。"}
-  - {name: Genesis-Embodied-AI/Genesis, cat: embodied, added: "2026-10-12", zh: "面向机器人与具身智能的通用物理仿真平台。"}
+  - {name: Genesis-Embodied-AI/genesis-world, cat: embodied, added: "2026-10-12", zh: "面向机器人与具身智能的通用物理仿真平台。"}
   - {name: google-deepmind/mujoco, cat: embodied, added: "2026-10-12", zh: "机器人与强化学习常用的物理仿真引擎。"}
   - {name: microsoft/AirSim, cat: embodied, added: "2026-10-12", zh: "基于虚幻引擎的无人机与汽车仿真平台，后续由 Project AirSim 接替。"}
   - {name: isaac-sim/IsaacLab, cat: embodied, added: "2026-10-12", zh: "基于 Isaac Sim 的 GPU 并行机器人学习框架。"}
@@ -139,5 +138,5 @@ repos:
   - {name: dair-ai/Prompt-Engineering-Guide, cat: learn, added: "2026-10-12", zh: "提示词工程、RAG 与 Agent 的指南和论文合集。"}
   - {name: labmlai/annotated_deep_learning_paper_implementations, cat: learn, added: "2026-10-12", zh: "带逐行注释的深度学习论文 PyTorch 实现。"}
   - {name: Shubhamsaboo/awesome-llm-apps, cat: learn, added: "2026-10-12", zh: "可运行的 LLM 应用、RAG 与 Agent 示例合集。"}
-  - {name: f/awesome-chatgpt-prompts, cat: learn, added: "2026-10-12", zh: "社区整理的提示词合集。"}
+  - {name: f/prompts.chat, cat: learn, added: "2026-10-12", zh: "社区整理的提示词合集。"}
   - {name: x1xhlol/system-prompts-and-models-of-ai-tools, cat: learn, added: "2026-10-12", zh: "收集各款 AI 编程工具和助手公开的系统提示词。"}
