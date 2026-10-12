@@ -1,0 +1,143 @@
+# AI 高星仓库栏目（ai.html）：人工维护。字段说明见 CONTRIBUTING.md，格式由 schema/ai_repo.schema.json 校验。
+# Star 数、语言、最近提交等与论文仓库共用 data/generated/repo_stats.json，由脚本每周刷新，请勿在这里填写。
+# 收录标准：AI 领域被广泛使用或有代表性的开源仓库，Star 一般在 5,000 以上。
+
+categories:
+  - {id: agent, code: AGT, full: Agent 框架, short: Agent}
+  - {id: coding, code: COD, full: AI 编程, short: 编程}
+  - {id: skills, code: SKL, full: Skills 与 MCP, short: Skills}
+  - {id: model, code: MDL, full: 模型与模型库, short: 模型}
+  - {id: infer, code: INF, full: 推理与部署, short: 推理}
+  - {id: train, code: TRN, full: 训练与微调, short: 训练}
+  - {id: rag, code: RAG, full: RAG 与数据, short: RAG}
+  - {id: app, code: APP, full: 应用与平台, short: 应用}
+  - {id: embodied, code: EMB, full: 具身智能与仿真, short: 具身}
+  - {id: learn, code: EDU, full: 教程与资源, short: 学习}
+
+repos:
+  # ── Agent 框架 ──
+  - {name: langchain-ai/langchain, cat: agent, added: "2026-10-12", zh: "构建 LLM 应用的通用框架，为模型、工具、检索和 Agent 提供统一接口。"}
+  - {name: langchain-ai/langgraph, cat: agent, added: "2026-10-12", zh: "用有状态的图来编排多步、多 Agent 工作流，支持持久化与人工介入。"}
+  - {name: microsoft/autogen, cat: agent, added: "2026-10-12", zh: "微软的多 Agent 框架，多个 Agent 通过对话协作完成任务。"}
+  - {name: crewAIInc/crewAI, cat: agent, added: "2026-10-12", zh: "按“角色 + 任务”组织多 Agent 团队协作的 Python 框架。"}
+  - {name: Significant-Gravitas/AutoGPT, cat: agent, added: "2026-10-12", zh: "最早让自主 Agent 走红的项目，现在是可视化搭建和运行 Agent 的平台。"}
+  - {name: FoundationAgents/MetaGPT, cat: agent, added: "2026-10-12", zh: "把软件公司的分工（产品、架构、工程）搬进多 Agent 协作，输入一句需求产出完整项目。"}
+  - {name: openai/openai-agents-python, cat: agent, added: "2026-10-12", zh: "OpenAI 官方轻量 Agent SDK：工具调用、Agent 间移交、护栏与追踪。"}
+  - {name: huggingface/smolagents, cat: agent, added: "2026-10-12", zh: "Hugging Face 的极简 Agent 库，Agent 直接写 Python 代码来调用工具。"}
+  - {name: agno-agi/agno, cat: agent, added: "2026-10-12", zh: "多模态 Agent 框架，内置记忆、知识库、工具与多 Agent 团队。"}
+  - {name: browser-use/browser-use, cat: agent, added: "2026-10-12", zh: "让 LLM Agent 操作真实浏览器完成网页任务。"}
+  - {name: microsoft/semantic-kernel, cat: agent, added: "2026-10-12", zh: "微软面向企业的 LLM 编排与 Agent SDK，支持 C#、Python 和 Java。"}
+
+  # ── AI 编程 ──
+  - {name: anthropics/claude-code, cat: coding, added: "2026-10-12", zh: "Anthropic 官方的终端编程 Agent，能读写代码库、执行命令，支持 Skills、MCP、子 Agent 与插件。"}
+  - {name: openai/codex, cat: coding, added: "2026-10-12", zh: "OpenAI 的终端编程 Agent（Codex CLI）。"}
+  - {name: google-gemini/gemini-cli, cat: coding, added: "2026-10-12", zh: "Google 开源的终端 AI Agent，接入 Gemini 模型，支持 MCP 扩展。"}
+  - {name: cline/cline, cat: coding, added: "2026-10-12", zh: "VS Code 中的自主编程 Agent，可编辑文件、运行命令、操作浏览器，每步需确认。"}
+  - {name: RooCodeInc/Roo-Code, cat: coding, added: "2026-10-12", zh: "由 Cline 衍生的 VS Code 编程 Agent，支持多种工作模式和自定义角色。"}
+  - {name: Aider-AI/aider, cat: coding, added: "2026-10-12", zh: "终端里的结对编程工具，直接在 git 仓库中改代码并自动提交。"}
+  - {name: continuedev/continue, cat: coding, added: "2026-10-12", zh: "开源 IDE AI 助手（VS Code / JetBrains），可接入任意模型。"}
+  - {name: All-Hands-AI/OpenHands, cat: coding, added: "2026-10-12", zh: "开源的自主软件开发 Agent 平台（原 OpenDevin），在沙箱中写代码、跑命令、浏览网页。"}
+  - {name: sst/opencode, cat: coding, added: "2026-10-12", zh: "终端里的开源 AI 编程 Agent，可切换多家模型。"}
+  - {name: github/spec-kit, cat: coding, added: "2026-10-12", zh: "GitHub 的规格驱动开发工具包：先写规格和计划，再让编程 Agent 按步骤实现。"}
+
+  # ── Skills 与 MCP ──
+  - {name: anthropics/skills, cat: skills, added: "2026-10-12", zh: "Anthropic 官方 Agent Skills 仓库：文档处理、设计、开发等技能示例与 SKILL.md 规范。"}
+  - {name: obra/superpowers, cat: skills, added: "2026-10-12", zh: "面向 Claude Code 等编程 Agent 的技能库：头脑风暴、写计划、TDD、系统化调试等工作流。"}
+  - {name: hesreallyhim/awesome-claude-code, cat: skills, added: "2026-10-12", zh: "Claude Code 的斜杠命令、Skills、Hooks、子 Agent 与工作流精选清单。"}
+  - {name: wshobson/agents, cat: skills, added: "2026-10-12", zh: "Claude Code 的子 Agent、插件与技能合集，覆盖开发、运维、数据等方向。"}
+  - {name: ComposioHQ/awesome-claude-skills, cat: skills, added: "2026-10-12", zh: "Claude Skills 精选清单，收集官方与社区的各类技能。"}
+  - {name: anthropics/claude-cookbooks, cat: skills, added: "2026-10-12", zh: "Anthropic 官方 Cookbook：工具调用、RAG、Agent、Skills 等可运行示例。"}
+  - {name: modelcontextprotocol/servers, cat: skills, added: "2026-10-12", zh: "Model Context Protocol 官方参考服务器合集：文件系统、Git、网页抓取、记忆等。"}
+  - {name: modelcontextprotocol/python-sdk, cat: skills, added: "2026-10-12", zh: "MCP 官方 Python SDK，用于编写 MCP 服务器和客户端。"}
+  - {name: modelcontextprotocol/typescript-sdk, cat: skills, added: "2026-10-12", zh: "MCP 官方 TypeScript SDK。"}
+  - {name: punkpeye/awesome-mcp-servers, cat: skills, added: "2026-10-12", zh: "按领域分类的 MCP 服务器清单。"}
+  - {name: github/github-mcp-server, cat: skills, added: "2026-10-12", zh: "GitHub 官方 MCP 服务器：让 Agent 读写仓库、Issue、PR 与 Actions。"}
+  - {name: microsoft/playwright-mcp, cat: skills, added: "2026-10-12", zh: "微软的 Playwright MCP 服务器，Agent 通过可访问性树操作浏览器。"}
+  - {name: upstash/context7, cat: skills, added: "2026-10-12", zh: "为编程 Agent 提供最新版本库文档和代码示例的 MCP 服务器。"}
+
+  # ── 模型与模型库 ──
+  - {name: huggingface/transformers, cat: model, added: "2026-10-12", zh: "文本、视觉、语音与多模态模型的事实标准库，涵盖几乎所有主流开源模型。"}
+  - {name: deepseek-ai/DeepSeek-V3, cat: model, added: "2026-10-12", zh: "DeepSeek 的 671B MoE 开源大模型。"}
+  - {name: deepseek-ai/DeepSeek-R1, cat: model, added: "2026-10-12", zh: "DeepSeek 用强化学习训练的开源推理模型及蒸馏小模型。"}
+  - {name: QwenLM/Qwen3, cat: model, added: "2026-10-12", zh: "阿里通义千问 Qwen3 系列开源模型，含稠密与 MoE 版本。"}
+  - {name: openai/gpt-oss, cat: model, added: "2026-10-12", zh: "OpenAI 的开放权重推理模型 gpt-oss-120b / 20b 及参考实现。"}
+  - {name: openai/whisper, cat: model, added: "2026-10-12", zh: "OpenAI 的多语言语音识别与翻译模型。"}
+  - {name: openai/CLIP, cat: model, added: "2026-10-12", zh: "图文对比学习模型，零样本图像分类与多模态检索的基础。"}
+  - {name: facebookresearch/segment-anything, cat: model, added: "2026-10-12", zh: "Meta 的通用图像分割模型 SAM，可按点、框提示分割任意物体。"}
+  - {name: Stability-AI/stablediffusion, cat: model, added: "2026-10-12", zh: "Stable Diffusion 2 系列文生图模型的官方代码。"}
+  - {name: black-forest-labs/flux, cat: model, added: "2026-10-12", zh: "FLUX.1 文生图模型的官方推理代码。"}
+  - {name: karpathy/nanoGPT, cat: model, added: "2026-10-12", zh: "最简洁的 GPT 训练与微调实现，几百行代码复现 GPT-2。"}
+
+  # ── 推理与部署 ──
+  - {name: ollama/ollama, cat: infer, added: "2026-10-12", zh: "一条命令在本地下载并运行开源大模型。"}
+  - {name: ggml-org/llama.cpp, cat: infer, added: "2026-10-12", zh: "纯 C/C++ 的 LLM 推理引擎，支持量化，在 CPU、手机和各类 GPU 上运行。"}
+  - {name: vllm-project/vllm, cat: infer, added: "2026-10-12", zh: "高吞吐 LLM 推理与服务引擎，PagedAttention 显存管理。"}
+  - {name: sgl-project/sglang, cat: infer, added: "2026-10-12", zh: "高性能 LLM / 多模态模型服务框架，RadixAttention 前缀缓存。"}
+  - {name: NVIDIA/TensorRT-LLM, cat: infer, added: "2026-10-12", zh: "NVIDIA 针对自家 GPU 优化的 LLM 推理库。"}
+  - {name: huggingface/text-generation-inference, cat: infer, added: "2026-10-12", zh: "Hugging Face 的 LLM 推理服务。"}
+  - {name: mlc-ai/mlc-llm, cat: infer, added: "2026-10-12", zh: "基于机器学习编译把 LLM 部署到手机、浏览器和各类硬件。"}
+  - {name: exo-explore/exo, cat: infer, added: "2026-10-12", zh: "把家里的多台设备组成集群来运行大模型。"}
+  - {name: mudler/LocalAI, cat: infer, added: "2026-10-12", zh: "兼容 OpenAI API 的本地推理服务，可跑文本、图像和语音模型。"}
+  - {name: ggml-org/whisper.cpp, cat: infer, added: "2026-10-12", zh: "Whisper 语音识别的 C/C++ 实现，可在端侧实时运行。"}
+
+  # ── 训练与微调 ──
+  - {name: pytorch/pytorch, cat: train, added: "2026-10-12", zh: "主流深度学习框架。"}
+  - {name: hiyouga/LLaMA-Factory, cat: train, added: "2026-10-12", zh: "统一的大模型微调框架，支持上百种模型和 LoRA、DPO 等方法，带 Web 界面。"}
+  - {name: unslothai/unsloth, cat: train, added: "2026-10-12", zh: "更快、更省显存的 LLM 微调与强化学习训练。"}
+  - {name: huggingface/peft, cat: train, added: "2026-10-12", zh: "LoRA 等参数高效微调方法库。"}
+  - {name: huggingface/trl, cat: train, added: "2026-10-12", zh: "用 SFT、DPO、GRPO 等方法做语言模型后训练的库。"}
+  - {name: deepspeedai/DeepSpeed, cat: train, added: "2026-10-12", zh: "微软的大规模分布式训练与推理优化库，ZeRO 显存优化。"}
+  - {name: volcengine/verl, cat: train, added: "2026-10-12", zh: "字节火山引擎的 LLM 强化学习训练框架。"}
+  - {name: axolotl-ai-cloud/axolotl, cat: train, added: "2026-10-12", zh: "用 YAML 配置驱动的 LLM 微调工具。"}
+  - {name: karpathy/nanochat, cat: train, added: "2026-10-12", zh: "从分词、预训练到对话微调和网页界面，几百美元复现一个完整的小型 ChatGPT。"}
+  - {name: jingyaogong/minimind, cat: train, added: "2026-10-12", zh: "从零训练一个 26M 参数小模型的完整中文教程与代码。"}
+
+  # ── RAG 与数据 ──
+  - {name: run-llama/llama_index, cat: rag, added: "2026-10-12", zh: "把私有数据接入 LLM 的数据框架，RAG 与文档 Agent。"}
+  - {name: infiniflow/ragflow, cat: rag, added: "2026-10-12", zh: "基于深度文档理解的开源 RAG 引擎。"}
+  - {name: microsoft/graphrag, cat: rag, added: "2026-10-12", zh: "微软的基于知识图谱的 RAG 方法。"}
+  - {name: HKUDS/LightRAG, cat: rag, added: "2026-10-12", zh: "港大的轻量图结构 RAG，检索快、易于增量更新。"}
+  - {name: mem0ai/mem0, cat: rag, added: "2026-10-12", zh: "给 AI Agent 加长期记忆的记忆层。"}
+  - {name: chroma-core/chroma, cat: rag, added: "2026-10-12", zh: "面向 AI 应用的开源向量数据库。"}
+  - {name: milvus-io/milvus, cat: rag, added: "2026-10-12", zh: "可扩展的云原生向量数据库。"}
+  - {name: docling-project/docling, cat: rag, added: "2026-10-12", zh: "IBM 开源的文档解析工具，把 PDF、Office 等转成结构化数据。"}
+  - {name: opendatalab/MinerU, cat: rag, added: "2026-10-12", zh: "把 PDF 高质量转换为 Markdown / JSON，擅长公式与表格。"}
+  - {name: microsoft/markitdown, cat: rag, added: "2026-10-12", zh: "把各种文件转成 Markdown 供 LLM 使用的小工具。"}
+  - {name: mendableai/firecrawl, cat: rag, added: "2026-10-12", zh: "把整个网站抓取成 LLM 可用的 Markdown 或结构化数据。"}
+  - {name: unclecode/crawl4ai, cat: rag, added: "2026-10-12", zh: "面向 LLM 的开源网页爬虫。"}
+
+  # ── 应用与平台 ──
+  - {name: langgenius/dify, cat: app, added: "2026-10-12", zh: "可视化搭建 LLM 应用和 Agent 工作流的开源平台。"}
+  - {name: n8n-io/n8n, cat: app, added: "2026-10-12", zh: "支持 AI 节点的工作流自动化平台，可自托管。"}
+  - {name: open-webui/open-webui, cat: app, added: "2026-10-12", zh: "自托管的 AI 对话界面，可接 Ollama 和 OpenAI 兼容接口。"}
+  - {name: lobehub/lobe-chat, cat: app, added: "2026-10-12", zh: "现代化的开源 AI 对话框架，支持多模型、插件与知识库。"}
+  - {name: langflow-ai/langflow, cat: app, added: "2026-10-12", zh: "拖拽式搭建 Agent 与 RAG 流程的可视化工具。"}
+  - {name: FlowiseAI/Flowise, cat: app, added: "2026-10-12", zh: "拖拽式构建 LLM 应用与 Agent。"}
+  - {name: Mintplex-Labs/anything-llm, cat: app, added: "2026-10-12", zh: "一体化桌面 / 服务器 AI 应用，内置 RAG 与 Agent。"}
+  - {name: ChatGPTNextWeb/NextChat, cat: app, added: "2026-10-12", zh: "轻量的跨平台 AI 对话客户端。"}
+  - {name: CherryHQ/cherry-studio, cat: app, added: "2026-10-12", zh: "支持多家模型服务的桌面 AI 客户端。"}
+  - {name: janhq/jan, cat: app, added: "2026-10-12", zh: "完全离线运行的本地 ChatGPT 替代品。"}
+  - {name: comfyanonymous/ComfyUI, cat: app, added: "2026-10-12", zh: "节点式的扩散模型图像 / 视频生成界面。"}
+  - {name: AUTOMATIC1111/stable-diffusion-webui, cat: app, added: "2026-10-12", zh: "最流行的 Stable Diffusion 网页界面。"}
+
+  # ── 具身智能与仿真 ──
+  - {name: huggingface/lerobot, cat: embodied, added: "2026-10-12", zh: "Hugging Face 的机器人学习库：数据集、模仿学习 / VLA 策略与低成本机械臂。"}
+  - {name: Genesis-Embodied-AI/Genesis, cat: embodied, added: "2026-10-12", zh: "面向机器人与具身智能的通用物理仿真平台。"}
+  - {name: google-deepmind/mujoco, cat: embodied, added: "2026-10-12", zh: "机器人与强化学习常用的物理仿真引擎。"}
+  - {name: microsoft/AirSim, cat: embodied, added: "2026-10-12", zh: "基于虚幻引擎的无人机与汽车仿真平台，后续由 Project AirSim 接替。"}
+  - {name: isaac-sim/IsaacLab, cat: embodied, added: "2026-10-12", zh: "基于 Isaac Sim 的 GPU 并行机器人学习框架。"}
+  - {name: Physical-Intelligence/openpi, cat: embodied, added: "2026-10-12", zh: "Physical Intelligence 开源的 π0 / π0.5 视觉-语言-动作模型。"}
+
+  # ── 教程与资源 ──
+  - {name: rasbt/LLMs-from-scratch, cat: learn, added: "2026-10-12", zh: "用 PyTorch 一步步从零实现类 ChatGPT 大模型，配套书籍。"}
+  - {name: karpathy/nn-zero-to-hero, cat: learn, added: "2026-10-12", zh: "Karpathy 的神经网络从零到 GPT 视频课程代码。"}
+  - {name: mlabonne/llm-course, cat: learn, added: "2026-10-12", zh: "大模型学习路线与 Colab 笔记本。"}
+  - {name: microsoft/generative-ai-for-beginners, cat: learn, added: "2026-10-12", zh: "微软的生成式 AI 入门课程，21 课。"}
+  - {name: microsoft/ML-For-Beginners, cat: learn, added: "2026-10-12", zh: "微软的机器学习入门课程，12 周 26 课。"}
+  - {name: datawhalechina/self-llm, cat: learn, added: "2026-10-12", zh: "开源大模型的中文部署与微调教程。"}
+  - {name: datawhalechina/happy-llm, cat: learn, added: "2026-10-12", zh: "从零开始的大语言模型原理与实践中文教程。"}
+  - {name: dair-ai/Prompt-Engineering-Guide, cat: learn, added: "2026-10-12", zh: "提示词工程、RAG 与 Agent 的指南和论文合集。"}
+  - {name: labmlai/annotated_deep_learning_paper_implementations, cat: learn, added: "2026-10-12", zh: "带逐行注释的深度学习论文 PyTorch 实现。"}
+  - {name: Shubhamsaboo/awesome-llm-apps, cat: learn, added: "2026-10-12", zh: "可运行的 LLM 应用、RAG 与 Agent 示例合集。"}
+  - {name: f/awesome-chatgpt-prompts, cat: learn, added: "2026-10-12", zh: "社区整理的提示词合集。"}
+  - {name: x1xhlol/system-prompts-and-models-of-ai-tools, cat: learn, added: "2026-10-12", zh: "收集各款 AI 编程工具和助手公开的系统提示词。"}

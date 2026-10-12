@@ -210,6 +210,65 @@ class BuildTest(unittest.TestCase):
             build.main(["--check"])
 
 
+with open(datalib.AI_SCHEMA, encoding="utf-8") as f:
+    AI_SCHEMA = json.load(f)
+
+
+def ai_data(*repos):
+    return {"categories": [{"id": "agent", "code": "AGT", "full": "Agent 框架", "short": "Agent"},
+                           {"id": "skills", "code": "SKL", "full": "Skills 与 MCP", "short": "Skills"}],
+            "repos": list(repos) or [{"name": "lab/agent", "cat": "agent", "zh": "示例 Agent 框架。", "added": "2026-10-12"},
+                                     {"name": "lab/skill", "cat": "skills", "zh": "示例技能库。", "added": "2026-10-12"}]}
+
+
+class AiReposTest(unittest.TestCase):
+    def test_real_data_is_valid(self):
+        errors, _ = validate.check_ai(datalib.load_ai(), datalib.load_stats(), AI_SCHEMA)
+        self.assertEqual(errors, [])
+
+    def test_check_ai(self):
+        errors, warnings = validate.check_ai(ai_data(), stats(), AI_SCHEMA)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("还没有统计数据" in m for _, m in warnings))
+        r = {"name": "lab/agent", "cat": "agent", "zh": "示例 Agent 框架。", "added": "2026-10-12"}
+        errors, _ = validate.check_ai(ai_data(r, dict(r, name="Lab/Agent")), stats(), AI_SCHEMA)
+        self.assertTrue(any("重复" in m for _, m in errors))
+        errors, _ = validate.check_ai(ai_data(dict(r, cat="nope")), stats(), AI_SCHEMA)
+        self.assertTrue(any("nope" in m for _, m in errors))
+        errors, _ = validate.check_ai(ai_data(dict(r, stars=5)), stats(), AI_SCHEMA)
+        self.assertEqual(errors[0][0], "lab/agent")
+        _, warnings = validate.check_ai(ai_data(r), stats(**{"lab/agent": {"full_name": "lab/agent2"}}), AI_SCHEMA)
+        self.assertTrue(any("改名" in m for _, m in warnings))
+
+    def test_ai_repos_are_not_orphan_stats(self):
+        st = stats(**{"lab/demo": {"full_name": "lab/demo"}, "lab/agent": {"full_name": "lab/agent"}})
+        _, w = validate.check([paper()], TAXONOMY, st, SCHEMA, {"lab/agent"})
+        self.assertFalse(any("lab/agent" in m for _, m in w))
+
+    def test_tracked_repos(self):
+        names = datalib.tracked_repos([paper()], ai_data(
+            {"name": "Lab/Demo", "cat": "agent", "zh": "x", "added": "2026-10-12"},
+            {"name": "lab/agent", "cat": "agent", "zh": "x", "added": "2026-10-12"}))
+        self.assertEqual(names, {"lab/demo": "lab/demo", "lab/agent": "lab/agent"})
+
+    def test_ai_entries_and_render(self):
+        st = stats(**{"lab/agent": {"full_name": "Lab/Agent", "stars": 12000, "lang": "Python", "archived": True}})
+        e = build.ai_entries(ai_data(), st)
+        self.assertEqual(e[0]["name"], "Lab/Agent")
+        self.assertEqual(e[0]["note"], build.ARCHIVED_NOTE)
+        self.assertIsNone(e[1]["stars"])
+        tpl = "<style>{{STYLE}}</style>{{AI_DATA}}|{{AI_CATS}}|{{DATA_DATE}}|{{AI_COUNT}}|{{PAPER_COUNT}}"
+        html = build.render_ai(ai_data(), st, tpl, [paper()], "body{}")
+        self.assertTrue(html.startswith("<style>body{}</style>"))
+        self.assertTrue(html.endswith('|"2026-10-05"|2|1'))
+        with self.assertRaises(SystemExit):
+            build.render_ai(ai_data(), st, "{{AI_DATA}}")
+
+    def test_readme_ai_count(self):
+        out = build.render_readme("收录 9 个 AI 领域高星仓库", [paper()], TAXONOMY, stats(), ai_data())
+        self.assertEqual(out, "收录 2 个 AI 领域高星仓库")
+
+
 class RefreshTest(unittest.TestCase):
     def fake_get(self, responses):
         def get(path):
@@ -247,6 +306,7 @@ class RefreshTest(unittest.TestCase):
         })
         orig_load, orig_save = datalib.load_papers, datalib.save_stats
         with mock.patch.object(datalib, "load_papers", lambda: orig_load(papers)), \
+                mock.patch.object(datalib, "load_ai", lambda: {"categories": [], "repos": []}), \
                 mock.patch.object(datalib, "load_stats", lambda: copy.deepcopy(old)), \
                 mock.patch.object(datalib, "save_stats", lambda s: orig_save(s, st_path)), \
                 mock.patch("sys.stdout"):

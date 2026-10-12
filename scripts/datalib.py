@@ -1,4 +1,4 @@
-"""各脚本共用的数据读写：papers.yaml、taxonomy.yaml、generated/ 下的统计与环境检测结果。"""
+"""各脚本共用的数据读写：papers.yaml、taxonomy.yaml、ai_repos.yaml、generated/ 下的统计与环境检测结果。"""
 import json
 import os
 import re
@@ -10,11 +10,16 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 PAPERS = os.path.join(DATA, "papers.yaml")
 TAXONOMY = os.path.join(DATA, "taxonomy.yaml")
+AI_REPOS = os.path.join(DATA, "ai_repos.yaml")
 STATS = os.path.join(DATA, "generated", "repo_stats.json")
 SIGNALS = os.path.join(DATA, "generated", "repo_signals.json")
 SCHEMA = os.path.join(ROOT, "schema", "paper.schema.json")
+AI_SCHEMA = os.path.join(ROOT, "schema", "ai_repo.schema.json")
+STYLE = os.path.join(ROOT, "templates", "style.css")
 TEMPLATE = os.path.join(ROOT, "templates", "index.html")
 INDEX = os.path.join(ROOT, "index.html")
+AI_TEMPLATE = os.path.join(ROOT, "templates", "ai.html")
+AI_INDEX = os.path.join(ROOT, "ai.html")
 README = os.path.join(ROOT, "README.md")
 
 STATS_SCHEMA_VERSION = 1
@@ -56,6 +61,10 @@ def load_taxonomy(path=TAXONOMY):
     return load_yaml(path)
 
 
+def load_ai(path=AI_REPOS):
+    return load_yaml(path) or {"categories": [], "repos": []}
+
+
 def load_stats(path=STATS):
     if not os.path.exists(path):
         return {"schema_version": STATS_SCHEMA_VERSION, "generated_at": None, "repos": {}}
@@ -73,6 +82,17 @@ def save_stats(stats, path=STATS):
 def repo_key(name):
     """仓库在统计文件中的键：GitHub 的 owner/name 不区分大小写。"""
     return name.lower()
+
+
+def tracked_repos(papers, ai):
+    """需要刷新统计数据的仓库：键 → papers.yaml / ai_repos.yaml 中写的名字（论文优先）。"""
+    names = {}
+    for p in papers:
+        for r in p.get("repos", []):
+            names.setdefault(repo_key(r["name"]), r["name"])
+    for r in (ai or {}).get("repos", []):
+        names.setdefault(repo_key(r["name"]), r["name"])
+    return names
 
 
 def primary_repo(paper):

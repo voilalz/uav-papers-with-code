@@ -77,6 +77,20 @@ button { font: inherit; color: inherit; }
 .page { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 56px; }
 @media (min-width: 720px) { .page { padding-inline: 28px; padding-block: 32px 72px; } }
 
+/* ── Section tabs（论文索引 / AI 高星仓库）── */
+.tabs {
+  display: flex; gap: 2px; margin: -6px 0 18px; border-bottom: 1px solid var(--rule);
+  font-family: var(--f-ui); font-size: var(--s-sm); overflow-x: auto; scrollbar-width: none;
+}
+.tabs a {
+  flex: none; padding: 6px 12px 7px; margin-bottom: -1px; text-decoration: none; color: var(--muted);
+  border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.tabs a:hover { color: var(--ink); }
+.tabs a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.tabs .n { margin-left: 5px; font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
+@media (max-width: 719.98px) { .tabs { margin-bottom: 12px; } }
+
 /* ── Masthead ───────────────────────────── */
 .masthead {
   position: relative; display: grid; gap: 20px;
@@ -364,6 +378,10 @@ html.locked { overflow: hidden; }
 </head>
 <body>
 <div class="page">
+  <nav class="tabs" aria-label="栏目">
+    <a href="./" aria-current="page">无人机论文<span class="n">123</span></a>
+    <a href="ai.html">AI 高星仓库<span class="n">107</span></a>
+  </nav>
   <header class="masthead">
     <div class="brand">
       <svg class="adi" viewBox="0 0 48 48" aria-hidden="true">

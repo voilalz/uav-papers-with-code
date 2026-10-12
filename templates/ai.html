@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 高星仓库 · UAV Papers with Code</title>
+<meta name="description" content="AI 领域高星开源仓库精选：{{AI_COUNT}} 个仓库，涵盖 Agent 框架、AI 编程、Skills 与 MCP、模型、推理部署、训练微调、RAG 等，附中文简介与每周更新的 Star 数。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 高星仓库 · UAV Papers with Code">
+<meta property="og:description" content="AI 领域高星开源仓库精选：{{AI_COUNT}} 个仓库，涵盖 Agent 框架、AI 编程、Skills 与 MCP、模型、推理部署、训练微调、RAG 等，附中文简介与每周更新的 Star 数。">
+<meta property="og:url" content="https://voilalz.github.io/uav-papers-with-code/ai.html">
+<meta name="theme-color" content="#EEF1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1218" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Cdefs%3E%3CclipPath%20id='c'%3E%3Ccircle%20cx='24'%20cy='24'%20r='21'/%3E%3C/clipPath%3E%3C/defs%3E%3Ccircle%20cx='24'%20cy='24'%20r='22.5'%20fill='%23F7F8F4'%20stroke='%23142235'%20stroke-width='2.5'/%3E%3Cg%20clip-path='url(%23c)'%20transform='rotate(-14%2024%2024)'%3E%3Crect%20x='-6'%20y='27'%20width='60'%20height='30'%20fill='%23C9D3C4'/%3E%3Cline%20x1='-6'%20y1='27'%20x2='54'%20y2='27'%20stroke='%23142235'%20stroke-width='1.6'/%3E%3C/g%3E%3Cpath%20d='M8%2025h10l3%203.5%203-3.5%203%203.5%203-3.5h10'%20fill='none'%20stroke='%23A3236F'%20stroke-width='3.2'%20stroke-linejoin='round'%20stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 字体异步加载：字体服务不可达时页面直接用系统字体渲染，不会卡住 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"></noscript>
+<style>
+{{STYLE}}
+/* ── AI 页 ── */
+.lede code { font-family: var(--f-mono); font-size: .92em; }
+.seg.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ai-rail-extra { display: grid; gap: 14px; }
+@media (max-width: 959.98px) {
+  /* 窄屏：分类改为一行横向滚动，排序紧随其后，不用抽屉 */
+  .rail > div { min-width: 0; }
+  .modes { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .mode { flex: none; min-width: 68px; padding-inline: 8px; }
+  .ai-rail-extra { grid-template-columns: minmax(0, 1fr); }
+  .seg button { padding-block: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="tabs" aria-label="栏目">
+    <a href="./">无人机论文<span class="n">{{PAPER_COUNT}}</span></a>
+    <a href="ai.html" aria-current="page">AI 高星仓库<span class="n">{{AI_COUNT}}</span></a>
+  </nav>
+  <header class="masthead">
+    <div class="brand">
+      <svg class="adi" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
+        <g fill="none" stroke="var(--muted)" stroke-width="1">
+          <path d="M13 16L24 24M13 32L24 24M35 16L24 24M35 32L24 24M13 16L13 32M35 16L35 32"/>
+        </g>
+        <g fill="var(--surface)" stroke="var(--ink)" stroke-width="1.4">
+          <circle cx="13" cy="16" r="3"/><circle cx="13" cy="32" r="3"/><circle cx="35" cy="16" r="3"/><circle cx="35" cy="32" r="3"/>
+        </g>
+        <circle cx="24" cy="24" r="4.2" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <p class="eyebrow">AI · LLM · AGENT · SKILLS · MCP</p>
+        <h1>AI 高星仓库</h1>
+        <p class="lede">AI 领域被广泛使用的开源仓库精选：Agent 框架、AI 编程、Skills 与 MCP、模型、推理部署、训练微调、RAG 等。每个仓库附中文简介，Star 数每周一自动刷新。</p>
+      </div>
+    </div>
+    <dl class="readout" id="readout"></dl>
+  </header>
+
+  <div class="layout">
+    <aside class="rail" aria-label="筛选">
+      <div class="bar">
+        <div class="search">
+          <label for="q" class="sr-only">搜索仓库</label>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="搜索仓库、简介、语言…">
+          <span class="kbd" aria-hidden="true">/</span>
+        </div>
+      </div>
+      <div>
+        <span class="label" id="modes-label">分类</span>
+        <div class="modes" id="modes" role="group" aria-labelledby="modes-label"></div>
+      </div>
+      <div class="ai-rail-extra">
+        <div>
+          <span class="label" id="sort-label">排序</span>
+          <div class="seg two" id="sort" role="group" aria-labelledby="sort-label">
+            <button type="button" data-sort="stars" aria-pressed="true">Star 数</button>
+            <button type="button" data-sort="updated" aria-pressed="false">最近提交</button>
+          </div>
+        </div>
+        <p class="legend"><span class="dot ok"></span>近一年内仍有代码提交　·　刻度条按 Star 数的对数比例绘制</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="status" aria-live="polite">
+        <span id="count"></span>
+        <button type="button" class="clear" id="clear" hidden>清除筛选</button>
+      </div>
+      <ol class="list" id="list"></ol>
+      <div class="empty" id="empty" hidden>
+        <p>没有匹配的仓库。可以换个关键词，或清除筛选后再试。</p>
+        <button type="button" class="clear" id="clear2">清除筛选</button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="foot">
+    <p>收录标准：AI 领域被广泛使用或有代表性的开源仓库，Star 一般在 5,000 以上；按用途归入一个主要分类。</p>
+    <p>Star 数、主要语言、许可证与“最近提交”（默认分支最后一次提交）取自 GitHub，每周一自动刷新，数据日期见页首。</p>
+    <p>想推荐仓库？在 <code>data/ai_repos.yaml</code> 里加一行提 PR，或到 <a href="https://github.com/voilalz/uav-papers-with-code/issues">issues</a> 留言。</p>
+    <p>网站源码与数据：<a href="https://github.com/voilalz/uav-papers-with-code">github.com/voilalz/uav-papers-with-code</a></p>
+  </footer>
+</div>
+
+<script type="application/json" id="data">{{AI_DATA}}</script>
+<script type="application/json" id="cats">{{AI_CATS}}</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("data").textContent);
+  var DATA_DATE = {{DATA_DATE}};
+  var RECENT_SINCE = (function () {
+    var d = new Date((DATA_DATE || "2000-01-01") + "T00:00:00Z");
+    d.setUTCFullYear(d.getUTCFullYear() - 1);
+    return d.toISOString().slice(0, 10);
+  })();
+  var CATS = [{ id: "all", code: "ALL", full: "全部", short: "全部" }].concat(JSON.parse(document.getElementById("cats").textContent));
+  var CAT = {};
+  CATS.forEach(function (c) { CAT[c.id] = c; });
+
+  var maxStars = 1;
+  DATA.forEach(function (d) {
+    if (d.stars && d.stars > maxStars) maxStars = d.stars;
+    d.short = d.name.split("/")[1];
+    d.hay = [d.name, d.zh, d.lang || "", d.license || "", d.note || "", CAT[d.cat].full, CAT[d.cat].code].join(" ").toLowerCase();
+  });
+
+  var state = { q: "", cat: "all", sort: "stars" };
+  var SORTS = ["stars", "updated"];
+  /* 筛选状态与网址同步：?q=…&cat=skills&sort=updated；#owner/repo 用于定位单条 */
+  function readURL() {
+    var p = new URLSearchParams(location.search);
+    state.q = p.get("q") || "";
+    state.cat = CAT[p.get("cat")] ? p.get("cat") : "all";
+    state.sort = SORTS.indexOf(p.get("sort")) >= 0 ? p.get("sort") : "stars";
+  }
+  function writeURL() {
+    var p = [];
+    if (state.q.trim()) p.push("q=" + encodeURIComponent(state.q.trim()));
+    if (state.cat !== "all") p.push("cat=" + state.cat);
+    if (state.sort !== "stars") p.push("sort=" + state.sort);
+    var url = location.pathname + (p.length ? "?" + p.join("&") : "") + location.hash;
+    if (url !== location.pathname + location.search + location.hash) {
+      try { history.replaceState(null, "", url); } catch (e) { /* file:// 等环境可能不允许 */ }
+    }
+  }
+  readURL();
+
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(n) { return n.toLocaleString("en-US"); }
+  function tokens() { return state.q.trim().toLowerCase().split(/\s+/).filter(Boolean); }
+  function searchOk(d, t) { for (var i = 0; i < t.length; i++) if (d.hay.indexOf(t[i]) < 0) return false; return true; }
+
+  var totalStars = DATA.reduce(function (a, d) { return a + (d.stars || 0); }, 0);
+  $("readout").innerHTML = [
+    ["仓库", DATA.length], ["分类", CATS.length - 1], ["Star 合计", fmt(totalStars)], ["数据日期", DATA_DATE || "待刷新"]
+  ].map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+
+  $("modes").innerHTML = CATS.map(function (c) {
+    return '<button type="button" class="mode" id="mode-' + c.id + '" data-cat="' + c.id + '" aria-pressed="false">' +
+      '<span class="code">' + esc(c.code) + '</span>' +
+      '<span class="lab"><span class="lab-short">' + esc(c.short) + '</span><span class="lab-full">' + esc(c.full) + '</span></span>' +
+      '<span class="n"></span></button>';
+  }).join("");
+
+  var sorters = {
+    stars: function (a, b) { return (b.stars == null ? -1 : b.stars) - (a.stars == null ? -1 : a.stars) || a.short.localeCompare(b.short); },
+    updated: function (a, b) { return (b.updated || "").localeCompare(a.updated || "") || (b.stars || 0) - (a.stars || 0); }
+  };
+
+  function render() {
+    var t = tokens();
+    var bySearch = DATA.filter(function (d) { return searchOk(d, t); });
+    CATS.forEach(function (c) {
+      var b = $("mode-" + c.id);
+      b.setAttribute("aria-pressed", String(state.cat === c.id));
+      b.querySelector(".n").textContent = bySearch.filter(function (d) { return c.id === "all" || d.cat === c.id; }).length;
+    });
+    var rows = bySearch.filter(function (d) { return state.cat === "all" || d.cat === state.cat; });
+    rows.sort(sorters[state.sort]);
+    writeURL();
+    Array.prototype.forEach.call(document.querySelectorAll("#sort button"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-sort") === state.sort));
+    });
+    var filtered = state.q.trim() || state.cat !== "all";
+    $("count").innerHTML = filtered
+      ? "筛选出 <b>" + rows.length + "</b> / " + DATA.length + " 个仓库"
+      : "共 <b>" + DATA.length + "</b> 个仓库";
+    $("clear").hidden = !filtered;
+    $("empty").hidden = rows.length > 0;
+    $("list").innerHTML = rows.map(entryHTML).join("");
+  }
+
+  function entryHTML(d) {
+    var star;
+    if (d.stars != null) {
+      var w = Math.max(4, Math.round(Math.log10(Math.max(d.stars, 1)) / Math.log10(maxStars) * 100));
+      star = '<span class="e-star" title="GitHub Star">★ ' + fmt(d.stars) + '<span class="g"><i style="width:' + w + '%"></i></span></span>';
+    } else {
+      star = '<span class="e-star"><span class="ds">Star 待刷新</span></span>';
+    }
+    var meta = '<span class="venue" title="' + esc(CAT[d.cat].full) + '">' + esc(CAT[d.cat].code) + "</span>";
+    if (d.lang) meta += "<span>" + esc(d.lang) + "</span>";
+    if (d.license) meta += '<span title="许可证">' + esc(d.license) + "</span>";
+    if (d.updated) {
+      var recent = d.updated >= RECENT_SINCE;
+      meta += '<span title="默认分支最后一次提交' + (recent ? "（近一年内有更新）" : "") + '"><span class="dot' + (recent ? " ok" : "") + '"></span> ' + d.updated.slice(0, 7) + "</span>";
+    }
+    var url = "https://github.com/" + d.name;
+    var note = d.note ? '<span class="note">' + esc(d.note) + "</span>" : "";
+    return '<li class="entry" id="' + esc(d.id) + '">' +
+      '<div class="e-side"><h2 class="e-name">' + esc(d.short) + '<a class="perma" href="#' + esc(d.id) + '" title="本条链接" aria-label="' + esc(d.short) + ' 的链接">#</a></h2>' + star + '<p class="e-meta">' + meta + "</p></div>" +
+      '<div class="e-main">' +
+        '<p class="e-zh">' + esc(d.zh) + "</p>" +
+        '<div class="e-foot"><a class="lnk" href="' + esc(url) + '" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">' + esc(d.name) + ' ↗</span></a>' +
+        '<span class="areas"><span>' + esc(CAT[d.cat].full) + "</span></span>" + note + "</div>" +
+      "</div></li>";
+  }
+
+  $("q").addEventListener("input", function (e) { state.q = e.target.value; render(); });
+  $("modes").addEventListener("click", function (e) {
+    var b = e.target.closest(".mode"); if (!b) return;
+    state.cat = b.getAttribute("data-cat"); render();
+  });
+  $("sort").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    state.sort = b.getAttribute("data-sort"); render();
+  });
+  function clearAll() { state.q = ""; state.cat = "all"; $("q").value = ""; render(); }
+  $("clear").addEventListener("click", clearAll);
+  $("clear2").addEventListener("click", clearAll);
+  document.addEventListener("keydown", function (e) {
+    var tag = (e.target && e.target.tagName) || "";
+    if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(tag) && !e.metaKey && !e.ctrlKey) { e.preventDefault(); $("q").focus(); }
+    if (e.key === "Escape" && e.target === $("q")) { $("q").value = ""; state.q = ""; render(); }
+  });
+
+  $("q").value = state.q;
+  render();
+
+  function focusEntry() {
+    var id = decodeURIComponent((location.hash || "").slice(1)).toLowerCase();
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) {
+      if (!DATA.some(function (d) { return d.id === id; })) return;
+      clearAll(); el = document.getElementById(id);
+    }
+    el.classList.add("hit");
+    el.scrollIntoView({ block: "center" });
+  }
+  focusEntry();
+  window.addEventListener("hashchange", function () {
+    Array.prototype.forEach.call(document.querySelectorAll(".entry.hit"), function (e) { e.classList.remove("hit"); });
+    focusEntry();
+  });
+})();
+</script>
+
+</body>
+</html>
