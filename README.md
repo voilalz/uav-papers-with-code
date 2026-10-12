@@ -8,15 +8,17 @@
 - 支持关键词搜索、按方向筛选，按 Star 数、发表年份或最近提交排序
 - 每篇附论文链接（优先 arXiv 等开放版本）、GitHub 仓库、Star 数与最近提交日期
 - 每篇都有固定链接，形如 `#vins-mono-2018`
+- 另设 [AI 高星仓库](https://voilalz.github.io/uav-papers-with-code/ai.html) 栏目，收录 106 个 AI 领域高星仓库（Agent、AI 编程、Skills 与 MCP、模型、推理、训练、RAG 等）
 - Star 数与提交日期截至 2026-10-12，每周一自动刷新
 
 ## 数据与文件
 
 - `data/papers.yaml`：论文条目，人工维护，唯一的事实来源；格式由 `schema/paper.schema.json` 定义。
 - `data/taxonomy.yaml`：大方向、细分方向、条目类型和 venue 词表。
+- `data/ai_repos.yaml`：AI 高星仓库栏目的分类与仓库，人工维护；格式由 `schema/ai_repo.schema.json` 定义。
 - `data/generated/repo_stats.json`：各仓库的 Star 数、语言、许可证与最近提交日期，由脚本生成。
 - `data/generated/repo_signals.json`：各仓库的 ROS / Docker / CUDA 等运行环境，由脚本扫描仓库文件推测得出。
-- `templates/index.html` → `index.html`：页面模板和由 `scripts/build.py` 生成的网站（单文件，无需服务器）。
+- `templates/index.html` → `index.html`、`templates/ai.html` → `ai.html`：页面模板和由 `scripts/build.py` 生成的网站（单文件，无需服务器；两页共用 `templates/style.css`）。
 - `scripts/`：校验、生成、刷新统计、链接巡检、按 arXiv 编号生成条目草稿，说明见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 - `.github/workflows/`：PR 数据校验；每周一刷新统计并重新发布网站；每周三巡检链接并汇总到 issue。
 

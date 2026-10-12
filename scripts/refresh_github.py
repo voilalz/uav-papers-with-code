@@ -4,8 +4,9 @@
 由 .github/workflows/refresh-stats.yml 每周运行一次，也可以在本地运行：
     GITHUB_TOKEN=xxx python3 scripts/refresh_github.py && python3 scripts/build.py
 
-只写统计文件，不改 papers.yaml；请求失败的仓库保留上次的值。
-仓库改名或迁移时记录新地址（页面随之使用新地址），validate.py 会提示把 papers.yaml 也改掉。
+只写统计文件，不改 YAML；请求失败的仓库保留上次的值。
+论文仓库与 data/ai_repos.yaml 中的 AI 仓库一并刷新。
+仓库改名或迁移时记录新地址（页面随之使用新地址），validate.py 会提示把 papers.yaml / ai_repos.yaml 也改掉。
 """
 import json
 import os
@@ -91,13 +92,8 @@ def fetch_repo(name, old=None, get=api_get):
 
 def main(get=api_get, today=None):
     today = today or datetime.now(timezone(timedelta(hours=8))).date().isoformat()
-    papers = datalib.load_papers()
+    names = datalib.tracked_repos(datalib.load_papers(), datalib.load_ai())
     old = datalib.load_stats().get("repos", {})
-
-    names = {}
-    for p in papers:
-        for r in p.get("repos", []):
-            names.setdefault(datalib.repo_key(r["name"]), r["name"])
 
     repos, failed, moved, star_delta = {}, [], [], 0
     for key, name in sorted(names.items()):
@@ -128,7 +124,7 @@ def main(get=api_get, today=None):
     datalib.save_stats({"schema_version": datalib.STATS_SCHEMA_VERSION, "generated_at": today, "repos": repos})
     print(f"已刷新 {len(names) - len(failed)}/{len(names)} 个仓库，Star 合计变化 {star_delta:+d}，数据日期 {today}")
     for line in moved:
-        print(f"::notice::仓库已改名，请同步修改 data/papers.yaml：{line}")
+        print(f"::notice::仓库已改名，请同步修改 data/papers.yaml 或 data/ai_repos.yaml：{line}")
     for line in failed:
         print(f"::warning::未能刷新：{line}")
 

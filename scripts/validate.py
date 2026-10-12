@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""校验 data/ 下的数据：格式、词表、唯一性与查重、链接与外部 ID 一致性。
+"""校验 data/ 下的数据：格式、词表、唯一性与查重、链接与外部 ID 一致性；也校验 AI 栏目的 ai_repos.yaml。
 
     python3 scripts/validate.py
 
@@ -39,8 +39,11 @@ def check_repro(repro):
     return msgs
 
 
-def check(papers, taxonomy, stats, schema):
-    """返回 (errors, warnings)，每项为 (论文 id 或 None, 消息)。"""
+def check(papers, taxonomy, stats, schema, other_repos=()):
+    """返回 (errors, warnings)，每项为 (论文 id 或 None, 消息)。
+
+    other_repos：其他栏目（ai_repos.yaml）中的仓库键，统计文件里有它们不算多余。
+    """
     errors, warnings = [], []
 
     validator = jsonschema.Draft202012Validator(schema)
@@ -129,37 +132,105 @@ def check(papers, taxonomy, stats, schema):
         elif st.get("missing"):
             warnings.append((pid, f"仓库 {name} 已无法访问（{st['missing']}），请核实后更换或删除"))
     for key in stat_repos:
-        if key not in seen["repo"]:
-            warnings.append((None, f"repo_stats.json 中的 {key} 已不在 papers.yaml 里，下次刷新时会移除"))
+        if key not in seen["repo"] and key not in other_repos:
+            warnings.append((None, f"repo_stats.json 中的 {key} 已不在 papers.yaml 或 ai_repos.yaml 里，下次刷新时会移除"))
 
     return errors, warnings
 
 
+def stat_warnings(name, st):
+    """单个仓库与统计数据对照的警告消息，没有问题时返回 None。"""
+    if not st:
+        return f"仓库 {name} 还没有统计数据，下次刷新后补上（或本地运行 refresh_github.py）"
+    if st.get("full_name") and datalib.repo_key(st["full_name"]) != datalib.repo_key(name):
+        return f"仓库已改名为 {st['full_name']}，请把 {name} 改为新地址"
+    if st.get("missing"):
+        return f"仓库 {name} 已无法访问（{st['missing']}），请核实后更换或删除"
+    return None
+
+
+def check_ai(ai, stats, schema):
+    """校验 ai_repos.yaml；返回 (errors, warnings)，每项为 (仓库名 或 None, 消息)。"""
+    errors, warnings = [], []
+    validator = jsonschema.Draft202012Validator(schema)
+    for err in sorted(validator.iter_errors(ai), key=lambda e: list(e.path)):
+        path = list(err.path)
+        name = None
+        if len(path) >= 2 and path[0] == "repos" and isinstance(path[1], int) and path[1] < len(ai["repos"]):
+            name = ai["repos"][path[1]].get("name") if isinstance(ai["repos"][path[1]], dict) else None
+        errors.append((name, f"{'.'.join(str(p) for p in path) or '文件'}：{err.message}"))
+    if errors:
+        return errors, warnings
+
+    cats = set()
+    for c in ai["categories"]:
+        if c["id"] in cats:
+            errors.append((None, f"分类 id {c['id']} 重复"))
+        cats.add(c["id"])
+    seen = set()
+    stat_repos = stats.get("repos", {})
+    for r in ai["repos"]:
+        key = datalib.repo_key(r["name"])
+        if key in seen:
+            errors.append((r["name"], "仓库重复"))
+        seen.add(key)
+        if r["cat"] not in cats:
+            errors.append((r["name"], f"分类 {r['cat']!r} 不在 categories 中"))
+        msg = stat_warnings(r["name"], stat_repos.get(key))
+        if msg:
+            warnings.append((r["name"], msg))
+    for c in cats - {r["cat"] for r in ai["repos"]}:
+        warnings.append((None, f"分类 {c} 下还没有仓库"))
+    return errors, warnings
+
+
+def ai_lines(path=datalib.AI_REPOS):
+    """仓库名 → 它在 ai_repos.yaml 中的行号。"""
+    lines = {}
+    with open(path, encoding="utf-8") as f:
+        for i, line in enumerate(f, 1):
+            m = re.search(r"\bname:\s*[\"']?([^\s,\"'}]+)", line)
+            if m:
+                lines.setdefault(m.group(1), i)
+    return lines
+
+
 def main():
-    try:
-        papers = datalib.load_papers()
-        taxonomy = datalib.load_taxonomy()
-    except Exception as err:              # YAML 语法错误、重复键
-        print(f"::error file=data/papers.yaml::{err}" if os.environ.get("GITHUB_ACTIONS") else err)
-        sys.exit(1)
+    loaded = {}
+    for key, load, rel in (("papers", datalib.load_papers, "data/papers.yaml"),
+                           ("taxonomy", datalib.load_taxonomy, "data/taxonomy.yaml"),
+                           ("ai", datalib.load_ai, "data/ai_repos.yaml")):
+        try:
+            loaded[key] = load()
+        except Exception as err:          # YAML 语法错误、重复键
+            print(f"::error file={rel}::{err}" if os.environ.get("GITHUB_ACTIONS") else err)
+            sys.exit(1)
+    papers, taxonomy, ai = loaded["papers"], loaded["taxonomy"], loaded["ai"]
     with open(datalib.SCHEMA, encoding="utf-8") as f:
         schema = json.load(f)
-    errors, warnings = check(papers, taxonomy, datalib.load_stats(), schema)
+    with open(datalib.AI_SCHEMA, encoding="utf-8") as f:
+        ai_schema = json.load(f)
+    stats = datalib.load_stats()
+    ai_keys = {datalib.repo_key(r["name"]) for r in ai.get("repos") or [] if isinstance(r, dict) and r.get("name")}
+    errors, warnings = check(papers, taxonomy, stats, schema, ai_keys)
+    ai_errors, ai_warnings = check_ai(ai, stats, ai_schema)
 
     gha = os.environ.get("GITHUB_ACTIONS") == "true"
-    lines = datalib.id_lines()
-    for level, items in (("error", errors), ("warning", warnings)):
-        for pid, msg in items:
-            if gha:
-                loc = f" file=data/papers.yaml,line={lines[pid]}" if pid in lines else ""
-                print(f"::{level}{loc}::{pid + '：' if pid else ''}{msg}")
-            else:
-                tag = "错误" if level == "error" else "警告"
-                where = f"[{pid}] " if pid else ""
-                print(f"{tag} {where}{msg}")
+    for rel, lines, errs, warns in (("data/papers.yaml", datalib.id_lines(), errors, warnings),
+                                    ("data/ai_repos.yaml", ai_lines(), ai_errors, ai_warnings)):
+        for level, items in (("error", errs), ("warning", warns)):
+            for pid, msg in items:
+                if gha:
+                    loc = f" file={rel},line={lines[pid]}" if pid in lines else f" file={rel}"
+                    print(f"::{level}{loc}::{pid + '：' if pid else ''}{msg}")
+                else:
+                    tag = "错误" if level == "error" else "警告"
+                    where = f"[{pid}] " if pid else ""
+                    print(f"{tag} {rel} {where}{msg}")
 
-    print(f"校验完成：{len(papers)} 篇，{len(errors)} 个错误，{len(warnings)} 个警告")
-    sys.exit(1 if errors else 0)
+    n_err, n_warn = len(errors) + len(ai_errors), len(warnings) + len(ai_warnings)
+    print(f"校验完成：{len(papers)} 篇论文、{len(ai.get('repos') or [])} 个 AI 仓库，{n_err} 个错误，{n_warn} 个警告")
+    sys.exit(1 if n_err else 0)
 
 
 if __name__ == "__main__":

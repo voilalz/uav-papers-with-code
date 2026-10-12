@@ -16,16 +16,18 @@
 data/
 ├── papers.yaml              # 论文条目：人工维护，唯一的事实来源
 ├── taxonomy.yaml            # 大方向、细分方向、条目类型、venue 词表
+├── ai_repos.yaml            # AI 高星仓库栏目（ai.html）：分类与仓库，人工维护
 └── generated/
     ├── repo_stats.json      # Star 数等统计：由脚本生成，请勿手改
     └── repo_signals.json    # ROS/Docker/CUDA 等环境的自动检测结果：由脚本生成，请勿手改
 schema/paper.schema.json     # papers.yaml 的格式定义
-templates/index.html         # 页面模板
-index.html                   # 生成的网站，请勿手改
+schema/ai_repo.schema.json   # ai_repos.yaml 的格式定义
+templates/                   # 页面模板：index.html、ai.html，两页共用 style.css
+index.html、ai.html          # 生成的网站，请勿手改
 scripts/
 ├── datalib.py               # 共用的读写函数
 ├── validate.py              # 校验：格式、词表、唯一性与查重
-├── build.py                 # 由 data/ 和模板生成 index.html，同步 README 中的数字
+├── build.py                 # 由 data/ 和模板生成 index.html、ai.html，同步 README 中的数字
 ├── refresh_github.py        # 刷新仓库统计（每周自动运行）
 ├── scan_repos.py            # 扫描仓库文件，推测运行环境（每周自动运行）
 ├── check_links.py           # 链接巡检（每周自动运行，结果汇总到 issue）
@@ -77,6 +79,24 @@ python3 scripts/build.py
 | `added` | 是 | 收录日期，`"YYYY-MM-DD"` |
 
 Star 数、主要语言、许可证、最近提交日期都来自 `data/generated/repo_stats.json`，不要写进 `papers.yaml`。
+
+## AI 高星仓库栏目
+
+`ai.html` 收录 AI 领域被广泛使用或有代表性的开源仓库（Agent 框架、AI 编程、Skills 与 MCP、模型、推理、训练、RAG 等），Star 一般在 5,000 以上。在 `data/ai_repos.yaml` 的 `repos` 里加一行即可：
+
+```yaml
+  - {name: owner/repo, cat: skills, added: "2026-10-12", zh: "一句话中文简介。"}
+```
+
+| 字段 | 必填 | 说明 |
+|---|---|---|
+| `name` | 是 | GitHub 仓库 `owner/repo` |
+| `cat` | 是 | 分类 id，见同一文件的 `categories`；新增分类在那里补 `code`、`full`、`short` |
+| `zh` | 是 | 一句话中文简介，4–120 字 |
+| `note` | 否 | 页面上的提示；仓库归档的提示会自动生成 |
+| `added` | 是 | 收录日期 |
+
+然后运行 `python3 scripts/validate.py && python3 scripts/build.py`，提交 `data/ai_repos.yaml`、`ai.html`、`index.html`、`README.md`。Star 数与论文仓库一起由每周的刷新任务写入 `repo_stats.json`。
 
 页面上的环境标签（ROS1/ROS2 与发行版、Ubuntu、CUDA、PX4、Docker、launch/config、标定文件、预训练模型、Jetson）来自 `data/generated/repo_signals.json`，由 `scan_repos.py` 根据文件树、README、`package.xml` 和 Dockerfile 推测，页面上以虚线标签显示并注明依据。判断规则见脚本中的 `detect()`；规则有改动时把 `SCANNER_VERSION` 加一，下次运行会重新扫描所有仓库。检测有误时请提 issue，不要手改该文件。
 
