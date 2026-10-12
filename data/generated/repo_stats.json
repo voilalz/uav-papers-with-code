@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07",
+  "generated_at": "2026-10-12",
   "repos": {
     "aerorobotics/neural-fly": {
       "full_name": "aerorobotics/neural-fly",
-      "stars": 222,
+      "stars": 224,
       "lang": "Jupyter",
       "license": null,
       "updated": "2022-05-21",
@@ -12,10 +12,10 @@
     },
     "aerostack2/aerostack2": {
       "full_name": "aerostack2/aerostack2",
-      "stars": 392,
+      "stars": 393,
       "lang": "C++",
       "license": "BSD-3-Clause",
-      "updated": "2026-09-16",
+      "updated": "2026-10-08",
       "archived": false
     },
     "airvln/airvln": {
@@ -44,7 +44,7 @@
     },
     "btx0424/omnidrones": {
       "full_name": "btx0424/OmniDrones",
-      "stars": 583,
+      "stars": 585,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-01-20",
@@ -60,7 +60,7 @@
     },
     "castacks/tartanair_tools": {
       "full_name": "castacks/tartanair_tools",
-      "stars": 434,
+      "stars": 435,
       "lang": "Jupyter",
       "license": "BSD-3-Clause",
       "updated": "2026-04-30",
@@ -68,7 +68,7 @@
     },
     "chenhongyiyang/querydet-pytorch": {
       "full_name": "ChenhongyiYang/QueryDet-PyTorch",
-      "stars": 483,
+      "stars": 484,
       "lang": "Python",
       "license": "MIT",
       "updated": "2024-03-22",
@@ -100,7 +100,7 @@
     },
     "dmmm1997/denseuav": {
       "full_name": "Dmmm1997/DenseUAV",
-      "stars": 231,
+      "stars": 232,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2025-12-12",
@@ -116,7 +116,7 @@
     },
     "ethz-asl/kalibr": {
       "full_name": "ethz-asl/kalibr",
-      "stars": 5750,
+      "stars": 5757,
       "lang": "C++",
       "license": null,
       "updated": "2024-03-08",
@@ -132,7 +132,7 @@
     },
     "ethz-asl/mav_control_rw": {
       "full_name": "ethz-asl/mav_control_rw",
-      "stars": 456,
+      "stars": 457,
       "lang": "C",
       "license": "Apache-2.0",
       "updated": "2018-09-01",
@@ -148,7 +148,7 @@
     },
     "ethz-asl/rotors_simulator": {
       "full_name": "ethz-asl/rotors_simulator",
-      "stars": 1506,
+      "stars": 1508,
       "lang": "C++",
       "license": null,
       "updated": "2021-07-06",
@@ -156,7 +156,7 @@
     },
     "ethz-asl/rovio": {
       "full_name": "ethz-asl/rovio",
-      "stars": 1269,
+      "stars": 1270,
       "lang": "C++",
       "license": null,
       "updated": "2024-01-10",
@@ -172,7 +172,7 @@
     },
     "fyangneil/clustered-object-detection-in-aerial-image": {
       "full_name": "fyangneil/Clustered-Object-Detection-in-Aerial-Image",
-      "stars": 131,
+      "stars": 132,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2020-05-25",
@@ -180,7 +180,7 @@
     },
     "gaoxiang12/faster-lio": {
       "full_name": "gaoxiang12/faster-lio",
-      "stars": 1639,
+      "stars": 1641,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2026-09-04",
@@ -196,7 +196,7 @@
     },
     "hku-mars/fast-livo2": {
       "full_name": "hku-mars/FAST-LIVO2",
-      "stars": 4711,
+      "stars": 4736,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2026-03-08",
@@ -204,7 +204,7 @@
     },
     "hku-mars/fast_lio": {
       "full_name": "hku-mars/FAST_LIO",
-      "stars": 5242,
+      "stars": 5264,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2024-07-23",
@@ -220,7 +220,7 @@
     },
     "hku-mars/marsim": {
       "full_name": "hku-mars/MARSIM",
-      "stars": 584,
+      "stars": 586,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2025-10-25",
@@ -228,7 +228,7 @@
     },
     "hku-mars/point-lio": {
       "full_name": "hku-mars/Point-LIO",
-      "stars": 1345,
+      "stars": 1353,
       "lang": "C++",
       "license": null,
       "updated": "2026-06-13",
@@ -236,7 +236,7 @@
     },
     "hku-mars/r3live": {
       "full_name": "hku-mars/r3live",
-      "stars": 2465,
+      "stars": 2468,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2022-08-24",
@@ -252,7 +252,7 @@
     },
     "hku-mars/super": {
       "full_name": "hku-mars/SUPER",
-      "stars": 1054,
+      "stars": 1066,
       "lang": "C++",
       "license": null,
       "updated": "2025-06-04",
@@ -260,7 +260,7 @@
     },
     "hku-mars/swarm-lio2": {
       "full_name": "hku-mars/Swarm-LIO2",
-      "stars": 460,
+      "stars": 461,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2026-01-13",
@@ -268,7 +268,7 @@
     },
     "hkust-aerial-robotics/d2slam": {
       "full_name": "HKUST-Aerial-Robotics/D2SLAM",
-      "stars": 470,
+      "stars": 471,
       "lang": "Jupyter",
       "license": null,
       "updated": "2024-12-13",
@@ -284,7 +284,7 @@
     },
     "hkust-aerial-robotics/falcon": {
       "full_name": "HKUST-Aerial-Robotics/FALCON",
-      "stars": 323,
+      "stars": 324,
       "lang": "C++",
       "license": null,
       "updated": "2025-05-16",
@@ -292,7 +292,7 @@
     },
     "hkust-aerial-robotics/fast-planner": {
       "full_name": "HKUST-Aerial-Robotics/Fast-Planner",
-      "stars": 3418,
+      "stars": 3421,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-10-24",
@@ -300,7 +300,7 @@
     },
     "hkust-aerial-robotics/fc-planner": {
       "full_name": "HKUST-Aerial-Robotics/FC-Planner",
-      "stars": 379,
+      "stars": 380,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2026-06-16",
@@ -308,7 +308,7 @@
     },
     "hkust-aerial-robotics/fuel": {
       "full_name": "HKUST-Aerial-Robotics/FUEL",
-      "stars": 1486,
+      "stars": 1492,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-11-19",
@@ -316,7 +316,7 @@
     },
     "hkust-aerial-robotics/gvins": {
       "full_name": "HKUST-Aerial-Robotics/GVINS",
-      "stars": 1162,
+      "stars": 1165,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2021-09-02",
@@ -324,7 +324,7 @@
     },
     "hkust-aerial-robotics/omni-swarm": {
       "full_name": "HKUST-Aerial-Robotics/Omni-swarm",
-      "stars": 288,
+      "stars": 289,
       "lang": "Jupyter",
       "license": null,
       "updated": "2022-07-03",
@@ -340,7 +340,7 @@
     },
     "hkust-aerial-robotics/vins-fusion": {
       "full_name": "HKUST-Aerial-Robotics/VINS-Fusion",
-      "stars": 4736,
+      "stars": 4744,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2021-07-26",
@@ -348,7 +348,7 @@
     },
     "hkust-aerial-robotics/vins-mono": {
       "full_name": "HKUST-Aerial-Robotics/VINS-Mono",
-      "stars": 6049,
+      "stars": 6055,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-05-23",
@@ -372,15 +372,15 @@
     },
     "koide3/glim": {
       "full_name": "koide3/glim",
-      "stars": 1859,
+      "stars": 1872,
       "lang": "C++",
       "license": "MIT",
-      "updated": "2026-09-06",
+      "updated": "2026-10-08",
       "archived": false
     },
     "kumarrobotics/msckf_vio": {
       "full_name": "KumarRobotics/msckf_vio",
-      "stars": 1976,
+      "stars": 1977,
       "lang": "C++",
       "license": null,
       "updated": "2021-04-26",
@@ -388,15 +388,15 @@
     },
     "layumi/university1652-baseline": {
       "full_name": "layumi/University1652-Baseline",
-      "stars": 687,
+      "stars": 690,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-04",
+      "updated": "2026-10-07",
       "archived": false
     },
     "learnsyslab/gym-pybullet-drones": {
       "full_name": "learnsyslab/gym-pybullet-drones",
-      "stars": 2153,
+      "stars": 2161,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-09-06",
@@ -412,7 +412,7 @@
     },
     "lukasvst/dm-vio": {
       "full_name": "lukasvst/dm-vio",
-      "stars": 1235,
+      "stars": 1236,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-10-27",
@@ -420,7 +420,7 @@
     },
     "microsoft/airsim": {
       "full_name": "microsoft/AirSim",
-      "stars": 18535,
+      "stars": 18548,
       "lang": "C++",
       "license": null,
       "updated": "2026-09-15",
@@ -444,7 +444,7 @@
     },
     "mit-acl/mader": {
       "full_name": "mit-acl/mader",
-      "stars": 621,
+      "stars": 624,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2022-12-07",
@@ -452,7 +452,7 @@
     },
     "mit-aera/blackbird-dataset": {
       "full_name": "mit-aera/Blackbird-Dataset",
-      "stars": 160,
+      "stars": 161,
       "lang": "Python",
       "license": "MIT",
       "updated": "2022-12-15",
@@ -460,7 +460,7 @@
     },
     "mit-spark/kimera-vio": {
       "full_name": "MIT-SPARK/Kimera-VIO",
-      "stars": 1923,
+      "stars": 1925,
       "lang": "C++",
       "license": "BSD-2-Clause",
       "updated": "2025-02-10",
@@ -484,7 +484,7 @@
     },
     "ntnu-arl/gbplanner_ros": {
       "full_name": "ntnu-arl/gbplanner_ros",
-      "stars": 865,
+      "stars": 870,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2026-09-13",
@@ -492,7 +492,7 @@
     },
     "ntu-aris/ntu_viral_dataset": {
       "full_name": "ntu-aris/ntu_viral_dataset",
-      "stars": 232,
+      "stars": 233,
       "lang": null,
       "license": "MIT",
       "updated": "2025-03-12",
@@ -500,7 +500,7 @@
     },
     "nvidia-isaac/nvblox": {
       "full_name": "nvidia-isaac/nvblox",
-      "stars": 1316,
+      "stars": 1319,
       "lang": "C++",
       "license": null,
       "updated": "2026-07-03",
@@ -508,7 +508,7 @@
     },
     "obss/sahi": {
       "full_name": "obss/sahi",
-      "stars": 5534,
+      "stars": 5543,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-09-30",
@@ -516,7 +516,7 @@
     },
     "octomap/octomap": {
       "full_name": "OctoMap/octomap",
-      "stars": 2387,
+      "stars": 2392,
       "lang": "C++",
       "license": null,
       "updated": "2026-09-26",
@@ -540,7 +540,7 @@
     },
     "pegasussimulator/pegasussimulator": {
       "full_name": "PegasusSimulator/PegasusSimulator",
-      "stars": 889,
+      "stars": 891,
       "lang": "Python",
       "license": "BSD-3-Clause",
       "updated": "2026-07-24",
@@ -548,7 +548,7 @@
     },
     "prbonn/kiss-icp": {
       "full_name": "PRBonn/kiss-icp",
-      "stars": 2339,
+      "stars": 2345,
       "lang": "C++",
       "license": "MIT",
       "updated": "2026-05-04",
@@ -564,7 +564,7 @@
     },
     "princeton-vl/droid-slam": {
       "full_name": "princeton-vl/DROID-SLAM",
-      "stars": 2707,
+      "stars": 2709,
       "lang": "Python",
       "license": "BSD-3-Clause",
       "updated": "2025-05-05",
@@ -580,10 +580,10 @@
     },
     "px4/px4-autopilot": {
       "full_name": "PX4/PX4-Autopilot",
-      "stars": 12752,
+      "stars": 12777,
       "lang": "C++",
       "license": "BSD-3-Clause",
-      "updated": "2026-10-07",
+      "updated": "2026-10-12",
       "archived": false
     },
     "reza-zhu/sues-200-benchmark": {
@@ -596,15 +596,15 @@
     },
     "robin-shaun/xtdrone": {
       "full_name": "robin-shaun/XTDrone",
-      "stars": 1729,
+      "stars": 1732,
       "lang": "C++",
       "license": "MIT",
-      "updated": "2026-10-06",
+      "updated": "2026-10-12",
       "archived": false
     },
     "robotics-star-lab/epic": {
       "full_name": "Robotics-STAR-Lab/EPIC",
-      "stars": 239,
+      "stars": 240,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-05-02",
@@ -628,7 +628,7 @@
     },
     "rpng/open_vins": {
       "full_name": "rpng/open_vins",
-      "stars": 3127,
+      "stars": 3133,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-11-30",
@@ -636,7 +636,7 @@
     },
     "skyy93/sample4geo": {
       "full_name": "Skyy93/Sample4Geo",
-      "stars": 167,
+      "stars": 168,
       "lang": "Python",
       "license": null,
       "updated": "2025-08-08",
@@ -660,7 +660,7 @@
     },
     "tixiaoshan/lio-sam": {
       "full_name": "TixiaoShan/LIO-SAM",
-      "stars": 4935,
+      "stars": 4941,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2023-04-17",
@@ -668,7 +668,7 @@
     },
     "tixiaoshan/lvi-sam": {
       "full_name": "TixiaoShan/LVI-SAM",
-      "stars": 1885,
+      "stars": 1887,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2022-12-17",
@@ -700,7 +700,7 @@
     },
     "uz-slamlab/orb_slam3": {
       "full_name": "UZ-SLAMLab/ORB_SLAM3",
-      "stars": 9126,
+      "stars": 9140,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2022-02-10",
@@ -732,7 +732,7 @@
     },
     "uzh-rpg/flightmare": {
       "full_name": "uzh-rpg/flightmare",
-      "stars": 1429,
+      "stars": 1432,
       "lang": "C++",
       "license": null,
       "updated": "2023-05-15",
@@ -764,7 +764,7 @@
     },
     "uzh-rpg/rpg_svo_pro_open": {
       "full_name": "uzh-rpg/rpg_svo_pro_open",
-      "stars": 1612,
+      "stars": 1613,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2022-08-04",
@@ -796,7 +796,7 @@
     },
     "vectr-ucla/direct_lidar_inertial_odometry": {
       "full_name": "vectr-ucla/direct_lidar_inertial_odometry",
-      "stars": 1053,
+      "stars": 1055,
       "lang": "C++",
       "license": "MIT",
       "updated": "2024-11-08",
@@ -804,7 +804,7 @@
     },
     "visdrone/dronevehicle": {
       "full_name": "VisDrone/DroneVehicle",
-      "stars": 744,
+      "stars": 748,
       "lang": null,
       "license": null,
       "updated": "2022-08-20",
@@ -812,7 +812,7 @@
     },
     "visdrone/visdrone-dataset": {
       "full_name": "VisDrone/VisDrone-Dataset",
-      "stars": 2592,
+      "stars": 2598,
       "lang": null,
       "license": null,
       "updated": "2023-09-24",
@@ -900,7 +900,7 @@
     },
     "yux1angji/gta-uav": {
       "full_name": "Yux1angJi/GTA-UAV",
-      "stars": 172,
+      "stars": 173,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2025-10-20",
@@ -916,7 +916,7 @@
     },
     "zhaoj9014/anti-uav": {
       "full_name": "ZhaoJ9014/Anti-UAV",
-      "stars": 861,
+      "stars": 863,
       "lang": "Python",
       "license": "MIT",
       "updated": "2025-05-07",
@@ -932,7 +932,7 @@
     },
     "zju-fast-lab/ego-planner": {
       "full_name": "ZJU-FAST-Lab/ego-planner",
-      "stars": 2684,
+      "stars": 2693,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-03-08",
@@ -940,7 +940,7 @@
     },
     "zju-fast-lab/ego-planner-swarm": {
       "full_name": "ZJU-FAST-Lab/ego-planner-swarm",
-      "stars": 2197,
+      "stars": 2201,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-03-08",
@@ -956,7 +956,7 @@
     },
     "zju-fast-lab/gcopter": {
       "full_name": "ZJU-FAST-Lab/GCOPTER",
-      "stars": 1305,
+      "stars": 1309,
       "lang": "C++",
       "license": "MIT",
       "updated": "2023-06-06",

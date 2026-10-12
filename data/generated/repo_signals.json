@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07",
+  "generated_at": "2026-10-12",
   "repos": {
     "aerorobotics/neural-fly": {
       "ros": "none",
@@ -51,8 +51,8 @@
         "launch_config": "as2_aerial_platforms/as2_platform_multirotor_simulator/launch/as2_platform_multirotor_simulator.launch.py",
         "calibration": "as2_behaviors/as2_behaviors_object_perception/config/camera_calibration.yaml"
       },
-      "commit": "2026-09-16",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-08",
+      "scanned": "2026-10-12",
       "scanner": 1
     },
     "airvln/airvln": {
@@ -1231,8 +1231,8 @@
         "launch_config": "config/config.json",
         "jetson": "README 中提到 Jetson"
       },
-      "commit": "2026-09-06",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-08",
+      "scanned": "2026-10-12",
       "scanner": 1
     },
     "kumarrobotics/msckf_vio": {
@@ -1280,8 +1280,8 @@
       "why": {
         "cuda": "含 .cu 源文件"
       },
-      "commit": "2026-10-04",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-07",
+      "scanned": "2026-10-12",
       "scanner": 1
     },
     "learnsyslab/gym-pybullet-drones": {
@@ -1867,8 +1867,8 @@
         "launch_config": "launch/multi_uav_mavros_sitl.launch",
         "calibration": "src/modules/gyro_calibration/parameters.yaml"
       },
-      "commit": "2026-10-07",
-      "scanned": "2026-10-07",
+      "commit": "2026-10-12",
+      "scanned": "2026-10-12",
       "scanner": 1
     },
     "reza-zhu/sues-200-benchmark": {
@@ -1919,8 +1919,8 @@
         "launch_config": "contributer_demo/demo1/launch/cic2021.launch",
         "calibration": "sitl_config/robotic_arm/le_arm_moveit_config/camera_calibration.yaml"
       },
-      "commit": "2026-10-06",
-      "scanned": "2026-10-07",
+      "commit": "2026-10-12",
+      "scanned": "2026-10-12",
       "scanner": 1
     },
     "robotics-star-lab/epic": {
