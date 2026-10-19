@@ -9,7 +9,7 @@
 - 每篇附论文链接（优先 arXiv 等开放版本）、GitHub 仓库、Star 数与最近提交日期
 - 每篇都有固定链接，形如 `#vins-mono-2018`
 - 另设 [AI 高星仓库](https://voilalz.github.io/uav-papers-with-code/ai.html) 栏目，收录 106 个 AI 领域高星仓库（Agent、AI 编程、Skills 与 MCP、模型、推理、训练、RAG 等）
-- Star 数与提交日期截至 2026-10-12，每周一自动刷新
+- Star 数与提交日期截至 2026-10-19，每周一自动刷新
 
 ## 数据与文件
 

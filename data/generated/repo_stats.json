@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-12",
+  "generated_at": "2026-10-19",
   "repos": {
     "aerorobotics/neural-fly": {
       "full_name": "aerorobotics/neural-fly",
@@ -12,7 +12,7 @@
     },
     "aerostack2/aerostack2": {
       "full_name": "aerostack2/aerostack2",
-      "stars": 393,
+      "stars": 398,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2026-10-08",
@@ -20,15 +20,15 @@
     },
     "agno-agi/agno": {
       "full_name": "agno-agi/agno",
-      "stars": 42682,
+      "stars": 42804,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-17",
       "archived": false
     },
     "aider-ai/aider": {
       "full_name": "Aider-AI/aider",
-      "stars": 49482,
+      "stars": 49631,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-05-22",
@@ -36,7 +36,7 @@
     },
     "airvln/airvln": {
       "full_name": "AirVLN/AirVLN",
-      "stars": 394,
+      "stars": 396,
       "lang": "Python",
       "license": null,
       "updated": "2026-03-25",
@@ -44,31 +44,31 @@
     },
     "anomalyco/opencode": {
       "full_name": "anomalyco/opencode",
-      "stars": 212810,
+      "stars": 216870,
       "lang": "TypeScript",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "anthropics/claude-code": {
       "full_name": "anthropics/claude-code",
-      "stars": 150297,
+      "stars": 152290,
       "lang": "TypeScript",
       "license": null,
-      "updated": "2026-10-11",
+      "updated": "2026-10-18",
       "archived": false
     },
     "anthropics/claude-cookbooks": {
       "full_name": "anthropics/claude-cookbooks",
-      "stars": 53368,
+      "stars": 53566,
       "lang": "Jupyter",
       "license": "MIT",
-      "updated": "2026-10-10",
+      "updated": "2026-10-17",
       "archived": false
     },
     "anthropics/skills": {
       "full_name": "anthropics/skills",
-      "stars": 180609,
+      "stars": 182052,
       "lang": "Python",
       "license": null,
       "updated": "2026-10-09",
@@ -76,7 +76,7 @@
     },
     "anyloc/anyloc": {
       "full_name": "AnyLoc/AnyLoc",
-      "stars": 643,
+      "stars": 645,
       "lang": "Python",
       "license": "BSD-3-Clause",
       "updated": "2024-03-13",
@@ -84,7 +84,7 @@
     },
     "arplaboratory/learning-to-fly": {
       "full_name": "arplaboratory/learning-to-fly",
-      "stars": 593,
+      "stars": 592,
       "lang": "C++",
       "license": "MIT",
       "updated": "2025-05-22",
@@ -92,7 +92,7 @@
     },
     "automatic1111/stable-diffusion-webui": {
       "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "stars": 165036,
+      "stars": 165074,
       "lang": "Python",
       "license": "AGPL-3.0",
       "updated": "2024-07-27",
@@ -100,15 +100,15 @@
     },
     "axolotl-ai-cloud/axolotl": {
       "full_name": "axolotl-ai-cloud/axolotl",
-      "stars": 12556,
+      "stars": 12591,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "black-forest-labs/flux": {
       "full_name": "black-forest-labs/flux",
-      "stars": 26007,
+      "stars": 26024,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2025-07-31",
@@ -116,15 +116,15 @@
     },
     "browser-use/browser-use": {
       "full_name": "browser-use/browser-use",
-      "stars": 117690,
+      "stars": 118450,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-07",
+      "updated": "2026-10-17",
       "archived": false
     },
     "btx0424/omnidrones": {
       "full_name": "btx0424/OmniDrones",
-      "stars": 585,
+      "stars": 588,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-01-20",
@@ -148,15 +148,15 @@
     },
     "chatgptnextweb/nextchat": {
       "full_name": "ChatGPTNextWeb/NextChat",
-      "stars": 88837,
+      "stars": 88862,
       "lang": "TypeScript",
       "license": "MIT",
-      "updated": "2026-10-08",
+      "updated": "2026-10-15",
       "archived": false
     },
     "chenhongyiyang/querydet-pytorch": {
       "full_name": "ChenhongyiYang/QueryDet-PyTorch",
-      "stars": 484,
+      "stars": 486,
       "lang": "Python",
       "license": "MIT",
       "updated": "2024-03-22",
@@ -164,18 +164,18 @@
     },
     "cherryhq/cherry-studio": {
       "full_name": "CherryHQ/cherry-studio",
-      "stars": 52560,
+      "stars": 52735,
       "lang": "TypeScript",
       "license": "AGPL-3.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "chroma-core/chroma": {
       "full_name": "chroma-core/chroma",
-      "stars": 29484,
+      "stars": 29528,
       "lang": "Rust",
       "license": "Apache-2.0",
-      "updated": "2026-10-09",
+      "updated": "2026-10-17",
       "archived": false
     },
     "cli98/dmnet": {
@@ -188,23 +188,23 @@
     },
     "cline/cline": {
       "full_name": "cline/cline",
-      "stars": 70198,
+      "stars": 70534,
       "lang": "TypeScript",
       "license": "Apache-2.0",
-      "updated": "2026-10-11",
+      "updated": "2026-10-19",
       "archived": false
     },
     "comfy-org/comfyui": {
       "full_name": "Comfy-Org/ComfyUI",
-      "stars": 137036,
+      "stars": 138883,
       "lang": "Python",
       "license": "GPL-3.0",
-      "updated": "2026-10-11",
+      "updated": "2026-10-18",
       "archived": false
     },
     "composiohq/awesome-claude-skills": {
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "stars": 76903,
+      "stars": 77402,
       "lang": "Python",
       "license": null,
       "updated": "2026-07-24",
@@ -212,7 +212,7 @@
     },
     "continuedev/continue": {
       "full_name": "continuedev/continue",
-      "stars": 36189,
+      "stars": 36256,
       "lang": "TypeScript",
       "license": "Apache-2.0",
       "updated": "2026-07-21",
@@ -220,10 +220,10 @@
     },
     "crewaiinc/crewai": {
       "full_name": "crewAIInc/crewAI",
-      "stars": 59592,
+      "stars": 59853,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "cuogeihong/ceasc": {
@@ -244,7 +244,7 @@
     },
     "dair-ai/prompt-engineering-guide": {
       "full_name": "dair-ai/Prompt-Engineering-Guide",
-      "stars": 79061,
+      "stars": 79319,
       "lang": "MDX",
       "license": "MIT",
       "updated": "2026-03-11",
@@ -252,7 +252,7 @@
     },
     "datawhalechina/happy-llm": {
       "full_name": "datawhalechina/happy-llm",
-      "stars": 34301,
+      "stars": 34435,
       "lang": "Jupyter",
       "license": null,
       "updated": "2026-08-08",
@@ -260,7 +260,7 @@
     },
     "datawhalechina/self-llm": {
       "full_name": "datawhalechina/self-llm",
-      "stars": 32440,
+      "stars": 32510,
       "lang": "Jupyter",
       "license": "Apache-2.0",
       "updated": "2026-09-12",
@@ -268,7 +268,7 @@
     },
     "deepseek-ai/deepseek-r1": {
       "full_name": "deepseek-ai/DeepSeek-R1",
-      "stars": 91900,
+      "stars": 91898,
       "lang": null,
       "license": "MIT",
       "updated": "2025-04-09",
@@ -276,7 +276,7 @@
     },
     "deepseek-ai/deepseek-v3": {
       "full_name": "deepseek-ai/DeepSeek-V3",
-      "stars": 104501,
+      "stars": 104511,
       "lang": "Python",
       "license": "MIT",
       "updated": "2025-08-28",
@@ -284,15 +284,15 @@
     },
     "deepspeedai/deepspeed": {
       "full_name": "deepspeedai/DeepSpeed",
-      "stars": 43217,
+      "stars": 43243,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-18",
       "archived": false
     },
     "dmmm1997/denseuav": {
       "full_name": "Dmmm1997/DenseUAV",
-      "stars": 232,
+      "stars": 233,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2025-12-12",
@@ -308,15 +308,15 @@
     },
     "docling-project/docling": {
       "full_name": "docling-project/docling",
-      "stars": 68724,
+      "stars": 69086,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-16",
       "archived": false
     },
     "ethz-asl/kalibr": {
       "full_name": "ethz-asl/kalibr",
-      "stars": 5757,
+      "stars": 5768,
       "lang": "C++",
       "license": null,
       "updated": "2024-03-08",
@@ -324,7 +324,7 @@
     },
     "ethz-asl/maplab": {
       "full_name": "ethz-asl/maplab",
-      "stars": 2879,
+      "stars": 2882,
       "lang": "C++",
       "license": "Apache-2.0",
       "updated": "2023-06-18",
@@ -340,7 +340,7 @@
     },
     "ethz-asl/nbvplanner": {
       "full_name": "ethz-asl/nbvplanner",
-      "stars": 453,
+      "stars": 455,
       "lang": "C++",
       "license": null,
       "updated": "2017-07-26",
@@ -356,7 +356,7 @@
     },
     "ethz-asl/rovio": {
       "full_name": "ethz-asl/rovio",
-      "stars": 1270,
+      "stars": 1271,
       "lang": "C++",
       "license": null,
       "updated": "2024-01-10",
@@ -364,7 +364,7 @@
     },
     "ethz-asl/voxblox": {
       "full_name": "ethz-asl/voxblox",
-      "stars": 1673,
+      "stars": 1675,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2021-11-22",
@@ -372,23 +372,23 @@
     },
     "exo-explore/exo": {
       "full_name": "exo-explore/exo",
-      "stars": 47836,
+      "stars": 47954,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "archived": false
     },
     "f/prompts.chat": {
       "full_name": "f/prompts.chat",
-      "stars": 172674,
+      "stars": 173465,
       "lang": null,
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "facebookresearch/segment-anything": {
       "full_name": "facebookresearch/segment-anything",
-      "stars": 54986,
+      "stars": 55035,
       "lang": "Jupyter",
       "license": "Apache-2.0",
       "updated": "2024-09-18",
@@ -396,15 +396,15 @@
     },
     "firecrawl/firecrawl": {
       "full_name": "firecrawl/firecrawl",
-      "stars": 190645,
+      "stars": 192862,
       "lang": "TypeScript",
       "license": "AGPL-3.0",
-      "updated": "2026-10-11",
+      "updated": "2026-10-19",
       "archived": false
     },
     "flowiseai/flowise": {
       "full_name": "FlowiseAI/Flowise",
-      "stars": 55496,
+      "stars": 55513,
       "lang": "TypeScript",
       "license": null,
       "updated": "2026-08-13",
@@ -412,7 +412,7 @@
     },
     "foundationagents/metagpt": {
       "full_name": "FoundationAgents/MetaGPT",
-      "stars": 70813,
+      "stars": 70914,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-01-21",
@@ -428,7 +428,7 @@
     },
     "gaoxiang12/faster-lio": {
       "full_name": "gaoxiang12/faster-lio",
-      "stars": 1641,
+      "stars": 1644,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2026-09-04",
@@ -436,23 +436,23 @@
     },
     "genesis-embodied-ai/genesis-world": {
       "full_name": "Genesis-Embodied-AI/genesis-world",
-      "stars": 30045,
+      "stars": 30084,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-11",
+      "updated": "2026-10-16",
       "archived": false
     },
     "ggml-org/llama.cpp": {
       "full_name": "ggml-org/llama.cpp",
-      "stars": 130897,
+      "stars": 131654,
       "lang": "C++",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "ggml-org/whisper.cpp": {
       "full_name": "ggml-org/whisper.cpp",
-      "stars": 54304,
+      "stars": 54478,
       "lang": "C++",
       "license": "MIT",
       "updated": "2026-10-12",
@@ -460,39 +460,39 @@
     },
     "github/github-mcp-server": {
       "full_name": "github/github-mcp-server",
-      "stars": 33539,
+      "stars": 33742,
       "lang": "Go",
       "license": "MIT",
-      "updated": "2026-10-08",
+      "updated": "2026-10-15",
       "archived": false
     },
     "github/spec-kit": {
       "full_name": "github/spec-kit",
-      "stars": 140892,
+      "stars": 141853,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-10",
+      "updated": "2026-10-16",
       "archived": false
     },
     "google-deepmind/mujoco": {
       "full_name": "google-deepmind/mujoco",
-      "stars": 15621,
+      "stars": 15745,
       "lang": "C++",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-18",
       "archived": false
     },
     "google-gemini/gemini-cli": {
       "full_name": "google-gemini/gemini-cli",
-      "stars": 107292,
+      "stars": 107443,
       "lang": "TypeScript",
       "license": "Apache-2.0",
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "archived": false
     },
     "henryhuyu/diffphysdrone": {
       "full_name": "HenryHuYu/DiffPhysDrone",
-      "stars": 635,
+      "stars": 643,
       "lang": "CUDA",
       "license": null,
       "updated": "2025-06-25",
@@ -500,15 +500,15 @@
     },
     "hesreallyhim/awesome-claude-code": {
       "full_name": "hesreallyhim/awesome-claude-code",
-      "stars": 55478,
+      "stars": 55983,
       "lang": "Python",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "hiyouga/llamafactory": {
       "full_name": "hiyouga/LlamaFactory",
-      "stars": 75424,
+      "stars": 75575,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-10-10",
@@ -516,7 +516,7 @@
     },
     "hku-mars/fast-livo2": {
       "full_name": "hku-mars/FAST-LIVO2",
-      "stars": 4736,
+      "stars": 4772,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2026-03-08",
@@ -524,7 +524,7 @@
     },
     "hku-mars/fast_lio": {
       "full_name": "hku-mars/FAST_LIO",
-      "stars": 5264,
+      "stars": 5285,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2024-07-23",
@@ -532,7 +532,7 @@
     },
     "hku-mars/ipc": {
       "full_name": "hku-mars/IPC",
-      "stars": 258,
+      "stars": 259,
       "lang": "C++",
       "license": null,
       "updated": "2024-07-19",
@@ -540,7 +540,7 @@
     },
     "hku-mars/marsim": {
       "full_name": "hku-mars/MARSIM",
-      "stars": 586,
+      "stars": 588,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2025-10-25",
@@ -548,7 +548,7 @@
     },
     "hku-mars/point-lio": {
       "full_name": "hku-mars/Point-LIO",
-      "stars": 1354,
+      "stars": 1358,
       "lang": "C++",
       "license": null,
       "updated": "2026-06-13",
@@ -556,7 +556,7 @@
     },
     "hku-mars/r3live": {
       "full_name": "hku-mars/r3live",
-      "stars": 2468,
+      "stars": 2475,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2022-08-24",
@@ -564,7 +564,7 @@
     },
     "hku-mars/rog-map": {
       "full_name": "hku-mars/ROG-Map",
-      "stars": 622,
+      "stars": 624,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-03-13",
@@ -572,7 +572,7 @@
     },
     "hku-mars/super": {
       "full_name": "hku-mars/SUPER",
-      "stars": 1066,
+      "stars": 1074,
       "lang": "C++",
       "license": null,
       "updated": "2025-06-04",
@@ -580,7 +580,7 @@
     },
     "hku-mars/swarm-lio2": {
       "full_name": "hku-mars/Swarm-LIO2",
-      "stars": 460,
+      "stars": 464,
       "lang": "C++",
       "license": "GPL-2.0",
       "updated": "2026-01-13",
@@ -588,15 +588,15 @@
     },
     "hkuds/lightrag": {
       "full_name": "HKUDS/LightRAG",
-      "stars": 40080,
+      "stars": 40205,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "archived": false
     },
     "hkust-aerial-robotics/d2slam": {
       "full_name": "HKUST-Aerial-Robotics/D2SLAM",
-      "stars": 471,
+      "stars": 472,
       "lang": "Jupyter",
       "license": null,
       "updated": "2024-12-13",
@@ -620,7 +620,7 @@
     },
     "hkust-aerial-robotics/fast-planner": {
       "full_name": "HKUST-Aerial-Robotics/Fast-Planner",
-      "stars": 3421,
+      "stars": 3424,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-10-24",
@@ -628,7 +628,7 @@
     },
     "hkust-aerial-robotics/fc-planner": {
       "full_name": "HKUST-Aerial-Robotics/FC-Planner",
-      "stars": 380,
+      "stars": 379,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2026-06-16",
@@ -636,7 +636,7 @@
     },
     "hkust-aerial-robotics/fuel": {
       "full_name": "HKUST-Aerial-Robotics/FUEL",
-      "stars": 1492,
+      "stars": 1497,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-11-19",
@@ -644,7 +644,7 @@
     },
     "hkust-aerial-robotics/gvins": {
       "full_name": "HKUST-Aerial-Robotics/GVINS",
-      "stars": 1165,
+      "stars": 1166,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2021-09-02",
@@ -652,7 +652,7 @@
     },
     "hkust-aerial-robotics/omni-swarm": {
       "full_name": "HKUST-Aerial-Robotics/Omni-swarm",
-      "stars": 289,
+      "stars": 290,
       "lang": "Jupyter",
       "license": null,
       "updated": "2022-07-03",
@@ -660,7 +660,7 @@
     },
     "hkust-aerial-robotics/teach-repeat-replan": {
       "full_name": "HKUST-Aerial-Robotics/Teach-Repeat-Replan",
-      "stars": 1162,
+      "stars": 1164,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2021-10-19",
@@ -668,7 +668,7 @@
     },
     "hkust-aerial-robotics/vins-fusion": {
       "full_name": "HKUST-Aerial-Robotics/VINS-Fusion",
-      "stars": 4745,
+      "stars": 4750,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2021-07-26",
@@ -676,7 +676,7 @@
     },
     "hkust-aerial-robotics/vins-mono": {
       "full_name": "HKUST-Aerial-Robotics/VINS-Mono",
-      "stars": 6055,
+      "stars": 6060,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-05-23",
@@ -684,23 +684,23 @@
     },
     "huggingface/lerobot": {
       "full_name": "huggingface/lerobot",
-      "stars": 28097,
+      "stars": 28279,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-08",
+      "updated": "2026-10-16",
       "archived": false
     },
     "huggingface/peft": {
       "full_name": "huggingface/peft",
-      "stars": 21780,
+      "stars": 21805,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-16",
       "archived": false
     },
     "huggingface/smolagents": {
       "full_name": "huggingface/smolagents",
-      "stars": 29790,
+      "stars": 29918,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-10-06",
@@ -708,7 +708,7 @@
     },
     "huggingface/text-generation-inference": {
       "full_name": "huggingface/text-generation-inference",
-      "stars": 10880,
+      "stars": 10878,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-03-21",
@@ -716,34 +716,34 @@
     },
     "huggingface/transformers": {
       "full_name": "huggingface/transformers",
-      "stars": 167547,
+      "stars": 167834,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "huggingface/trl": {
       "full_name": "huggingface/trl",
-      "stars": 19493,
+      "stars": 19547,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-16",
       "archived": false
     },
     "infiniflow/ragflow": {
       "full_name": "infiniflow/ragflow",
-      "stars": 92038,
+      "stars": 92444,
       "lang": "Go",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "isaac-sim/isaaclab": {
       "full_name": "isaac-sim/IsaacLab",
-      "stars": 8321,
+      "stars": 8378,
       "lang": "Python",
-      "license": "BSD-3-Clause",
-      "updated": "2026-10-12",
+      "license": null,
+      "updated": "2026-10-19",
       "archived": false
     },
     "jaeyoung-lim/mavros_controllers": {
@@ -756,15 +756,15 @@
     },
     "janhq/jan": {
       "full_name": "janhq/jan",
-      "stars": 44901,
+      "stars": 45008,
       "lang": "Rust",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "jingyaogong/minimind": {
       "full_name": "jingyaogong/minimind",
-      "stars": 63590,
+      "stars": 63965,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-09-22",
@@ -772,7 +772,7 @@
     },
     "karpathy/nanochat": {
       "full_name": "karpathy/nanochat",
-      "stars": 58575,
+      "stars": 58755,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-07-03",
@@ -780,7 +780,7 @@
     },
     "karpathy/nanogpt": {
       "full_name": "karpathy/nanoGPT",
-      "stars": 63726,
+      "stars": 63914,
       "lang": "Python",
       "license": "MIT",
       "updated": "2025-11-12",
@@ -788,7 +788,7 @@
     },
     "karpathy/nn-zero-to-hero": {
       "full_name": "karpathy/nn-zero-to-hero",
-      "stars": 24753,
+      "stars": 24863,
       "lang": "Jupyter",
       "license": "MIT",
       "updated": "2024-02-20",
@@ -804,7 +804,7 @@
     },
     "koide3/glim": {
       "full_name": "koide3/glim",
-      "stars": 1872,
+      "stars": 1881,
       "lang": "C++",
       "license": "MIT",
       "updated": "2026-10-08",
@@ -812,7 +812,7 @@
     },
     "kumarrobotics/msckf_vio": {
       "full_name": "KumarRobotics/msckf_vio",
-      "stars": 1977,
+      "stars": 1979,
       "lang": "C++",
       "license": null,
       "updated": "2021-04-26",
@@ -820,7 +820,7 @@
     },
     "labmlai/annotated_deep_learning_paper_implementations": {
       "full_name": "labmlai/annotated_deep_learning_paper_implementations",
-      "stars": 67546,
+      "stars": 67576,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-01-22",
@@ -828,39 +828,39 @@
     },
     "langchain-ai/langchain": {
       "full_name": "langchain-ai/langchain",
-      "stars": 147664,
+      "stars": 148052,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-18",
       "archived": false
     },
     "langchain-ai/langgraph": {
       "full_name": "langchain-ai/langgraph",
-      "stars": 43109,
+      "stars": 43480,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-11",
+      "updated": "2026-10-18",
       "archived": false
     },
     "langflow-ai/langflow": {
       "full_name": "langflow-ai/langflow",
-      "stars": 155526,
+      "stars": 155819,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-06",
+      "updated": "2026-10-16",
       "archived": false
     },
     "langgenius/dify": {
       "full_name": "langgenius/dify",
-      "stars": 158218,
-      "lang": "TypeScript",
+      "stars": 158843,
+      "lang": "Python",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "layumi/university1652-baseline": {
       "full_name": "layumi/University1652-Baseline",
-      "stars": 690,
+      "stars": 695,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-10-07",
@@ -868,10 +868,10 @@
     },
     "learnsyslab/gym-pybullet-drones": {
       "full_name": "learnsyslab/gym-pybullet-drones",
-      "stars": 2161,
+      "stars": 2172,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-09-06",
+      "updated": "2026-10-17",
       "archived": false
     },
     "liushuaiyr/uavmot": {
@@ -884,10 +884,10 @@
     },
     "lobehub/lobehub": {
       "full_name": "lobehub/lobehub",
-      "stars": 83155,
+      "stars": 83314,
       "lang": "TypeScript",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "lukasvst/dm-vio": {
@@ -900,15 +900,15 @@
     },
     "mem0ai/mem0": {
       "full_name": "mem0ai/mem0",
-      "stars": 67025,
+      "stars": 67414,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-07",
+      "updated": "2026-10-14",
       "archived": false
     },
     "microsoft/airsim": {
       "full_name": "microsoft/AirSim",
-      "stars": 18548,
+      "stars": 18562,
       "lang": "C++",
       "license": null,
       "updated": "2026-09-15",
@@ -924,23 +924,23 @@
     },
     "microsoft/autogen": {
       "full_name": "microsoft/autogen",
-      "stars": 61371,
+      "stars": 61474,
       "lang": "Python",
       "license": "CC-BY-4.0",
-      "updated": "2026-04-06",
+      "updated": "2026-10-16",
       "archived": false
     },
     "microsoft/generative-ai-for-beginners": {
       "full_name": "microsoft/generative-ai-for-beginners",
-      "stars": 121239,
+      "stars": 121605,
       "lang": "Jupyter",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-17",
       "archived": false
     },
     "microsoft/graphrag": {
       "full_name": "microsoft/graphrag",
-      "stars": 36295,
+      "stars": 36381,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-10-08",
@@ -948,7 +948,7 @@
     },
     "microsoft/markitdown": {
       "full_name": "microsoft/markitdown",
-      "stars": 189683,
+      "stars": 190965,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-10-04",
@@ -956,7 +956,7 @@
     },
     "microsoft/ml-for-beginners": {
       "full_name": "microsoft/ML-For-Beginners",
-      "stars": 91427,
+      "stars": 91588,
       "lang": "Jupyter",
       "license": "MIT",
       "updated": "2026-09-14",
@@ -964,7 +964,7 @@
     },
     "microsoft/playwright-mcp": {
       "full_name": "microsoft/playwright-mcp",
-      "stars": 38044,
+      "stars": 38351,
       "lang": "TypeScript",
       "license": "Apache-2.0",
       "updated": "2026-10-08",
@@ -972,31 +972,31 @@
     },
     "microsoft/semantic-kernel": {
       "full_name": "microsoft/semantic-kernel",
-      "stars": 28654,
+      "stars": 28671,
       "lang": "C#",
       "license": "MIT",
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "archived": false
     },
     "milvus-io/milvus": {
       "full_name": "milvus-io/milvus",
-      "stars": 46362,
+      "stars": 46421,
       "lang": "Go",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "mintplex-labs/anything-llm": {
       "full_name": "Mintplex-Labs/anything-llm",
-      "stars": 66958,
+      "stars": 67297,
       "lang": "JavaScript",
       "license": "MIT",
-      "updated": "2026-10-09",
+      "updated": "2026-10-15",
       "archived": false
     },
     "mit-acl/faster": {
       "full_name": "mit-acl/faster",
-      "stars": 1253,
+      "stars": 1255,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2025-03-10",
@@ -1004,7 +1004,7 @@
     },
     "mit-acl/mader": {
       "full_name": "mit-acl/mader",
-      "stars": 624,
+      "stars": 625,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2022-12-07",
@@ -1020,7 +1020,7 @@
     },
     "mit-spark/kimera-vio": {
       "full_name": "MIT-SPARK/Kimera-VIO",
-      "stars": 1925,
+      "stars": 1927,
       "lang": "C++",
       "license": "BSD-2-Clause",
       "updated": "2025-02-10",
@@ -1028,7 +1028,7 @@
     },
     "mlabonne/llm-course": {
       "full_name": "mlabonne/llm-course",
-      "stars": 83508,
+      "stars": 84196,
       "lang": null,
       "license": "Apache-2.0",
       "updated": "2026-02-05",
@@ -1036,7 +1036,7 @@
     },
     "mlc-ai/mlc-llm": {
       "full_name": "mlc-ai/mlc-llm",
-      "stars": 23227,
+      "stars": 23254,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-10-06",
@@ -1044,15 +1044,15 @@
     },
     "modelcontextprotocol/python-sdk": {
       "full_name": "modelcontextprotocol/python-sdk",
-      "stars": 24549,
+      "stars": 24614,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-11",
+      "updated": "2026-10-17",
       "archived": false
     },
     "modelcontextprotocol/servers": {
       "full_name": "modelcontextprotocol/servers",
-      "stars": 91160,
+      "stars": 91362,
       "lang": "JavaScript",
       "license": null,
       "updated": "2026-10-11",
@@ -1060,18 +1060,18 @@
     },
     "modelcontextprotocol/typescript-sdk": {
       "full_name": "modelcontextprotocol/typescript-sdk",
-      "stars": 13557,
+      "stars": 13610,
       "lang": "TypeScript",
       "license": null,
-      "updated": "2026-10-05",
+      "updated": "2026-10-13",
       "archived": false
     },
     "mudler/localai": {
       "full_name": "mudler/LocalAI",
-      "stars": 49484,
+      "stars": 49628,
       "lang": "Go",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "mwaseema/drone-detection": {
@@ -1084,15 +1084,15 @@
     },
     "n8n-io/n8n": {
       "full_name": "n8n-io/n8n",
-      "stars": 207052,
+      "stars": 207961,
       "lang": "TypeScript",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "ntnu-arl/aerial_gym_simulator": {
       "full_name": "ntnu-arl/aerial_gym_simulator",
-      "stars": 776,
+      "stars": 778,
       "lang": "Python",
       "license": "BSD-3-Clause",
       "updated": "2026-06-28",
@@ -1100,7 +1100,7 @@
     },
     "ntnu-arl/gbplanner_ros": {
       "full_name": "ntnu-arl/gbplanner_ros",
-      "stars": 870,
+      "stars": 874,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2026-09-13",
@@ -1116,7 +1116,7 @@
     },
     "nvidia-isaac/nvblox": {
       "full_name": "nvidia-isaac/nvblox",
-      "stars": 1319,
+      "stars": 1324,
       "lang": "C++",
       "license": null,
       "updated": "2026-07-03",
@@ -1124,15 +1124,15 @@
     },
     "nvidia/tensorrt-llm": {
       "full_name": "NVIDIA/TensorRT-LLM",
-      "stars": 14797,
+      "stars": 14853,
       "lang": "Python",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "obra/superpowers": {
       "full_name": "obra/superpowers",
-      "stars": 297908,
+      "stars": 301745,
       "lang": "Shell",
       "license": "MIT",
       "updated": "2026-10-10",
@@ -1140,15 +1140,15 @@
     },
     "obss/sahi": {
       "full_name": "obss/sahi",
-      "stars": 5543,
+      "stars": 5555,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-09-30",
+      "updated": "2026-10-16",
       "archived": false
     },
     "octomap/octomap": {
       "full_name": "OctoMap/octomap",
-      "stars": 2391,
+      "stars": 2392,
       "lang": "C++",
       "license": null,
       "updated": "2026-09-26",
@@ -1156,15 +1156,15 @@
     },
     "ollama/ollama": {
       "full_name": "ollama/ollama",
-      "stars": 182823,
+      "stars": 183775,
       "lang": "Go",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-18",
       "archived": false
     },
     "open-mmlab/mmrotate": {
       "full_name": "open-mmlab/mmrotate",
-      "stars": 2172,
+      "stars": 2176,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2024-09-28",
@@ -1172,15 +1172,15 @@
     },
     "open-webui/open-webui": {
       "full_name": "open-webui/open-webui",
-      "stars": 154371,
+      "stars": 156122,
       "lang": "Python",
       "license": null,
-      "updated": "2026-10-10",
+      "updated": "2026-10-16",
       "archived": false
     },
     "openai/clip": {
       "full_name": "openai/CLIP",
-      "stars": 34447,
+      "stars": 34482,
       "lang": "Jupyter",
       "license": "MIT",
       "updated": "2026-03-25",
@@ -1188,31 +1188,31 @@
     },
     "openai/codex": {
       "full_name": "openai/codex",
-      "stars": 128754,
+      "stars": 129820,
       "lang": "Rust",
       "license": "Apache-2.0",
-      "updated": "2026-10-11",
+      "updated": "2026-10-19",
       "archived": false
     },
     "openai/gpt-oss": {
       "full_name": "openai/gpt-oss",
-      "stars": 20457,
+      "stars": 20475,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-07-24",
+      "updated": "2026-10-12",
       "archived": false
     },
     "openai/openai-agents-python": {
       "full_name": "openai/openai-agents-python",
-      "stars": 29983,
+      "stars": 30127,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-08",
+      "updated": "2026-10-17",
       "archived": false
     },
     "openai/whisper": {
       "full_name": "openai/whisper",
-      "stars": 110358,
+      "stars": 110844,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-08-31",
@@ -1220,7 +1220,7 @@
     },
     "opendatalab/mineru": {
       "full_name": "opendatalab/MinerU",
-      "stars": 81509,
+      "stars": 82017,
       "lang": "Python",
       "license": null,
       "updated": "2026-10-11",
@@ -1228,10 +1228,10 @@
     },
     "openhands/openhands": {
       "full_name": "OpenHands/OpenHands",
-      "stars": 90660,
+      "stars": 91232,
       "lang": "TypeScript",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "opt4smart/crazychoir": {
@@ -1244,7 +1244,7 @@
     },
     "pegasussimulator/pegasussimulator": {
       "full_name": "PegasusSimulator/PegasusSimulator",
-      "stars": 891,
+      "stars": 903,
       "lang": "Python",
       "license": "BSD-3-Clause",
       "updated": "2026-07-24",
@@ -1252,7 +1252,7 @@
     },
     "physical-intelligence/openpi": {
       "full_name": "Physical-Intelligence/openpi",
-      "stars": 14183,
+      "stars": 14293,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2026-08-24",
@@ -1260,7 +1260,7 @@
     },
     "prbonn/kiss-icp": {
       "full_name": "PRBonn/kiss-icp",
-      "stars": 2345,
+      "stars": 2350,
       "lang": "C++",
       "license": "MIT",
       "updated": "2026-05-04",
@@ -1268,7 +1268,7 @@
     },
     "prince687028/traveluav": {
       "full_name": "prince687028/TravelUAV",
-      "stars": 285,
+      "stars": 289,
       "lang": "Python",
       "license": null,
       "updated": "2026-01-22",
@@ -1276,7 +1276,7 @@
     },
     "princeton-vl/droid-slam": {
       "full_name": "princeton-vl/DROID-SLAM",
-      "stars": 2708,
+      "stars": 2711,
       "lang": "Python",
       "license": "BSD-3-Clause",
       "updated": "2025-05-05",
@@ -1292,31 +1292,31 @@
     },
     "punkpeye/awesome-mcp-servers": {
       "full_name": "punkpeye/awesome-mcp-servers",
-      "stars": 96169,
+      "stars": 96585,
       "lang": null,
       "license": "MIT",
-      "updated": "2026-10-09",
+      "updated": "2026-10-18",
       "archived": false
     },
     "px4/px4-autopilot": {
       "full_name": "PX4/PX4-Autopilot",
-      "stars": 12780,
+      "stars": 12830,
       "lang": "C++",
       "license": "BSD-3-Clause",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "pytorch/pytorch": {
       "full_name": "pytorch/pytorch",
-      "stars": 104680,
+      "stars": 104895,
       "lang": "Python",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "qwenlm/qwen3": {
       "full_name": "QwenLM/Qwen3",
-      "stars": 27664,
+      "stars": 27676,
       "lang": "Python",
       "license": null,
       "updated": "2026-01-09",
@@ -1324,7 +1324,7 @@
     },
     "rasbt/llms-from-scratch": {
       "full_name": "rasbt/LLMs-from-scratch",
-      "stars": 106404,
+      "stars": 106812,
       "lang": "Jupyter",
       "license": null,
       "updated": "2026-10-02",
@@ -1332,7 +1332,7 @@
     },
     "reza-zhu/sues-200-benchmark": {
       "full_name": "Reza-Zhu/SUES-200-Benchmark",
-      "stars": 92,
+      "stars": 94,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-09-08",
@@ -1340,15 +1340,15 @@
     },
     "robin-shaun/xtdrone": {
       "full_name": "robin-shaun/XTDrone",
-      "stars": 1732,
+      "stars": 1735,
       "lang": "C++",
       "license": "MIT",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "archived": false
     },
     "robotics-star-lab/epic": {
       "full_name": "Robotics-STAR-Lab/EPIC",
-      "stars": 240,
+      "stars": 241,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-05-02",
@@ -1356,7 +1356,7 @@
     },
     "robotics-star-lab/racer": {
       "full_name": "Robotics-STAR-Lab/RACER",
-      "stars": 799,
+      "stars": 802,
       "lang": "C++",
       "license": null,
       "updated": "2024-11-19",
@@ -1372,7 +1372,7 @@
     },
     "roocodeinc/roo-code": {
       "full_name": "RooCodeInc/Roo-Code",
-      "stars": 24280,
+      "stars": 24272,
       "lang": "TypeScript",
       "license": "Apache-2.0",
       "updated": "2026-05-15",
@@ -1380,7 +1380,7 @@
     },
     "rpng/open_vins": {
       "full_name": "rpng/open_vins",
-      "stars": 3133,
+      "stars": 3145,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-11-30",
@@ -1388,39 +1388,39 @@
     },
     "run-llama/llama_index": {
       "full_name": "run-llama/llama_index",
-      "stars": 52470,
+      "stars": 52561,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-08",
+      "updated": "2026-10-14",
       "archived": false
     },
     "sgl-project/sglang": {
       "full_name": "sgl-project/sglang",
-      "stars": 37026,
+      "stars": 37303,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "shubhamsaboo/awesome-llm-apps": {
       "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "stars": 141340,
+      "stars": 142250,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-09-29",
+      "updated": "2026-10-18",
       "archived": false
     },
     "significant-gravitas/autogpt": {
       "full_name": "Significant-Gravitas/AutoGPT",
-      "stars": 187529,
+      "stars": 187646,
       "lang": "Python",
       "license": null,
-      "updated": "2026-10-12",
+      "updated": "2026-10-16",
       "archived": false
     },
     "skyy93/sample4geo": {
       "full_name": "Skyy93/Sample4Geo",
-      "stars": 168,
+      "stars": 169,
       "lang": "Python",
       "license": null,
       "updated": "2025-08-08",
@@ -1428,7 +1428,7 @@
     },
     "spencerfolk/rotorpy": {
       "full_name": "spencerfolk/rotorpy",
-      "stars": 314,
+      "stars": 317,
       "lang": "Python",
       "license": "MIT",
       "updated": "2026-09-07",
@@ -1444,7 +1444,7 @@
     },
     "tixiaoshan/lio-sam": {
       "full_name": "TixiaoShan/LIO-SAM",
-      "stars": 4941,
+      "stars": 4947,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2023-04-17",
@@ -1452,7 +1452,7 @@
     },
     "tixiaoshan/lvi-sam": {
       "full_name": "TixiaoShan/LVI-SAM",
-      "stars": 1887,
+      "stars": 1890,
       "lang": "C++",
       "license": "BSD-3-Clause",
       "updated": "2022-12-17",
@@ -1460,7 +1460,7 @@
     },
     "tum-aas/neural-mpc": {
       "full_name": "TUM-AAS/neural-mpc",
-      "stars": 286,
+      "stars": 287,
       "lang": "Python",
       "license": "GPL-3.0",
       "updated": "2025-03-15",
@@ -1476,26 +1476,26 @@
     },
     "unclecode/crawl4ai": {
       "full_name": "unclecode/crawl4ai",
-      "stars": 85336,
+      "stars": 85802,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-11",
+      "updated": "2026-10-15",
       "archived": false
     },
     "unslothai/unsloth": {
       "full_name": "unslothai/unsloth",
-      "stars": 77836,
+      "stars": 78237,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "upstash/context7": {
       "full_name": "upstash/context7",
-      "stars": 62916,
+      "stars": 63270,
       "lang": "TypeScript",
       "license": "MIT",
-      "updated": "2026-10-09",
+      "updated": "2026-10-17",
       "archived": false
     },
     "usc-actlab/crazyswarm": {
@@ -1508,7 +1508,7 @@
     },
     "uz-slamlab/orb_slam3": {
       "full_name": "UZ-SLAMLab/ORB_SLAM3",
-      "stars": 9140,
+      "stars": 9154,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2022-02-10",
@@ -1540,7 +1540,7 @@
     },
     "uzh-rpg/flightmare": {
       "full_name": "uzh-rpg/flightmare",
-      "stars": 1432,
+      "stars": 1435,
       "lang": "C++",
       "license": null,
       "updated": "2023-05-15",
@@ -1572,7 +1572,7 @@
     },
     "uzh-rpg/rpg_svo_pro_open": {
       "full_name": "uzh-rpg/rpg_svo_pro_open",
-      "stars": 1613,
+      "stars": 1616,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2022-08-04",
@@ -1580,7 +1580,7 @@
     },
     "uzh-rpg/rpg_time_optimal": {
       "full_name": "uzh-rpg/rpg_time_optimal",
-      "stars": 128,
+      "stars": 129,
       "lang": "Python",
       "license": "GPL-3.0",
       "updated": "2021-09-17",
@@ -1596,7 +1596,7 @@
     },
     "v4rl-ucy/covins": {
       "full_name": "v4rl-ucy/covins",
-      "stars": 461,
+      "stars": 465,
       "lang": "C++",
       "license": null,
       "updated": "2023-05-28",
@@ -1604,7 +1604,7 @@
     },
     "vectr-ucla/direct_lidar_inertial_odometry": {
       "full_name": "vectr-ucla/direct_lidar_inertial_odometry",
-      "stars": 1055,
+      "stars": 1058,
       "lang": "C++",
       "license": "MIT",
       "updated": "2024-11-08",
@@ -1612,15 +1612,15 @@
     },
     "verl-project/verl": {
       "full_name": "verl-project/verl",
-      "stars": 23833,
+      "stars": 23920,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "visdrone/dronevehicle": {
       "full_name": "VisDrone/DroneVehicle",
-      "stars": 748,
+      "stars": 751,
       "lang": null,
       "license": null,
       "updated": "2022-08-20",
@@ -1628,7 +1628,7 @@
     },
     "visdrone/visdrone-dataset": {
       "full_name": "VisDrone/VisDrone-Dataset",
-      "stars": 2599,
+      "stars": 2606,
       "lang": null,
       "license": null,
       "updated": "2023-09-24",
@@ -1684,15 +1684,15 @@
     },
     "vllm-project/vllm": {
       "full_name": "vllm-project/vllm",
-      "stars": 93619,
+      "stars": 94096,
       "lang": "Python",
       "license": "Apache-2.0",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "archived": false
     },
     "water-cookie/citynav": {
       "full_name": "water-cookie/citynav",
-      "stars": 142,
+      "stars": 144,
       "lang": "Python",
       "license": "MIT",
       "updated": "2025-02-11",
@@ -1700,10 +1700,10 @@
     },
     "wshobson/agents": {
       "full_name": "wshobson/agents",
-      "stars": 40445,
+      "stars": 41042,
       "lang": "Python",
       "license": "MIT",
-      "updated": "2026-10-04",
+      "updated": "2026-10-17",
       "archived": false
     },
     "wtyhub/lpn": {
@@ -1716,15 +1716,15 @@
     },
     "x1xhlol/system-prompts-and-models-of-ai-tools": {
       "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
-      "stars": 143954,
+      "stars": 144083,
       "lang": null,
       "license": "GPL-3.0",
-      "updated": "2026-08-11",
+      "updated": "2026-10-12",
       "archived": false
     },
     "xyyang317/aba-vitrack": {
       "full_name": "xyyang317/Aba-ViTrack",
-      "stars": 53,
+      "stars": 54,
       "lang": "Python",
       "license": "MIT",
       "updated": "2025-12-17",
@@ -1740,7 +1740,7 @@
     },
     "yux1angji/gta-uav": {
       "full_name": "Yux1angJi/GTA-UAV",
-      "stars": 173,
+      "stars": 174,
       "lang": "Python",
       "license": "Apache-2.0",
       "updated": "2025-10-20",
@@ -1748,7 +1748,7 @@
     },
     "zcablii/lsknet": {
       "full_name": "zcablii/LSKNet",
-      "stars": 700,
+      "stars": 699,
       "lang": "Python",
       "license": null,
       "updated": "2026-09-14",
@@ -1756,7 +1756,7 @@
     },
     "zhaoj9014/anti-uav": {
       "full_name": "ZhaoJ9014/Anti-UAV",
-      "stars": 863,
+      "stars": 868,
       "lang": "Python",
       "license": "MIT",
       "updated": "2025-05-07",
@@ -1764,7 +1764,7 @@
     },
     "zju-fast-lab/cmpcc": {
       "full_name": "ZJU-FAST-Lab/CMPCC",
-      "stars": 300,
+      "stars": 302,
       "lang": "C",
       "license": null,
       "updated": "2021-05-14",
@@ -1772,7 +1772,7 @@
     },
     "zju-fast-lab/ego-planner": {
       "full_name": "ZJU-FAST-Lab/ego-planner",
-      "stars": 2693,
+      "stars": 2699,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-03-08",
@@ -1780,7 +1780,7 @@
     },
     "zju-fast-lab/ego-planner-swarm": {
       "full_name": "ZJU-FAST-Lab/ego-planner-swarm",
-      "stars": 2201,
+      "stars": 2216,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2025-03-08",
@@ -1796,7 +1796,7 @@
     },
     "zju-fast-lab/gcopter": {
       "full_name": "ZJU-FAST-Lab/GCOPTER",
-      "stars": 1309,
+      "stars": 1313,
       "lang": "C++",
       "license": "MIT",
       "updated": "2023-06-06",
@@ -1804,7 +1804,7 @@
     },
     "zju-fast-lab/swarm-formation": {
       "full_name": "ZJU-FAST-Lab/Swarm-Formation",
-      "stars": 570,
+      "stars": 571,
       "lang": "C++",
       "license": "GPL-3.0",
       "updated": "2024-01-24",
