@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-19",
+  "generated_at": "2026-10-26",
   "repos": {
     "aerorobotics/neural-fly": {
       "ros": "none",
@@ -51,8 +51,8 @@
         "launch_config": "as2_aerial_platforms/as2_platform_multirotor_simulator/launch/as2_platform_multirotor_simulator.launch.py",
         "calibration": "as2_behaviors/as2_behaviors_object_perception/config/camera_calibration.yaml"
       },
-      "commit": "2026-10-08",
-      "scanned": "2026-10-12",
+      "commit": "2026-10-21",
+      "scanned": "2026-10-26",
       "scanner": 1
     },
     "airvln/airvln": {
@@ -1604,8 +1604,8 @@
       "jetson": false,
       "pretrained": false,
       "why": {},
-      "commit": "2025-03-12",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-25",
+      "scanned": "2026-10-26",
       "scanner": 1
     },
     "nvidia-isaac/nvblox": {
@@ -1627,8 +1627,8 @@
         "docker": "docker/Dockerfile.build",
         "calibration": "executables/tests/data/3dmatch/camera-intrinsics.txt"
       },
-      "commit": "2026-07-03",
-      "scanned": "2026-10-06",
+      "commit": "2026-10-23",
+      "scanned": "2026-10-26",
       "scanner": 1
     },
     "obss/sahi": {
@@ -1867,8 +1867,8 @@
         "launch_config": "launch/multi_uav_mavros_sitl.launch",
         "calibration": "src/modules/gyro_calibration/parameters.yaml"
       },
-      "commit": "2026-10-19",
-      "scanned": "2026-10-19",
+      "commit": "2026-10-25",
+      "scanned": "2026-10-26",
       "scanner": 1
     },
     "reza-zhu/sues-200-benchmark": {
